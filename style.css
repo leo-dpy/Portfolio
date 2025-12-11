@@ -334,6 +334,21 @@ h2 {
     box-shadow: 0 0 15px var(--accent-dim);
 }
 
+/* NOUVEAU : STYLE POUR BOUTON BLOQUÉ */
+.btn-disabled {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: #333 !important;
+    color: #666 !important;
+    cursor: not-allowed;
+    pointer-events: none; /* Désactive le clic */
+    box-shadow: none !important;
+}
+
+.btn-disabled:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
 .stack {
     padding-top: 1rem;
     border-top: 1px solid #222;
