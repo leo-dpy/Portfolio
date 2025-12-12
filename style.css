@@ -170,6 +170,7 @@ h1 {
     font-size: 0.95rem;
 }
 
+/* Style existant pour .btn (LinkedIn) */
 .btn {
     display: inline-block;
     margin-top: 2rem;
@@ -189,6 +190,39 @@ h1 {
     color: #000;
     box-shadow: 0 0 20px var(--accent);
 }
+
+/* --- AJUSTEMENTS BOUTONS HEADER LÉO DUPUY (DEMANDÉ PAR L'UTILISATEUR) --- */
+
+/* 1. Conteneur des boutons (pour les espacer) */
+.contact-buttons {
+    display: flex;        /* Aligne les boutons côte à côte */
+    gap: 20px;            /* Écart de 20px entre eux */
+    margin-top: 2rem;     /* Espace sous le texte de la bio */
+}
+
+/* On annule la marge 'margin-top' du .btn, car le conteneur la gère maintenant */
+.contact-buttons .btn {
+    margin-top: 0;
+}
+
+/* 2. Style du bouton CONTACT ME (Bouton grisé) */
+.btn-secondary {
+    /* Écrase le style du .btn pour l'adapter au gris */
+    background: transparent;
+    border: 1px solid #535353; /* Bordure gris foncé */
+    color: #999;               /* Texte gris clair */
+    box-shadow: none;          /* Enlève l'ombre bleue */
+}
+
+/* 3. Effet au survol du bouton gris */
+.btn-secondary:hover {
+    background: #535353;       /* Remplissage gris au survol */
+    color: var(--text);        /* Texte blanc */
+    border-color: #535353;     /* Bordure fondue */
+    box-shadow: 0 0 10px rgba(83, 83, 83, 0.5); /* Petite ombre grise */
+}
+/* --- FIN AJUSTEMENTS BOUTONS --- */
+
 
 /* --- SECTIONS --- */
 section {
