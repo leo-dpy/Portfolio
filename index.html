@@ -3,267 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Léo Dupuy, Etudiant B1 passionné par la Cybersécurité. Découvrez mes projets : Groupie Tracker, Pokemon Battle et Power 4 ...">
+    <meta name="description" content="Portfolio de Léo Dupuy, Etudiant B1 passionné par la Cybersécurité.">
     <title>Léo Dupuy | Etudiant B1 Cybersécurité</title>
-    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%230051ff%22>></text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+
+    <canvas id="networkCanvas"></canvas>
+    <div class="global-overlay"></div>
 
     <nav>
         <div class="logo">LÉO<span> DUPUY</span></div>
         <div class="nav-links">
+            <a href="#about">PROFIL</a>
             <a href="#skills">COMPÉTENCES</a>
             <a href="#projets">PROJETS</a>
             <a href="#exp">PARCOURS</a>
+            <a href="#interests">CENTRES D'INTÉRÊT</a>
         </div>
     </nav>
 
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Léo Dupuy</h1>
+            <div class="typewriter">
+                <span class="hero-subtitle">ÉTUDIANT B1 CYBERSÉCURITÉ</span>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>SCROLL_DOWN</span>
+            <div class="arrow">↓</div>
+        </div>
+    </header>
+
     <div class="container">
 
-        <header>
-            <div class="hero-grid">
-                <div>
-                    <h1>Léo Dupuy</h1>
-                    <span class="subtitle">>> ÉTUDIANT B1 CYBERSÉCURITÉ</span>
-                    
-                    <div class="info-badges">
-                        <span class="badge badge-accent">OPEN TO WORK</span>
-                        <span class="badge">PERMIS B</span>
-                        <span class="badge">18 ANS</span>
-                        <span class="badge">LILLE, FR</span>
-                    </div>
-
-                    <div class="bio">
-                        Passionné par l'informatique depuis toujours, j'ai déjà eu la chance de découvrir la réalité du terrain, notamment lors d'un stage en SOC chez IBM.
-                        <br><br>
-                        Curieux, organisé et doté d'un fort esprit d'équipe, je ne me contente pas de la théorie : je développe mes compétences en informatique et je monte des projets Web et réseau pour comprendre comment les choses fonctionnent.
-                    </div>
-
-                    <div class="contact-buttons"> 
-                        <a href="https://linkedin.com/in/dupuy-leo" target="_blank" class="btn">LINKEDIN PROFILE</a>
-                        <a href="mailto:leo.dupuy@ynov.com" class="btn btn-secondary"> CONTACT </a>
+        <section id="about">
+            <div class="profile-card">
+                <div class="profile-visual">
+                    <div class="img-frame">
+                        <img src="photo-professionelle.jpg" alt="Léo Dupuy" class="profile-pic">
                     </div>
                 </div>
-                
-                <div class="img-wrapper">
-                    <img src="photo-professionelle.jpg" alt="Léo Dupuy" class="profile-pic">
+                <div class="profile-content">
+                    <h2 class="profile-title">À Propos <span class="dot">.</span></h2>
+                    <div class="info-badges">
+                        <span class="badge badge-glow">OPEN TO WORK</span>
+                        <span class="badge">LILLE, FR</span>
+                        <span class="badge">18 ANS</span>
+                    </div>
+                    <div class="bio">
+                        <p>
+                            Je m'appelle Léo Dupuy, j'ai 18 ans et je suis étudiant en première année de <strong>Bachelor Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis toujours, j'ai construit mon parcours autour de cette vocation.
+                        </p>
+                    </div>
+                    <div class="contact-buttons"> 
+                        <a href="https://linkedin.com/in/dupuy-leo" target="_blank" class="btn btn-primary">LINKEDIN</a>
+                        <a href="mailto:leo.dupuy@ynov.com" class="btn btn-outline">CONTACT</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </section>
 
         <section id="skills">
-            <h2><span class="section-num">01</span> Compétences & Langues</h2>
-            
+            <h2 class="section-title">>_ SKILLS</h2>
             <div class="skills-wrapper">
-                
-                <div class="skill-group">
-                    <h3>// Hard Skills</h3>
-                    
-                    <div class="prog-item">
-                        <div class="prog-info"><span>Go (Golang)</span> <span>60%</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:60%"></div></div>
+                <div class="skill-category">
+                    <h3>[ HARD_SKILLS ]</h3>
+                    <div class="tech-bar-container">
+                        <div class="tech-info"><span>GO (GOLANG)</span> <span>45%</span></div>
+                        <div class="tech-track"><div class="tech-fill" style="width:45%"></div></div>
                     </div>
-
-                    <div class="prog-item">
-                        <div class="prog-info"><span>Web (HTML/CSS/JS)</span> <span>65%</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:65%"></div></div>
+                    <div class="tech-bar-container">
+                        <div class="tech-info"><span>WEB (HTML/CSS/JS)</span> <span>65%</span></div>
+                        <div class="tech-track"><div class="tech-fill" style="width:65%"></div></div>
                     </div>
-
-                    <div class="prog-item">
-                        <div class="prog-info"><span>Windows</span> <span>90%</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:90%"></div></div>
+                    <div class="tech-bar-container">
+                        <div class="tech-info"><span>WINDOWS ADMIN</span> <span>80%</span></div>
+                        <div class="tech-track"><div class="tech-fill" style="width:80%"></div></div>
                     </div>
-
-                    <div class="prog-item">
-                        <div class="prog-info"><span>Linux / Bash</span> <span>60%</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:60%"></div></div>
+                    <div class="tech-bar-container">
+                        <div class="tech-info"><span>LINUX / BASH</span> <span>50%</span></div>
+                        <div class="tech-track"><div class="tech-fill" style="width:50%"></div></div>
                     </div>
-
-                    <div class="prog-item">
-                        <div class="prog-info"><span>Réseau</span> <span>50%</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:50%"></div></div>
+                    <div class="tech-bar-container">
+                        <div class="tech-info"><span>RÉSEAU</span> <span>40%</span></div>
+                        <div class="tech-track"><div class="tech-fill" style="width:40%"></div></div>
                     </div>
                 </div>
 
-                <div class="skill-group">
-                    <h3>// Communication</h3>
-                    
-                    <div class="prog-item">
-                        <div class="prog-info"><span>FRANÇAIS</span> <span>MATERNELLE</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:100%"></div></div>
+                <div class="skill-category">
+                    <h3>[ COMMUNICATION ]</h3>
+                    <div class="lang-grid">
+                        <div class="lang-card">
+                            <span class="lang-code">FR</span><span class="lang-name">Français</span>
+                            <div class="mini-bar"><div style="width:100%"></div></div>
+                        </div>
+                        <div class="lang-card">
+                            <span class="lang-code">EN</span><span class="lang-name">Anglais (B1)</span>
+                            <div class="mini-bar"><div style="width:55%"></div></div>
+                        </div>
+                        <div class="lang-card">
+                            <span class="lang-code">ES</span><span class="lang-name">Espagnol (B1)</span>
+                            <div class="mini-bar"><div style="width:55%"></div></div>
+                        </div>
                     </div>
-                    
-                    <div class="prog-item">
-                        <div class="prog-info"><span>ANGLAIS</span> <span>NIVEAU B1</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:55%"></div></div>
-                    </div>
-                    
-                    <div class="prog-item">
-                        <div class="prog-info"><span>ESPAGNOL</span> <span>NIVEAU B1</span></div>
-                        <div class="prog-bg"><div class="prog-bar" style="width:55%"></div></div>
+                    <h3 style="margin-top: 30px;">[ SOFT_SKILLS ]</h3>
+                    <div class="soft-skills-container">
+                        <span class="skill-tag">Esprit d'équipe</span>
+                        <span class="skill-tag">Curiosité</span>
+                        <span class="skill-tag">Organisation</span>
+                        <span class="skill-tag">Patience</span>
                     </div>
                 </div>
-
-            </div>
-
-            <h3 class="soft-skills-title">// Soft Skills</h3>
-            <div class="soft-skills-container">
-                <span class="skill-tag" style="border-color:var(--accent); color:#fff;">Esprit d'équipe</span>
-                <span class="skill-tag" style="border-color:var(--accent); color:#fff;">Curiosité</span>
-                <span class="skill-tag" style="border-color:var(--accent); color:#fff;">Organisation</span>
-                <span class="skill-tag" style="border-color:var(--accent); color:#fff;">Patience</span>
             </div>
         </section>
-
 
         <section id="projets">
-            <h2><span class="section-num">02</span> Projets</h2>
-            <div class="grid">
+            <h2 class="section-title">>_ PROJECTS</h2>
+            <div class="projects-grid">
                 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-top"><span>WEB APP</span> <span>↗</span></div>
-                        <h3><a href="#" target="_blank">Groupie Tracker</a></h3>
-                        <p>Développement d'une application consommant une API musicale. Visualisation de données d'artistes, concerts et géolocalisation.</p>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="p-type">WEB APP</span>
+                        <span class="p-status online">● ONLINE</span>
                     </div>
-                    
-                    <div class="card-footer">
-                        <div class="collab">Feat. <a href="https://github.com/Bura-Kevin" target="_blank">@Bura-Kevin</a></div>
-                        <a id="btn-groupie" href="#" target="_blank" class="btn-lancer">VOIR LE PROJET</a>
-                        <div class="stack">API // HTML // CSS // GO // JS</div>
+                    <div class="project-body">
+                        <h3>Groupie Tracker</h3>
+                        <p>Application consommant une API musicale. Visualisation de données d'artistes, concerts et géolocalisation.</p>
+                        <div class="p-stack">
+                            <span>API</span><span>GO</span><span>HTML/CSS</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-top"><span>GAME ENGINE</span> <span>↗</span></div>
-                        <h3><a href="#" target="_blank">Power 4</a></h3>
-                        <p>Création d'un jeu Puissance 4 complet. Algorithmes de vérification de victoire complexes et gestion multi-joueurs.</p>
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="collab">Feat. <a href="https://github.com/Statistiques00" target="_blank">@Statistiques00</a></div>
-                        <a href="#" target="_blank" class="btn-lancer" id="btn-power4">VOIR LE PROJET</a>
-                        <div class="stack">ALGO // LOGIQUE // JEU</div>
+                    <div class="project-footer">
+                        <div class="feat-box">
+                            <span class="feat-label">FEAT.</span>
+                            <a href="https://github.com/Bura-Kevin" target="_blank">@Bura-Kevin</a>
+                        </div>
+                        <a id="btn-groupie" href="#" target="_blank" class="btn-project">VOIR LE PROJET</a>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="card-top"><span>SIMULATEUR</span> <span>↗</span></div>
-                        <h3><a href="#" target="_blank">Pokemon Battle Web</a></h3>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="p-type">GAME ENGINE</span>
+                        <span class="p-status online">● v1.2</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Power 4</h3>
+                        <p>Jeu Puissance 4 complet. Algorithmes de vérification de victoire complexes et gestion multi-joueurs.</p>
+                        <div class="p-stack">
+                            <span>ALGO</span><span>LOGIQUE</span><span>JEU</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="feat-box">
+                            <span class="feat-label">FEAT.</span>
+                            <a href="https://github.com/Statistiques00" target="_blank">@Statistiques00</a>
+                        </div>
+                        <a id="btn-power4" href="#" target="_blank" class="btn-project">VOIR LE PROJET</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="p-type">SIMULATEUR</span>
+                        <span class="p-status online">● v2.0</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Pokemon Battle</h3>
                         <p>Simulateur de combat interactif sur navigateur. Intégration d'un Pokédex dynamique et gestion des attaques.</p>
+                        <div class="p-stack">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
                     </div>
-
-                    <div class="card-footer">
-                        <a href="#" target="_blank" class="btn-lancer" id="btn-pokemon">VOIR LE PROJET</a>
-                        <div class="stack">HTML // CSS // JS</div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <a id="btn-pokemon" href="#" target="_blank" class="btn-project">VOIR LE PROJET</a>
                     </div>
                 </div>
 
-                <div class="card" style="border-style: dashed; border-color: #333;">
-                    <div class="card-content">
-                        <div class="card-top"><span style="color:#ffcc00">EN DÉVELOPPEMENT</span> <span>↗</span></div>
-                        <h3><a href="https://cybersens.fr" target="_blank">CyberSens</a></h3>
-                        <p>Plateforme dédiée à la sensibilisation et aux outils de cybersécurité. Rdv directement sur le site pour plus d'infos.</p>
+                <div class="project-card wip-card">
+                    <div class="project-header">
+                        <span class="p-type warning">EN DÉVELOPPEMENT</span>
+                        <span class="p-status warning">⚠️ W.I.P</span>
                     </div>
-
-                    <div class="card-footer">
-                        <span class="btn-lancer btn-disabled">BIENTÔT DISPONIBLE</span>
-                        <div class="stack">W.I.P // SECURITY</div>
+                    <div class="project-body">
+                        <h3>CyberSens</h3>
+                        <p>Plateforme dédiée à la sensibilisation et aux outils de cybersécurité. Rdv directement sur le site pour plus d'infos.</p>
+                        <div class="p-stack">
+                            <span>SECURITY</span><span>EDUCATION</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="feat-box">
+                            <span class="feat-label">STATUT</span>
+                            <span>EN COURS</span>
+                        </div>
+                        <a href="https://cybersens.fr" target="_blank" class="btn-project btn-locked">BIENTÔT DISPO</a>
                     </div>
                 </div>
 
             </div>
         </section>
-
 
         <section id="exp">
-            <h2><span class="section-num">03</span> Parcours</h2>
+            <h2 class="section-title">>_ EXPÉRIENCES & FORMATIONS</h2>
             
-            <div style="margin-bottom: 60px;">
-                <h3 style="font-size:1rem; color:#666; margin-bottom:30px; text-transform:uppercase;">Expérience</h3>
+            <div class="timeline-container">
                 
-                <div class="timeline-item">
-                    <div class="date-box">
-                        <span class="date-year">2023</span>
-                        <span class="date-place">Lille</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="role">Stage Cybersécurité (SOC)</div>
-                        <span class="company">IBM FRANCE</span>
-                        <p class="desc">Immersion dans un Security Operations Center (SOC). Observation des analystes, compréhension de la détection d'incidents et découverte des métiers de la Cyberdéfense.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="date-box">
-                        <span class="date-year">2022</span>
-                        <span class="date-place">Pecquencourt</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="role">Réparateur Informatique</div>
-                        <span class="company">MICRO LOGIS</span>
-                        <p class="desc">Diagnostic matériel approfondi, installation de systèmes (Windows) et composants (Disques durs). Gestion de la relation client.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <h3 style="font-size:1rem; color:#666; margin-bottom:30px; text-transform:uppercase;">Formation</h3>
-                
-                <div class="timeline-item">
-                    <div class="date-box">
-                        <span class="date-year">2025+</span>
-                        <span class="date-place">Lille</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="role">Bachelor Cybersécurité</div>
-                        <span class="company">YNOV CAMPUS</span>
-                        <p class="desc">Cursus spécialisé en sécurité des systèmes, réseaux et développement sécurisé.</p>
+                <div class="timeline-block">
+                    <div class="timeline-content active-tl">
+                        <div class="tl-header">
+                            <span class="tl-date">2025+</span>
+                            <span class="tl-type">FORMATION</span>
+                        </div>
+                        <h4>Bachelor Cybersécurité</h4>
+                        <span class="tl-place">LILLE YNOV CAMPUS</span>
+                        <p>Spécialisation sécurité systèmes & réseaux. Développement sécurisé.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="date-box">
-                        <span class="date-year">2022-25</span>
-                        <span class="date-place">Valenciennes</span>
-                    </div>
+                <div class="timeline-block">
                     <div class="timeline-content">
-                        <div class="role">Baccalauréat STI2D (SIN)</div>
-                        <span class="company">LYCÉE DU HAINAUT</span>
-                        <p class="desc">Option Systèmes d'Information et Numérique. Focus sur l'informatique et la technologie.</p>
+                        <div class="tl-header">
+                            <span class="tl-date">2023</span>
+                            <span class="tl-type">EXPÉRIENCE</span>
+                        </div>
+                        <h4>Stage Cybersécurité (SOC)</h4>
+                        <span class="tl-place">IBM FRANCE @ Lille</span>
+                        <p>Immersion SOC et découverte de la cyberdéfense.</p>
+                        <div class="job-tags">
+                            <span>Analyse Incidents</span><span>Phishing</span><span>Observation SOC</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="date-box">
-                        <span class="date-year">2022</span>
-                        <span class="date-place">Marchiennes</span>
-                    </div>
+                <div class="timeline-block">
                     <div class="timeline-content">
-                        <div class="role">Diplôme National du Brevet</div>
-                        <span class="company">COLLÈGE MARGUERITE YOURCENAR</span>
+                        <div class="tl-header">
+                            <span class="tl-date">2022-25</span>
+                            <span class="tl-type">FORMATION</span>
+                        </div>
+                        <h4>Baccalauréat STI2D</h4>
+                        <span class="tl-place">LYCÉE DU HAINAUT</span>
+                        <p>Option Systèmes d'Information et Numérique (SIN). Mention Bien.</p>
                     </div>
                 </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-content">
+                        <div class="tl-header">
+                            <span class="tl-date">2022</span>
+                            <span class="tl-type">EXPÉRIENCE</span>
+                        </div>
+                        <h4>Réparateur Informatique</h4>
+                        <span class="tl-place">MICRO LOGIS @ Pecquencourt</span>
+                        <p>Gestion autonome de l'atelier et intervention technique.</p>
+                        <div class="job-tags">
+                            <span>Diagnostic Hardware</span><span>Installation OS</span><span>Relation Client</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-content">
+                        <div class="tl-header">
+                            <span class="tl-date">2022</span>
+                            <span class="tl-type">FORMATION</span>
+                        </div>
+                        <h4>Diplôme National du Brevet</h4>
+                        <span class="tl-place">COLLÈGE M. YOURCENAR</span>
+                        <p>Mention Assez Bien.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section>
-            <h2><span class="section-num">04</span> Intérêts</h2>
+        <section id="interests">
+            <h2 class="section-title">>_ OFFLINE_ACTIVITIES</h2>
             <div class="interests-grid">
-                <div class="interest-module"><div class="interest-icon">🏎️</div><div class="interest-info"><h4>Automobile</h4><p>Mécanique & Sport</p></div></div>
-                <div class="interest-module"><div class="interest-icon">🚵</div><div class="interest-info"><h4>VTT</h4><p>Pratique loisir</p></div></div>
-                <div class="interest-module"><div class="interest-icon">⚽</div><div class="interest-info"><h4>Football</h4><p>Suivi actualité</p></div></div>
-                <div class="interest-module"><div class="interest-icon">💻</div><div class="interest-info"><h4>IT & Tech</h4><p>Veille Technologique</p></div></div>
+                
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+                        </svg>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Automobile</h3>
+                        <p>Mécanique & Sport</p>
+                    </div>
+                </div>
+
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
+                            <path d="M15 6h-5l-3 11.5"/><path d="M9 6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2.5"/>
+                            <path d="M12 12.5h6l-3-6"/>
+                        </svg>
+                    </div>
+                    <div class="interest-content">
+                        <h3>VTT</h3>
+                        <p>Pratique sur mon temps libre</p>
+                    </div>
+                </div>
+
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                            <path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                        </svg>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Football</h3>
+                        <p>Suivi des championnats européens</p>
+                    </div>
+                </div>
+
+                <div class="interest-card">
+                    <div class="interest-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="16" x="4" y="4" rx="2"/>
+                            <rect width="6" height="6" x="9" y="9" rx="1"/>
+                            <path d="M9 1V4"/><path d="M15 1V4"/><path d="M9 20V23"/><path d="M15 20V23"/>
+                            <path d="M20 9H23"/><path d="M20 14H23"/><path d="M1 9H4"/><path d="M1 14H4"/>
+                        </svg>
+                    </div>
+                    <div class="interest-content">
+                        <h3>Veille Tech</h3>
+                        <p>Hardware & Cyber</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <footer></footer>
+        <footer>
+            <p>© 2025 Léo Dupuy</p>
+        </footer>
 
     </div>
 
