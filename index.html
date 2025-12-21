@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Léo Dupuy | Portfolio Cybersécurité & Étudiant Lille Ynov Campus</title>
-    <meta name="description" content="Découvrez le portfolio de Léo Dupuy, étudiant en Bachelor Cybersécurité à Lille Ynov Campus. Apprenant en administration Windows, Linux et développement Go.">
+    <meta name="description" content="Découvrez le portfolio de Léo Dupuy, étudiant en Bachelor Cybersécurité à Lille Ynov Campus. Expert en administration Windows, Linux et développement Go.">
     <link rel="canonical" href="https://leodupuy.fr/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leodupuy.fr/">
     <meta property="og:title" content="Léo Dupuy | Portfolio Cybersécurité">
-    <meta property="og:description" content="Étudiant en Bachelor Cybersécurité à Lille. Découvrez mes projets et mon parcours.">
-    <meta property="og:image" content="https://leodupuy.fr/photo-professionelle.webp">
+    <meta property="og:description" content="Étudiant en Bachelor Cybersécurité à Lille. Découvrez mes projets techniques et mon parcours.">
 
     <script type="application/ld+json">
     {
@@ -30,20 +29,77 @@
         "name": "Lille Ynov Campus"
       },
       "url": "https://leodupuy.fr",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Lille",
-        "addressCountry": "FR"
-      },
-      "sameAs": [
-        "https://linkedin.com/in/dupuy-leo"
-      ]
+      "sameAs": ["https://linkedin.com/in/dupuy-leo"]
     }
     </script>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%230051ff%22>></text></svg>">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Styles pour la section Participations en Split Layout */
+        .participation-container {
+            width: 100%;
+        }
+        
+        .participation-wide {
+            width: 100% !important;
+            max-width: none !important;
+            box-sizing: border-box;
+            padding: 0 !important; 
+        }
+
+        .participation-split {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .participation-info {
+            flex: 1.2;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .participation-image-side {
+            flex: 1;
+            min-height: 400px;
+            overflow: hidden;
+            border-left: 1px solid #222;
+            position: relative;
+        }
+
+        .participation-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Filtre supprimé ici */
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .project-card:hover .participation-image-side img {
+            /* Filtre hover supprimé ici */
+            transform: scale(1.05);
+        }
+
+        /* Responsive : on empile sur mobile */
+        @media(max-width: 900px) {
+            .participation-split {
+                flex-direction: column;
+            }
+            .participation-image-side {
+                order: -1; /* Image en haut */
+                min-height: 250px;
+                border-left: none;
+                border-bottom: 1px solid #222;
+            }
+            .participation-info {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -56,6 +112,7 @@
             <a href="#about">PROFIL</a>
             <a href="#skills">COMPÉTENCES</a>
             <a href="#projets">PROJETS</a>
+            <a href="#participations">PARTICIPATIONS</a>
             <a href="#exp">PARCOURS</a>
             <a href="#interests">CENTRES D'INTÉRÊT</a>
         </div>
@@ -80,7 +137,7 @@
             <div class="profile-card">
                 <div class="profile-visual">
                     <div class="img-frame">
-                        <img src="photo-professionelle.webp" alt="Léo Dupuy - Étudiant en Cybersécurité" class="profile-pic" width="250" height="250" loading="eager">
+                        <img src="photo-professionelle.jpg" alt="Léo Dupuy" class="profile-pic" width="250" height="250" loading="eager">
                     </div>
                 </div>
                 <div class="profile-content">
@@ -158,53 +215,37 @@
         <section id="projets">
             <h2 class="section-title">>_ PROJECTS</h2>
             <div class="projects-grid">
-                
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="p-type">WEB APP</span>
-                        <span class="p-status online">● ONLINE</span>
-                    </div>
+                    <div class="project-header"><span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span></div>
                     <div class="project-body">
                         <h3>Groupie Tracker</h3>
-                        <p>Application consommant une API musicale. Visualisation de données d'artistes, concerts et géolocalisation.</p>
+                        <p>Application musicale avec API Go et visualisation de données.</p>
                         <div class="p-stack"><span>API</span><span>GO</span><span>HTML/CSS</span></div>
                     </div>
                     <div class="project-footer">
-                        <div class="feat-box">
-                            <span class="feat-label">FEAT.</span>
-                            <a href="https://github.com/Bura-Kevin" target="_blank" rel="noopener">@Bura-Kevin</a>
-                        </div>
+                        <div class="feat-box"><span class="feat-label">FEAT.</span><a href="https://github.com/Bura-Kevin" target="_blank" rel="noopener">@Bura-Kevin</a></div>
                         <a id="btn-groupie" href="#" target="_blank" class="btn-project" rel="noopener">VOIR LE PROJET</a>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="p-type">GAME ENGINE</span>
-                        <span class="p-status online">● v1.2</span>
-                    </div>
+                    <div class="project-header"><span class="p-type">GAME ENGINE</span><span class="p-status online">● v1.2</span></div>
                     <div class="project-body">
                         <h3>Power 4</h3>
-                        <p>Jeu Puissance 4 complet. Algorithmes de vérification de victoire complexes et gestion multi-joueurs.</p>
+                        <p>Jeu Puissance 4 complet avec algorithmes complexes.</p>
                         <div class="p-stack"><span>ALGO</span><span>LOGIQUE</span><span>JEU</span></div>
                     </div>
                     <div class="project-footer">
-                        <div class="feat-box">
-                            <span class="feat-label">FEAT.</span>
-                            <a href="https://github.com/Statistiques00" target="_blank" rel="noopener">@Statistiques00</a>
-                        </div>
+                        <div class="feat-box"><span class="feat-label">FEAT.</span><a href="https://github.com/Statistiques00" target="_blank" rel="noopener">@Statistiques00</a></div>
                         <a id="btn-power4" href="#" target="_blank" class="btn-project" rel="noopener">VOIR LE PROJET</a>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <div class="project-header">
-                        <span class="p-type">SIMULATEUR</span>
-                        <span class="p-status online">● v2.0</span>
-                    </div>
+                    <div class="project-header"><span class="p-type">SIMULATEUR</span><span class="p-status online">● v2.0</span></div>
                     <div class="project-body">
                         <h3>Pokemon Battle</h3>
-                        <p>Simulateur de combat interactif sur navigateur. Intégration d'un Pokédex dynamique et gestion des attaques.</p>
+                        <p>Simulateur de combat interactif sur navigateur.</p>
                         <div class="p-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
                     </div>
                     <div class="project-footer" style="justify-content: flex-end;">
@@ -213,13 +254,10 @@
                 </article>
 
                 <article class="project-card wip-card">
-                    <div class="project-header">
-                        <span class="p-type warning">CYBERSECURITY</span>
-                        <span class="p-status warning">⚠️ W.I.P</span>
-                    </div>
+                    <div class="project-header"><span class="p-type warning">CYBERSECURITY</span><span class="p-status warning">⚠️ W.I.P</span></div>
                     <div class="project-body">
                         <h3>CyberSens</h3>
-                        <p>Plateforme dédiée à la sensibilisation et aux outils de cybersécurité. Rdv sur le site pour plus d'infos.</p>
+                        <p>Plateforme dédiée à la sensibilisation et aux outils de cybersécurité.</p>
                         <div class="p-stack"><span>SECURITY</span><span>EDUCATION</span></div>
                     </div>
                     <div class="project-footer">
@@ -227,7 +265,47 @@
                         <a href="https://cybersens.fr" target="_blank" class="btn-project btn-locked" rel="noopener">BIENTÔT DISPO</a>
                     </div>
                 </article>
+            </div>
+        </section>
 
+        <section id="participations">
+            <h2 class="section-title">>_ PARTICIPATIONS</h2>
+            <div class="participation-container">
+                <article class="project-card participation-wide">
+                    <div class="participation-split">
+                        
+                        <div class="participation-info">
+                            <div class="project-header">
+                                <span class="p-type">COMPÉTITION CTF</span>
+                                <span class="p-status online">🥈 2ème PLACE (LILLE)</span>
+                            </div>
+                            <div class="project-body" style="padding: 0; min-height: auto; margin-bottom: 20px;">
+                                <h3 style="margin-top: 10px;">CTF Inter-Campus Ynov</h3>
+                                <p>Compétition de cybersécurité réunissant les étudiants des différents campus Ynov. Épreuves de Web Exploitation, Cryptographie et OSINT.</p>
+                                <div class="p-stack">
+                                    <span>CYBERSÉCURITÉ</span>
+                                    <span>TEAMWORK</span>
+                                    <span>CHALLENGE</span>
+                                </div>
+                            </div>
+                            <div class="project-footer" style="padding-top: 20px;">
+                                <div class="feat-box">
+                                    <span class="feat-label">ÉDITION</span>
+                                    <span>2024-2025</span>
+                                </div>
+                                <div class="feat-box">
+                                    <span class="feat-label">CAMPUS</span>
+                                    <span>Lille</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="participation-image-side">
+                            <img src="CTF-picture.webp" alt="CTF Inter-Campus Ynov">
+                        </div>
+
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -239,7 +317,7 @@
                         <div class="tl-header"><span class="tl-date">2025+</span><span class="tl-type">FORMATION</span></div>
                         <h4>Bachelor Cybersécurité</h4>
                         <span class="tl-place">LILLE YNOV CAMPUS</span>
-                        <p>Spécialisation sécurité systèmes & réseaux. Développement sécurisé.</p>
+                        <p>Spécialisation sécurité systèmes & réseaux.</p>
                     </div>
                 </div>
                 <div class="timeline-block">
@@ -247,7 +325,7 @@
                         <div class="tl-header"><span class="tl-date">2023</span><span class="tl-type">EXPÉRIENCE</span></div>
                         <h4>Stage Cybersécurité (SOC)</h4>
                         <span class="tl-place">IBM FRANCE @ Lille</span>
-                        <p>Immersion SOC et découverte de la cyberdéfense (Analyse incidents, Phishing).</p>
+                        <p>Immersion SOC et découverte de la cyberdéfense.</p>
                     </div>
                 </div>
                 <div class="timeline-block">
@@ -255,7 +333,7 @@
                         <div class="tl-header"><span class="tl-date">2022-25</span><span class="tl-type">FORMATION</span></div>
                         <h4>Baccalauréat STI2D</h4>
                         <span class="tl-place">LYCÉE DU HAINAUT</span>
-                        <p>Option Systèmes d'Information et Numérique (SIN). Mention Bien.</p>
+                        <p>Option SIN. Mention Bien.</p>
                     </div>
                 </div>
                 <div class="timeline-block">
@@ -263,7 +341,7 @@
                         <div class="tl-header"><span class="tl-date">2022</span><span class="tl-type">EXPÉRIENCE</span></div>
                         <h4>Réparateur Informatique</h4>
                         <span class="tl-place">MICRO LOGIS @ Pecquencourt</span>
-                        <p>Gestion autonome de l'atelier technique et intervention physique.</p>
+                        <p>Gestion autonome de l'atelier technique.</p>
                     </div>
                 </div>
                 <div class="timeline-block">
@@ -281,32 +359,23 @@
             <h2 class="section-title">>_ OFFLINE_ACTIVITIES</h2>
             <div class="interests-grid">
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
-                    </div>
+                    <div class="interest-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></div>
                     <div class="interest-content"><h3>Automobile</h3><p>Mécanique & Sport</p></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h-5l-3 11.5"/><path d="M9 6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2.5"/><path d="M12 12.5h6l-3-6"/></svg>
-                    </div>
-                    <div class="interest-content"><h3>VTT</h3><p>Pratique sur mon temps libre</p></div>
+                    <div class="interest-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h-5l-3 11.5"/><path d="M9 6c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v2.5"/><path d="M12 12.5h6l-3-6"/></svg></div>
+                    <div class="interest-content"><h3>VTT</h3><p>Pratique régulière</p></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-                    </div>
-                    <div class="interest-content"><h3>Football</h3><p>Suivi des championnats</p></div>
+                    <div class="interest-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+                    <div class="interest-content"><h3>Football</h3><p>Championnats</p></div>
                 </div>
                 <div class="interest-card">
-                    <div class="interest-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1V4"/><path d="M15 1V4"/><path d="M9 20V23"/><path d="M15 20V23"/><path d="M20 9H23"/><path d="M20 14H23"/><path d="M1 9H4"/><path d="M1 14H4"/></svg>
-                    </div>
+                    <div class="interest-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M9 1V4"/><path d="M15 1V4"/><path d="M9 20V23"/><path d="M15 20V23"/><path d="M20 9H23"/><path d="M20 14H23"/><path d="M1 9H4"/><path d="M1 14H4"/></svg></div>
                     <div class="interest-content"><h3>Veille Tech</h3><p>Hardware & Cyber</p></div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
