@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Power4 (Local) -> Port 8082");
             btnPower4.href = "http://localhost:8082";
         } else {
-            console.log("Power4 (Serveur) -> power4.leodupuy.com");
-            btnPower4.href = "https://power4.leodupuy.com";
+            console.log("Power4 (Serveur) -> power4.leodupuy.fr");
+            btnPower4.href = "https://power4.leodupuy.fr";
         }
     }
 
@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Pokemon (Local) -> Port 5501");
             btnPokemon.href = "http://127.0.0.1:5501/"; 
         } else {
-            console.log("Pokemon (Serveur) -> pokemon-battle.leodupuy.com");
-            btnPokemon.href = "https://pokemon-battle.leodupuy.com";
+            console.log("Pokemon (Serveur) -> pokemon-battle.leodupuy.fr");
+            btnPokemon.href = "https://pokemon-battle.leodupuy.fr";
         }
     }
 
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
             monBouton.href = "http://localhost:8081";
             console.log("Lien modifié vers -> http://localhost:8081");
         } else {
-            monBouton.href = "https://groupie-tracker.leodupuy.com";
-            console.log("Lien modifié vers -> https://groupie-tracker.leodupuy.com");
+            monBouton.href = "https://groupie-tracker.leodupuy.fr";
+            console.log("Lien modifié vers -> https://groupie-tracker.leodupuy.fr");
         }
     } else {
         console.error("ERREUR ❌ : Le bouton avec l'ID 'btn-groupie' est introuvable.");
