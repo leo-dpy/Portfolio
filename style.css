@@ -650,6 +650,11 @@ h2 {
     color: #ffbd2e;
 }
 
+.offline {
+    color: #ff5f56;
+    text-shadow: 0 0 5px rgba(255, 95, 86, 0.5);
+}
+
 .project-body h3 {
     margin: 0 0 10px 0;
     color: #fff;
@@ -740,7 +745,11 @@ h2 {
 }
 
 .wip-card:hover {
-    border-color: #ffbd2e;
+    border-color: #ff5f56;
+}
+
+.online-card:hover {
+    border-color: #27c93f;
 }
 
 .btn-locked {
