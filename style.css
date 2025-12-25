@@ -1165,3 +1165,136 @@ footer {
         padding: 30px 20px;
     }
 }
+
+/* Mobile Navigation & Improvements */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        height: 60px;
+        border-radius: 0;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+        background: rgba(5, 5, 5, 0.95);
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-toggle-label {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    #nav-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Hamburger animation */
+    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* Hero Text */
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    /* Profile */
+    .profile-card {
+        padding: 1.5rem;
+        margin-top: 0;
+    }
+    
+    .img-frame {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .profile-title {
+        font-size: 1.5rem;
+    }
+
+    /* Timeline adjustments */
+    .timeline-container::after {
+        left: 20px;
+    }
+    
+    .timeline-block {
+        padding-left: 50px;
+        padding-right: 0;
+    }
+    
+    .timeline-block::after {
+        left: 11px !important;
+    }
+    
+    /* General Padding */
+    section {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
