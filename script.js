@@ -163,4 +163,63 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Email Pop-up Logic
+    const btnContact = document.getElementById('btn-contact');
+    const emailPopup = document.getElementById('email-popup');
+    const popupClose = document.querySelector('.email-popup-close');
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const emailText = document.getElementById('email-text');
+    const copyText = document.getElementById('copy-text');
+
+    if (btnContact && emailPopup) {
+        // Ouvrir le pop-up
+        btnContact.addEventListener('click', (e) => {
+            e.preventDefault();
+            emailPopup.classList.add('show');
+        });
+
+        // Fermer le pop-up avec le bouton X
+        if (popupClose) {
+            popupClose.addEventListener('click', () => {
+                emailPopup.classList.remove('show');
+            });
+        }
+
+        // Fermer le pop-up en cliquant en dehors
+        emailPopup.addEventListener('click', (e) => {
+            if (e.target === emailPopup) {
+                emailPopup.classList.remove('show');
+            }
+        });
+
+        // Fermer le pop-up avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && emailPopup.classList.contains('show')) {
+                emailPopup.classList.remove('show');
+            }
+        });
+
+        // Copier l'email
+        if (copyEmailBtn && emailText) {
+            copyEmailBtn.addEventListener('click', () => {
+                const email = emailText.textContent;
+                navigator.clipboard.writeText(email).then(() => {
+                    copyText.textContent = '✓ COPIÉ';
+                    copyEmailBtn.style.borderColor = '#fff';
+                    copyEmailBtn.style.color = '#fff';
+                    copyEmailBtn.style.background = '#111';
+                    
+                    setTimeout(() => {
+                        copyText.textContent = 'COPIER L\'EMAIL';
+                        copyEmailBtn.style.background = '';
+                        copyEmailBtn.style.borderColor = '';
+                        copyEmailBtn.style.color = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Erreur lors de la copie:', err);
+                });
+            });
+        }
+    }
+
 });
