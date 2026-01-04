@@ -26,21 +26,19 @@
 
     <nav role="navigation">
         <div class="logo">LÉO<span> DUPUY</span></div>
-        
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
+        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
         </label>
-
         <div class="nav-links">
             <a href="#about">PROFIL</a>
             <a href="#skills">COMPÉTENCES</a>
             <a href="#projets">PROJETS</a>
             <a href="#participations">PARTICIPATIONS</a>
             <a href="#exp">PARCOURS</a>
-            <a href="#interests">CENTRES D'INTÉRÊT</a>
+            <a href="#interests">INTÉRÊTS</a>
         </div>
     </nav>
 
@@ -50,10 +48,6 @@
             <div class="typewriter">
                 <span class="hero-subtitle">ÉTUDIANT B1 CYBERSÉCURITÉ</span>
             </div>
-        </div>
-        <div class="scroll-down">
-            <span>SCROLL_DOWN</span>
-            <div class="arrow">↓</div>
         </div>
     </header>
 
@@ -71,10 +65,10 @@
                     <div class="info-badges">
                         <span class="badge badge-glow">OPEN TO WORK</span>
                         <span class="badge">LILLE, FR</span>
-                        <span class="badge">18 ANS</span>
+                        <span class="badge">19 ANS</span>
                     </div>
                     <div class="bio">
-                        <p>Je m'appelle Léo Dupuy, j'ai 18 ans et je suis étudiant en première année de <strong>Bachelor Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis toujours, j'ai construit mon parcours autour de cette vocation.</p>
+                        <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en première année de <strong>Bachelor Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis toujours, j'ai construit mon parcours autour de cette vocation.</p>
                     </div>
                     <div class="contact-buttons"> 
                         <a href="https://linkedin.com/in/dupuy-leo" target="_blank" class="btn btn-primary" rel="noopener">LINKEDIN</a>
@@ -103,25 +97,59 @@
             <div class="skills-wrapper">
                 <div class="skill-category">
                     <h3>[ HARD_SKILLS ]</h3>
-                    <div class="tech-bar-container">
-                        <div class="tech-info"><span>GO (GOLANG)</span> <span>40%</span></div>
-                        <div class="tech-track"><div class="tech-fill" style="width:40%"></div></div>
-                    </div>
-                    <div class="tech-bar-container">
-                        <div class="tech-info"><span>WEB (HTML/CSS/JS)</span> <span>55%</span></div>
-                        <div class="tech-track"><div class="tech-fill" style="width:55%"></div></div>
-                    </div>
-                    <div class="tech-bar-container">
-                        <div class="tech-info"><span>WINDOWS ADMIN</span> <span>75%</span></div>
-                        <div class="tech-track"><div class="tech-fill" style="width:75%"></div></div>
-                    </div>
-                    <div class="tech-bar-container">
-                        <div class="tech-info"><span>LINUX / BASH</span> <span>45%</span></div>
-                        <div class="tech-track"><div class="tech-fill" style="width:45%"></div></div>
-                    </div>
-                    <div class="tech-bar-container">
-                        <div class="tech-info"><span>RÉSEAU</span> <span>30%</span></div>
-                        <div class="tech-track"><div class="tech-fill" style="width:30%"></div></div>
+                    <div class="skill-groups">
+                        <details class="skill-group">
+                            <summary class="group-title">DEV</summary>
+                            <div class="tech-grid">
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>WEB (HTML/CSS/JS)</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:55%"></div></div>
+                                </div>
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>GO (GOLANG)</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:40%"></div></div>
+                                </div>
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>C SHARP (C#)</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:25%"></div></div>
+                                </div>
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>BASE DE DONNÉES (SQL / PHP)</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:10%"></div></div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="skill-group">
+                            <summary class="group-title">SYSTEMES</summary>
+                            <div class="tech-grid">
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>LINUX / BASH</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:45%"></div></div>
+                                </div>
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>WINDOWS ADMIN</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:75%"></div></div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="skill-group">
+                            <summary class="group-title">RÉSEAU</summary>
+                            <div class="tech-grid">
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>RÉSEAU</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:30%"></div></div>
+                                </div>
+                            </div>
+                        </details>
+                        <details class="skill-group">
+                            <summary class="group-title">OUTILS</summary>
+                            <div class="tech-grid">
+                                <div class="tech-bar-container">
+                                    <div class="tech-info"><span>GIT</span></div>
+                                    <div class="tech-track"><div class="tech-fill" style="width:85%"></div></div>
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
 

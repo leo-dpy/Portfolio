@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    console.log("Script chargé ! Recherche du bouton...");
-
     var btnPower4 = document.getElementById("btn-power4");
 
     if (btnPower4) {
@@ -9,10 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var protocol = window.location.protocol;
 
         if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "" || protocol === "file:") {
-            console.log("Power4 (Local) -> Port 8082");
             btnPower4.href = "http://localhost:8082";
         } else {
-            console.log("Power4 (Serveur) -> power4.leodupuy.fr");
             btnPower4.href = "https://power4.leodupuy.fr";
         }
     }
@@ -24,10 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var protocol = window.location.protocol;
 
         if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "" || protocol === "file:") {
-            console.log("Pokemon (Local) -> Port 5501");
             btnPokemon.href = "http://127.0.0.1:5501/"; 
         } else {
-            console.log("Pokemon (Serveur) -> pokemon-battle.leodupuy.fr");
             btnPokemon.href = "https://pokemon-battle.leodupuy.fr";
         }
     }
@@ -35,103 +29,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var monBouton = document.getElementById("btn-groupie");
 
     if (monBouton) {
-        console.log("Bouton trouvé ! ✅");
-
         if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
             monBouton.href = "http://localhost:8081";
-            console.log("Lien modifié vers -> http://localhost:8081");
         } else {
             monBouton.href = "https://groupie-tracker.leodupuy.fr";
-            console.log("Lien modifié vers -> https://groupie-tracker.leodupuy.fr");
         }
     } else {
-        console.error("ERREUR ❌ : Le bouton avec l'ID 'btn-groupie' est introuvable.");
+        // Bouton absent : rien à faire, on garde la page intacte.
     }
 
-    const canvas = document.getElementById('networkCanvas');
-    
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        
-        const particleCount = 60; 
-        const connectionDistance = 150; 
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 81, 255, 0.7)';
-                ctx.fill();
-            }
-        }
-        
-        function init() {
-            resize();
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                let p = particles[i];
-                p.update();
-                p.draw();
-                
-                for (let j = i; j < particles.length; j++) {
-                    let p2 = particles[j];
-                    let dx = p.x - p2.x;
-                    let dy = p.y - p2.y;
-                    let distance = Math.sqrt(dx*dx + dy*dy);
-                    
-                    if (distance < connectionDistance) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 81, 255, ${1 - distance/connectionDistance})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-        
-        window.addEventListener('resize', () => {
-            resize();
-            particles = [];
-            init();
-        });
-        
-        init();
-        animate();
-    }
+    // Liens projets : sélection locale/production sans modifier le rendu visuel.
 
+    // Ancre douce : garde les sections stables sans changer la mise en page.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -161,6 +70,57 @@ document.addEventListener("DOMContentLoaded", function() {
                 navToggle.checked = false;
             });
         });
+    }
+
+    // Scroll spy : active le lien correspondant à la zone visible.
+    const linkSections = Array.from(navLinks).map(link => {
+        const hash = link.getAttribute('href');
+        if (!hash || !hash.startsWith('#')) return null;
+        const id = hash.slice(1);
+        const section = document.getElementById(id);
+        return section ? { section, link } : null;
+    }).filter(Boolean);
+
+    if (linkSections.length) {
+        const clearActive = () => linkSections.forEach(({ link }) => link.classList.remove('active'));
+        const setActive = (target) => {
+            clearActive();
+            const match = linkSections.find(({ section }) => section === target);
+            if (match) match.link.classList.add('active');
+        };
+
+        let ticking = false;
+        const updateActive = () => {
+            const viewportMid = window.scrollY + window.innerHeight * 0.4;
+            const firstTop = linkSections[0].section.getBoundingClientRect().top + window.scrollY;
+
+            if (viewportMid < firstTop - 10) {
+                clearActive();
+            } else {
+                let current = linkSections[0];
+                for (const entry of linkSections) {
+                    const rect = entry.section.getBoundingClientRect();
+                    const top = rect.top + window.scrollY;
+                    const bottom = top + rect.height;
+                    if (viewportMid >= top && viewportMid < bottom) {
+                        current = entry;
+                        break;
+                    }
+                }
+                setActive(current.section);
+            }
+            ticking = false;
+        };
+
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateActive);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        updateActive();
     }
 
     // Email Pop-up Logic
