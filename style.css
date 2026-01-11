@@ -1,5 +1,4 @@
-﻿
-:root {
+﻿:root {
     --bg: #050505;
     --text: #e0e0e0;
     --accent: #0051ff;
@@ -122,6 +121,7 @@ nav {
         opacity: 0;
         transform: translateY(-50%) translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(-50%) translateX(0);
@@ -208,16 +208,16 @@ nav {
     margin: 0 auto;
     padding: 0 2rem;
     background-color: transparent;
-    
+
 }
 
 
 header.hero-section {
-    
+
     position: relative;
     width: 100%;
     height: 100vh;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -235,11 +235,11 @@ header.hero-section {
     position: relative;
     z-index: 2;
     background: transparent;
-    
+
     border: none;
-    
+
     box-shadow: none;
-    
+
     padding: 0;
 }
 
@@ -276,7 +276,7 @@ h1 {
     background: transparent;
     border: none;
     padding: 0;
-    
+
 }
 
 @keyframes typing {
@@ -355,7 +355,7 @@ h1 {
     align-items: center;
     transition: 0.3s ease;
     margin-top: 2rem;
-    
+
 }
 
 .profile-card:hover {
@@ -651,7 +651,7 @@ h2 {
 .tech-track {
     width: 100%;
     height: 10px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.03) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0.03) 100%);
     border: 1px solid #1f1f1f;
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     position: relative;
@@ -670,13 +670,11 @@ h2 {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.18) 0%,
-        transparent 28%,
-        transparent 72%,
-        rgba(255, 255, 255, 0.12) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            transparent 28%,
+            transparent 72%,
+            rgba(255, 255, 255, 0.12) 100%);
     mix-blend-mode: screen;
     opacity: 0.5;
 }
@@ -748,9 +746,14 @@ h2 {
     gap: 2.5rem;
 }
 
+/* === MODIFICATION : Fond harmonisé pour les cartes projets === */
 .project-card {
-    background: linear-gradient(135deg, rgba(15, 15, 25, 0.95) 0%, rgba(20, 20, 35, 0.95) 100%);
-    border: 1px solid rgba(0, 81, 255, 0.2);
+    background: rgba(10, 10, 10, 0.85);
+    /* Fond neutre (comme Profile) */
+    backdrop-filter: blur(10px);
+    /* Effet flou */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Bordure neutre */
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -759,14 +762,12 @@ h2 {
     position: relative;
     overflow: hidden;
     border-radius: 16px;
-    clip-path: polygon(
-        20px 0,
-        100% 0,
-        100% calc(100% - 20px),
-        calc(100% - 20px) 100%,
-        0 100%,
-        0 20px
-    );
+    clip-path: polygon(20px 0,
+            100% 0,
+            100% calc(100% - 20px),
+            calc(100% - 20px) 100%,
+            0 100%,
+            0 20px);
 }
 
 .project-card::before {
@@ -1010,10 +1011,15 @@ h2 {
     left: -8px;
 }
 
+/* === MODIFICATION : Fond harmonisé pour les cartes parcours === */
 .timeline-content {
     padding: 20px;
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid #222;
+    background: rgba(10, 10, 10, 0.85);
+    /* Harmonisé avec Profile/Projet */
+    backdrop-filter: blur(10px);
+    /* Ajout du flou */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Bordure neutre */
     position: relative;
     clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
     overflow: hidden;
@@ -1287,7 +1293,7 @@ footer {
     width: 100% !important;
     max-width: none !important;
     box-sizing: border-box;
-    padding: 0 !important; 
+    padding: 0 !important;
 }
 
 .participation-split {
@@ -1330,12 +1336,15 @@ footer {
     .participation-split {
         flex-direction: column;
     }
+
     .participation-image-side {
-        order: -1; /* Image en haut */
+        order: -1;
+        /* Image en haut */
         min-height: 250px;
         border-left: none;
         border-bottom: 1px solid #222;
     }
+
     .participation-info {
         padding: 30px 20px;
     }
@@ -1406,11 +1415,11 @@ footer {
         opacity: 0;
     }
 
-    #nav-toggle:checked ~ .nav-links {
+    #nav-toggle:checked~.nav-links {
         transform: translateX(0);
         opacity: 1;
     }
-    
+
     .nav-links a {
         font-size: 1.15rem;
         width: 100%;
@@ -1431,15 +1440,15 @@ footer {
     }
 
     /* Hamburger animation */
-    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    #nav-toggle:checked~.nav-toggle-label span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
-    
-    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+
+    #nav-toggle:checked~.nav-toggle-label span:nth-child(2) {
         opacity: 0;
     }
-    
-    #nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+
+    #nav-toggle:checked~.nav-toggle-label span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
@@ -1447,7 +1456,7 @@ footer {
     h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 0.8rem;
         letter-spacing: 2px;
@@ -1458,12 +1467,12 @@ footer {
         padding: 1.5rem;
         margin-top: 0;
     }
-    
+
     .img-frame {
         width: 200px;
         height: 250px;
     }
-    
+
     .profile-title {
         font-size: 1.5rem;
     }
@@ -1472,21 +1481,21 @@ footer {
     .timeline-container::after {
         left: 20px;
     }
-    
+
     .timeline-block {
         padding-left: 50px;
         padding-right: 0;
     }
-    
+
     .timeline-block::after {
         left: 11px !important;
     }
-    
+
     /* General Padding */
     section {
         padding: 4rem 0;
     }
-    
+
     .container {
         padding: 0 1.5rem;
     }
@@ -1540,6 +1549,7 @@ footer {
         transform: translateY(-30px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
