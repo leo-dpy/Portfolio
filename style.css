@@ -793,16 +793,16 @@ h2 {
     pointer-events: none;
 }
 
-.project-card:hover {
+.project-card:not(.participation-wide):hover {
     border-color: rgba(0, 81, 255, 0.6);
     box-shadow: 0 15px 40px rgba(0, 81, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transform: translateY(-8px);
 }
 
-.project-card:hover::before,
-.project-card:hover::after {
+/* .project-card:not(.participation-wide):hover::before,
+.project-card:not(.participation-wide):hover::after {
     opacity: 1;
-}
+} */
 
 .project-header {
     display: flex;
@@ -938,12 +938,15 @@ h2 {
     opacity: 0.9;
 }
 
-.wip-card:hover {
-    border-color: #ff5f56;
+/* === Status Hover Borders (Specific to override generic hover) === */
+.project-card.online-card:hover {
+    border-color: #27c93f;
+    box-shadow: 0 15px 40px rgba(39, 201, 63, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.online-card:hover {
-    border-color: #27c93f;
+.project-card.wip-card:hover {
+    border-color: #ff5f56;
+    box-shadow: 0 15px 40px rgba(255, 95, 86, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .btn-locked {
@@ -1148,7 +1151,7 @@ h2 {
     z-index: -1;
 }
 
-.interest-card:hover {
+/* .interest-card:hover {
     border-color: var(--accent);
     box-shadow: 0 12px 30px rgba(0, 81, 255, 0.15);
     transform: translateY(-6px);
@@ -1156,7 +1159,7 @@ h2 {
 
 .interest-card:hover::after {
     opacity: 1;
-}
+} */
 
 .interest-icon {
     width: 54px;
@@ -1326,10 +1329,9 @@ footer {
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.project-card:hover .participation-image-side img {
-    /* Filtre hover supprimé ici */
+/* .project-card:hover .participation-image-side img {
     transform: scale(1.05);
-}
+} */
 
 /* Responsive : on empile sur mobile */
 @media(max-width: 900px) {
