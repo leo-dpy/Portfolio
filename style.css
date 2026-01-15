@@ -1392,6 +1392,12 @@ footer {
         border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        animation: none;
+    }
+
+    .logo {
+        display: block;
+        margin-bottom: 0;
     }
 
     .nav-toggle-label {
@@ -1408,8 +1414,9 @@ footer {
         backdrop-filter: blur(14px);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 2rem 1rem;
+        overflow-y: auto;
         gap: 1.5rem;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out, opacity 0.3s ease;
