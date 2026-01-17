@@ -142,4 +142,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // SKILL TABS LOGIC
+    const skillTabs = document.querySelectorAll('.skill-tab');
+    const skillContents = document.querySelectorAll('.skills-content');
+
+    if (skillTabs.length && skillContents.length) {
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Deactivate all
+                skillTabs.forEach(t => t.classList.remove('active'));
+                skillContents.forEach(c => c.classList.remove('active'));
+
+                // Activate selected
+                tab.classList.add('active');
+                const targetId = tab.getAttribute('data-tab');
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    }
+
 });
