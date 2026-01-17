@@ -742,33 +742,31 @@ h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-.wide-card {
-    grid-column: span 2;
-}
+
 
 /* === MODIFICATION : Fond harmonisé pour les cartes projets === */
 .project-card {
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 20px;
+    background: linear-gradient(160deg, rgba(15, 15, 20, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
-    /* border-radius: 16px; removed for sharp angles */
-    clip-path: polygon(20px 0,
+    clip-path: polygon(15px 0,
             100% 0,
-            100% calc(100% - 20px),
-            calc(100% - 20px) 100%,
+            100% calc(100% - 15px),
+            calc(100% - 15px) 100%,
             0 100%,
-            0 20px);
+            0 15px);
+    height: 100%;
 }
 
 .project-card::before {
@@ -808,18 +806,27 @@ h2 {
 .project-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
-    font-size: 0.75rem;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.65rem;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .p-type {
-    color: #666;
+    color: var(--accent);
+    background: rgba(0, 81, 255, 0.08);
+    padding: 4px 8px;
+    border: 1px solid rgba(0, 81, 255, 0.2);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
 }
 
 .p-status {
-    color: #fff;
+    color: #aaa;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .online {
@@ -837,17 +844,19 @@ h2 {
 }
 
 .project-body h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .project-body p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #aaa;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     min-height: auto;
     /* Remove fixed min-height */
     display: -webkit-box;
@@ -855,22 +864,22 @@ h2 {
     /* Limit to 3 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .p-stack {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .p-stack span {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     background: transparent;
     border: 1px solid #333;
     color: #888;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 0;
     /* Sharp */
 }
@@ -914,47 +923,35 @@ h2 {
 }
 
 .btn-project {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--accent);
+    background: rgba(0, 81, 255, 0.08);
+    border: 1px solid rgba(0, 81, 255, 0.3);
     color: var(--accent);
-    padding: 5px 0;
-    font-size: 0.75rem;
+    padding: 8px 16px;
+    font-size: 0.7rem;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     text-transform: uppercase;
-    position: relative;
-    z-index: 10;
-    clip-path: none;
-    /* Removed polygon */
     letter-spacing: 1px;
-}
-
-.btn-project::after {
-    content: ' ->';
-    opacity: 0;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 }
 
 .btn-project:hover {
-    background: transparent;
+    background: var(--accent);
     color: #fff;
-    border-color: #fff;
-    box-shadow: none;
-    transform: none;
-    padding-right: 5px;
+    border-color: var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.4);
+    transform: translateY(-2px);
+    padding-right: 16px;
+    /* Ensure padding doesn't shift */
 }
 
-.btn-project:hover::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
+.btn-project::after,
 .btn-project::before {
-    display: none;
+    content: none;
 }
 
 .wip-card {
@@ -1277,9 +1274,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .wide-card {
-        grid-column: auto;
-    }
+
 
     .soft-skills-container {
         justify-content: center;
@@ -1685,3 +1680,34 @@ footer {
     cursor: pointer;
     font-family: var(--font);
 }
+
+.git-mini {
+    color: #666;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.git-mini:hover {
+    color: #fff;
+    opacity: 1;
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.git-mini svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+@media(min-width: 900px) { .wide-card { grid-column: 1 / -1 !important; } }
