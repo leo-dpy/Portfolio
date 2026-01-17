@@ -743,17 +743,18 @@ h2 {
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
+}
+
+.wide-card {
+    grid-column: span 2;
 }
 
 /* === MODIFICATION : Fond harmonisé pour les cartes projets === */
 .project-card {
     background: rgba(10, 10, 10, 0.85);
-    /* Fond neutre (comme Profile) */
     backdrop-filter: blur(10px);
-    /* Effet flou */
     border: 1px solid rgba(255, 255, 255, 0.08);
-    /* Bordure neutre */
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -761,7 +762,7 @@ h2 {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    border-radius: 16px;
+    /* border-radius: 16px; removed for sharp angles */
     clip-path: polygon(20px 0,
             100% 0,
             100% calc(100% - 20px),
@@ -870,6 +871,7 @@ h2 {
     align-items: flex-end;
     border-top: 1px solid #222;
     padding-top: 20px;
+    /* Increased padding */
     position: relative;
     z-index: 5;
 }
@@ -1252,6 +1254,10 @@ footer {
     .interests-grid,
     .skills-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .wide-card {
+        grid-column: auto;
     }
 
     .soft-skills-container {

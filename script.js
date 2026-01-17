@@ -1,44 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    var btnPower4 = document.getElementById("btn-power4");
-
-    if (btnPower4) {
-        var hostname = window.location.hostname;
-        var protocol = window.location.protocol;
-
-        if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "" || protocol === "file:") {
-            btnPower4.href = "http://localhost:8082";
-        } else {
-            btnPower4.href = "https://power4.leodupuy.fr";
-        }
-    }
-
-    var btnPokemon = document.getElementById("btn-pokemon");
-
-    if (btnPokemon) {
-        var hostname = window.location.hostname;
-        var protocol = window.location.protocol;
-
-        if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "" || protocol === "file:") {
-            btnPokemon.href = "http://127.0.0.1:5501/"; 
-        } else {
-            btnPokemon.href = "https://pokemon-battle.leodupuy.fr";
-        }
-    }
-
-    var monBouton = document.getElementById("btn-groupie");
-
-    if (monBouton) {
-        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-            monBouton.href = "http://localhost:8081";
-        } else {
-            monBouton.href = "https://groupie-tracker.leodupuy.fr";
-        }
-    } else {
-        // Bouton absent : rien à faire, on garde la page intacte.
-    }
-
-    // Liens projets : sélection locale/production sans modifier le rendu visuel.
+document.addEventListener("DOMContentLoaded", function () {
 
     // Ancre douce : garde les sections stables sans changer la mise en page.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -46,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const headerHeight = 80;
                 const elementPosition = targetSection.getBoundingClientRect().top;
@@ -168,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     copyEmailBtn.style.borderColor = '#fff';
                     copyEmailBtn.style.color = '#fff';
                     copyEmailBtn.style.background = '#111';
-                    
+
                     setTimeout(() => {
                         copyText.textContent = 'COPIER L\'EMAIL';
                         copyEmailBtn.style.background = '';
