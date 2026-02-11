@@ -583,20 +583,19 @@ h2 {
     pointer-events: none;
 }
 
-.project-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 81, 255, 0.15) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
+
+
+.project-card:hover .btn-project {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.4);
+    transform: translateY(-2px);
+    padding-right: 16px;
 }
 
-.project-card:not(.participation-wide):hover {
-    border-color: rgba(0, 81, 255, 0.6);
-    box-shadow: 0 15px 40px rgba(0, 81, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transform: translateY(-8px);
+.project-card {
+    cursor: pointer;
 }
 
 .project-header {
@@ -618,12 +617,84 @@ h2 {
 }
 
 .p-status {
-    color: #aaa;
+    color: #fff;
     font-size: 0.65rem;
     display: flex;
     align-items: center;
     gap: 6px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
 }
+
+.online {
+    color: #27c93f;
+    text-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
+}
+
+.p-status.online {
+    border-color: rgba(39, 201, 63, 0.3);
+    background: rgba(39, 201, 63, 0.1);
+}
+
+.warning {
+    color: #ffbd2e;
+    text-shadow: 0 0 8px rgba(255, 189, 46, 0.6);
+}
+
+.p-status.warning {
+    border-color: rgba(255, 189, 46, 0.3);
+    background: rgba(255, 189, 46, 0.1);
+}
+
+.offline {
+    color: #ff5f56;
+    text-shadow: 0 0 8px rgba(255, 95, 86, 0.6);
+}
+
+.p-status.offline {
+    border-color: rgba(255, 95, 86, 0.3);
+    background: rgba(255, 95, 86, 0.1);
+}
+
+/* Status Bar styles */
+/* Status Styles: Integrated Border & Glow */
+.project-card.online-card {
+    border-color: rgba(39, 201, 63, 0.4);
+    box-shadow: 0 4px 20px rgba(39, 201, 63, 0.05);
+}
+
+.project-card.online-card:hover {
+    box-shadow: 0 8px 30px rgba(39, 201, 63, 0.15);
+    border-color: rgba(39, 201, 63, 0.8);
+}
+
+.project-card.offline-card {
+    border-color: rgba(255, 95, 86, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 95, 86, 0.05);
+}
+
+.project-card.offline-card:hover {
+    box-shadow: 0 8px 30px rgba(255, 95, 86, 0.15);
+    border-color: rgba(255, 95, 86, 0.8);
+}
+
+.project-card.wip-card {
+    border-color: rgba(255, 189, 46, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 189, 46, 0.05);
+}
+
+.project-card.wip-card:hover {
+    box-shadow: 0 8px 30px rgba(255, 189, 46, 0.15);
+    border-color: rgba(255, 189, 46, 0.8);
+}
+
+/* Remove old bottom bar */
+.project-card::after {
+    content: none;
+}
+
 
 .online {
     color: #27c93f;
@@ -657,6 +728,7 @@ h2 {
 
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
 
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -755,16 +827,7 @@ h2 {
 }
 
 
-.project-card.online-card:hover {
-    border-color: #27c93f;
-    box-shadow: 0 15px 40px rgba(39, 201, 63, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.project-card.wip-card:hover {
-    border-color: #ff5f56;
-    box-shadow: 0 15px 40px rgba(255, 95, 86, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
+/* Removed online-card:hover and wip-card:hover rules */
 .btn-locked {
     border-color: #444;
     color: #555;
@@ -923,24 +986,27 @@ h2 {
 /* SECTION INTERETS */
 .interests-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
     margin-top: 1.5rem;
 }
 
 .interest-card {
     background: linear-gradient(145deg, rgba(10, 10, 10, 0.92), rgba(7, 7, 7, 0.88));
     border: 1px solid #1d2330;
-    padding: 24px 20px;
+    padding: 30px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
     isolation: isolate;
+    gap: 25px;
+    height: auto;
+    min-height: 140px;
 }
 
 .interest-card::before {
@@ -948,53 +1014,57 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(0, 81, 255, 0.7), transparent 60%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 81, 255, 0.7), transparent 60%);
     opacity: 0.7;
 }
 
-.interest-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(120% 80% at 50% 0, rgba(0, 81, 255, 0.08), transparent 55%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
 .interest-icon {
-    width: 54px;
-    height: 54px;
-    margin-bottom: 14px;
+    width: 60px;
+    height: 60px;
     color: var(--accent);
     display: grid;
     place-items: center;
-    clip-path: none;
-    background: none;
-    border: none;
-    box-shadow: none;
+    flex-shrink: 0;
+    background: rgba(0, 81, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
 }
+
 
 .interest-icon svg {
     width: 100%;
     height: 100%;
+    stroke-width: 1.5;
+}
+
+.interest-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
 }
 
 .interest-content h3 {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin: 0 0 6px 0;
+    letter-spacing: 1.5px;
 }
 
 .interest-content p {
-    color: #8a94a7;
-    font-size: 0.82rem;
-    margin: 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 600;
+    white-space: nowrap;
+    /* Force single line */
 }
+
+
 
 footer {
     text-align: center;
@@ -1743,4 +1813,234 @@ footer {
     flex: 1 1 0;
     min-width: 200px;
 
+}
+
+/* SECTION CERTIFICATIONS CUSTOM - HORIZONTAL STYLE */
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cert-card-horizontal {
+    width: 100%;
+    max-width: 700px;
+    background: linear-gradient(160deg, rgba(15, 15, 20, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 3px solid rgba(0, 81, 255, 0.3);
+    /* Default subtle accent */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    text-decoration: none;
+    /* Reset link style */
+    cursor: pointer;
+}
+
+.cert-card-horizontal:hover {
+    transform: translateY(-5px) translateX(5px);
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--accent);
+    /* Bright accent on hover */
+    box-shadow: -5px 5px 20px rgba(0, 81, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cert-visual-side {
+    width: 160px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+.cert-card-horizontal:hover .cert-visual-side {
+    background: rgba(0, 81, 255, 0.05);
+    /* Subtle glow in visual area */
+}
+
+.cert-logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2)) grayscale(20%);
+    transition: all 0.4s ease;
+}
+
+.cert-card-horizontal:hover .cert-logo-img {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) grayscale(0%);
+    transform: scale(1.05);
+}
+
+.cert-content-side {
+    flex: 1;
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cert-content-side h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cert-tag {
+    font-size: 0.65rem;
+    background: rgba(0, 81, 255, 0.15);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 4px 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px);
+    box-shadow: 0 0 10px rgba(0, 81, 255, 0.1);
+}
+
+.cert-card-horizontal:hover .cert-tag {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.4);
+}
+
+.cert-org {
+    display: block;
+    font-family: var(--font);
+    color: #888;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.cert-org::before {
+    content: '//';
+    color: var(--accent);
+    font-weight: normal;
+    margin-right: 8px;
+}
+
+.cert-content-side p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 95%;
+}
+
+.btn-cert-link {
+    font-size: 0.8rem;
+    color: #bbb;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.btn-cert-link::after {
+    content: '→';
+    font-size: 1.1em;
+    transition: transform 0.3s;
+    color: var(--accent);
+}
+
+.btn-cert-link:hover {
+    color: #fff;
+    border-bottom-color: var(--accent);
+}
+
+.btn-cert-link:hover::after {
+    transform: translateX(6px);
+}
+
+.cert-cta {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.cert-card-horizontal:hover .cert-cta {
+    color: var(--accent);
+}
+
+@media (max-width: 700px) {
+    .cert-card-horizontal {
+        flex-direction: column;
+        max-width: 400px;
+        clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    }
+
+    .cert-visual-side {
+        width: 100%;
+        min-height: 120px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .cert-logo-img {
+        max-width: 100px;
+    }
+
+    .cert-content-side {
+        padding: 25px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cert-header {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .cert-org {
+        display: inline-block;
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .cert-org::before {
+        display: none;
+    }
+
+    .btn-cert-link {
+        align-self: center;
+    }
 }

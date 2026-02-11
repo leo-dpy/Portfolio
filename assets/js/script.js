@@ -164,4 +164,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+
+    // PROJECT CARDS CLICK LOGIC
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent conflict if clicking directly on an inner link/button
+            if (e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+
+            const projectBtn = card.querySelector('.btn-project');
+
+            // Check if button exists and has an href (is a link, not a span like "locked" buttons)
+            if (projectBtn && projectBtn.hasAttribute('href')) {
+                const targetUrl = projectBtn.getAttribute('href');
+                // Open directly in the same tab as requested
+                window.location.href = targetUrl;
+            }
+        });
+    });
+
 });
