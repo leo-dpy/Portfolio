@@ -144,8 +144,8 @@ nav {
     content: '';
     position: absolute;
     left: 0;
-    top: 8%;
-    bottom: 8%;
+    top: 0;
+    bottom: 0;
     width: 1px;
     background: linear-gradient(180deg, transparent, rgba(0, 81, 255, 0.25) 15%, rgba(0, 81, 255, 0.35) 50%, rgba(0, 81, 255, 0.25) 85%, transparent);
     opacity: 0.8;
@@ -347,15 +347,12 @@ h1 {
     overflow: hidden;
     padding: 3rem;
     align-items: center;
-    transition: 0.3s ease;
+
     margin-top: 2rem;
 
 }
 
-.profile-card:hover {
-    border-color: rgba(0, 81, 255, 0.3);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
+
 
 .profile-visual {
     display: flex;
