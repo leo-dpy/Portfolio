@@ -1,5 +1,4 @@
-﻿/* REINITIALISATION & VARIABLES */
-:root {
+﻿:root {
     --bg: #050505;
     --text: #e0e0e0;
     --accent: #0051ff;
@@ -25,7 +24,7 @@ body {
     position: relative;
 }
 
-/* BARRE DE DEFILEMENT */
+
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -67,7 +66,7 @@ header.hero-section {
 }
 
 
-/* ANIMATIONS */
+
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -95,7 +94,7 @@ header.hero-section {
 }
 
 
-/* NAVIGATION */
+
 nav {
     position: fixed;
     left: 35px;
@@ -204,7 +203,7 @@ nav {
 }
 
 
-/* SECTION ACCUEIL */
+
 header.hero-section {
 
     position: relative;
@@ -335,7 +334,7 @@ h1 {
 }
 
 
-/* SECTION PROFIL */
+
 .profile-card {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -429,7 +428,7 @@ h1 {
     gap: 15px;
 }
 
-/* BOUTONS */
+
 .btn-primary {
     background: transparent;
     border: 1px solid var(--accent);
@@ -546,7 +545,7 @@ h2 {
 
 
 
-/* SECTION PROJETS */
+
 .project-card {
     background: linear-gradient(160deg, rgba(15, 15, 20, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%);
     backdrop-filter: blur(12px);
@@ -655,8 +654,8 @@ h2 {
     background: rgba(255, 95, 86, 0.1);
 }
 
-/* Status Bar styles */
-/* Status Styles: Integrated Border & Glow */
+
+
 .project-card.online-card {
     border-color: rgba(39, 201, 63, 0.4);
     box-shadow: 0 4px 20px rgba(39, 201, 63, 0.05);
@@ -687,7 +686,7 @@ h2 {
     border-color: rgba(255, 189, 46, 0.8);
 }
 
-/* Remove old bottom bar */
+
 .project-card::after {
     content: none;
 }
@@ -840,7 +839,7 @@ h2 {
 
 /* --- NOUVEAU DESIGN PROJETS --- */
 
-/* FILTERS */
+
 .project-filters {
     display: flex;
     justify-content: center;
@@ -893,7 +892,7 @@ h2 {
     transform: translateY(-50%);
 }
 
-/* SECTION PARCOURS */
+
 .timeline-container {
     position: relative;
     max-width: 800px;
@@ -1035,7 +1034,7 @@ h2 {
 }
 
 
-/* SECTION INTERETS */
+
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1113,7 +1112,6 @@ h2 {
     line-height: 1.4;
     font-weight: 600;
     white-space: nowrap;
-    /* Force single line */
 }
 
 
@@ -1190,7 +1188,7 @@ footer {
     }
 }
 
-/* SECTION PARTICIPATIONS */
+
 .participation-container {
     width: 100%;
 }
@@ -1242,7 +1240,6 @@ footer {
 
     .participation-image-side {
         order: -1;
-        /* Image en haut */
         min-height: 250px;
         border-left: none;
         border-bottom: 1px solid #222;
@@ -1253,7 +1250,7 @@ footer {
     }
 }
 
-/* NAVIGATION MOBILE */
+
 .nav-toggle {
     display: none;
 }
@@ -1419,7 +1416,7 @@ footer {
     }
 }
 
-/* POPUP EMAIL */
+
 .email-popup {
     display: none;
     position: fixed;
@@ -1598,7 +1595,7 @@ footer {
     }
 }
 
-/* SECTION COMPETENCES */
+
 .skills-wrapper-redesign {
     max-width: 900px;
     margin: 0 auto;
@@ -1791,7 +1788,7 @@ footer {
     }
 }
 
-/* COMPETENCES SOCIALES (SOFT SKILLS) */
+
 .soft-skill-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1829,7 +1826,7 @@ footer {
 }
 
 
-/* GRILLE LANGUES */
+
 .lang-grid-center {
     display: flex !important;
     flex-wrap: wrap;
@@ -1843,7 +1840,7 @@ footer {
 
 }
 
-/* SECTION CERTIFICATIONS CUSTOM - HORIZONTAL STYLE */
+
 .certifications-container {
     display: flex;
     flex-wrap: wrap;
@@ -1860,7 +1857,6 @@ footer {
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-left: 3px solid rgba(0, 81, 255, 0.3);
-    /* Default subtle accent */
     padding: 0;
     display: flex;
     align-items: center;
@@ -1868,7 +1864,6 @@ footer {
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
     text-decoration: none;
-    /* Reset link style */
     cursor: pointer;
 }
 
@@ -1876,7 +1871,6 @@ footer {
     transform: translateY(-5px) translateX(5px);
     border-color: rgba(255, 255, 255, 0.1);
     border-left-color: var(--accent);
-    /* Bright accent on hover */
     box-shadow: -5px 5px 20px rgba(0, 81, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -1894,7 +1888,6 @@ footer {
 
 .cert-card-horizontal:hover .cert-visual-side {
     background: rgba(0, 81, 255, 0.05);
-    /* Subtle glow in visual area */
 }
 
 .cert-logo-img {

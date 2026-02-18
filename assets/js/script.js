@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Ancre douce : garde les sections stables sans changer la mise en page.
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Mobile Menu Logic
+
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Scroll spy : active le lien correspondant à la zone visible.
+
     const linkSections = Array.from(navLinks).map(link => {
         const hash = link.getAttribute('href');
         if (!hash || !hash.startsWith('#')) return null;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateActive();
     }
 
-    // Email Pop-up Logic
+
     const btnContact = document.getElementById('btn-contact');
     const emailPopup = document.getElementById('email-popup');
     const popupClose = document.querySelector('.email-popup-close');
@@ -92,34 +92,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyText = document.getElementById('copy-text');
 
     if (btnContact && emailPopup) {
-        // Ouvrir le pop-up
+
         btnContact.addEventListener('click', (e) => {
             e.preventDefault();
             emailPopup.classList.add('show');
         });
 
-        // Fermer le pop-up avec le bouton X
+
         if (popupClose) {
             popupClose.addEventListener('click', () => {
                 emailPopup.classList.remove('show');
             });
         }
 
-        // Fermer le pop-up en cliquant en dehors
+
         emailPopup.addEventListener('click', (e) => {
             if (e.target === emailPopup) {
                 emailPopup.classList.remove('show');
             }
         });
 
-        // Fermer le pop-up avec la touche Échap
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && emailPopup.classList.contains('show')) {
                 emailPopup.classList.remove('show');
             }
         });
 
-        // Copier l'email
+
         if (copyEmailBtn && emailText) {
             copyEmailBtn.addEventListener('click', () => {
                 const email = emailText.textContent;
@@ -142,18 +142,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // SKILL TABS LOGIC
+
     const skillTabs = document.querySelectorAll('.skill-tab');
     const skillContents = document.querySelectorAll('.skills-content');
 
     if (skillTabs.length && skillContents.length) {
         skillTabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Deactivate all
+
                 skillTabs.forEach(t => t.classList.remove('active'));
                 skillContents.forEach(c => c.classList.remove('active'));
 
-                // Activate selected
+
                 tab.classList.add('active');
                 const targetId = tab.getAttribute('data-tab');
                 const targetContent = document.getElementById(targetId);
@@ -166,38 +166,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // PROJECT CARDS CLICK LOGIC
+
     const projectCards = document.querySelectorAll('.project-card');
 
     projectCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Prevent conflict if clicking directly on an inner link/button
+
             if (e.target.closest('a') || e.target.closest('button')) {
                 return;
             }
 
             const projectBtn = card.querySelector('.btn-project');
 
-            // Check if button exists and has an href (is a link, not a span like "locked" buttons)
+
             if (projectBtn && projectBtn.hasAttribute('href')) {
                 const targetUrl = projectBtn.getAttribute('href');
-                // Open directly in the same tab as requested
+
                 window.location.href = targetUrl;
             }
         });
     });
 
 
-    // PROJECT FILTERING LOGIC
+
     const filterBtns = document.querySelectorAll('.filter-btn');
     const gridItems = document.querySelectorAll('.projects-grid .project-card');
 
     if (filterBtns.length) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
+
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
+
                 btn.classList.add('active');
 
                 const filterValue = btn.getAttribute('data-filter');
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (filterValue === 'all' || category === filterValue) {
                         card.style.display = 'flex';
-                        // Add animation class if desired
+
                         card.style.animation = 'fadeIn 0.5s ease forwards';
                     } else {
                         card.style.display = 'none';
