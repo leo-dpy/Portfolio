@@ -418,16 +418,29 @@
 
         <section id="projets">
             <h2 class="section-title">>_ PROJETS</h2>
+
+            <!-- FILTERS -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">A LA UNE</button>
+                <button class="filter-btn" data-filter="perso">PROJETS PERSO</button>
+                <button class="filter-btn" data-filter="ynov">PROJETS YNOV</button>
+                <button class="filter-btn" data-filter="ydays">PROJET YDAYS</button>
+            </div>
+
+            <!-- GRID -->
             <div class="projects-grid">
 
-                <article class="project-card online-card">
+                <article class="project-card online-card" data-category="ynov">
                     <div class="project-header"><span class="p-type">WEB APP</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
                         <h3>Groupie Tracker</h3>
-                        <p>Application musicale avec API Go et visualisation de données permettant également d'écouter
-                            de la musique et bien plus encore.</p>
-
+                        <p>Application musicale avec API Go et visualisation de données. Interface web dynamique.</p>
+                        <div class="p-stack">
+                            <span>GO</span>
+                            <span>API REST</span>
+                            <span>DATAVIZ</span>
+                        </div>
                     </div>
                     <div class="project-footer">
                         <div class="feat-box"><span class="feat-label">FEAT.</span><a
@@ -449,13 +462,17 @@
                     </div>
                 </article>
 
-                <article class="project-card online-card">
+                <article class="project-card online-card" data-category="ynov">
                     <div class="project-header"><span class="p-type">GAME ENGINE</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
                         <h3>Power 4</h3>
-                        <p>Jeu Puissance 4 complet avec différents fonctionnalités, difficultés et IA intégrée.</p>
-
+                        <p>Jeu Puissance 4 complet avec différentes fonctionnalités, difficultés et IA intégrée.</p>
+                        <div class="p-stack">
+                            <span>JS</span>
+                            <span>ALGORYTHMIE</span>
+                            <span>IA</span>
+                        </div>
                     </div>
                     <div class="project-footer">
                         <div class="feat-box"><span class="feat-label">FEAT.</span><a
@@ -476,14 +493,18 @@
                     </div>
                 </article>
 
-                <article class="project-card online-card">
+                <article class="project-card online-card" data-category="perso">
                     <div class="project-header"><span class="p-type">SIMULATEUR</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
                         <h3>Pokemon Battle</h3>
-                        <p>Simulateur de combat pokémon interactif sur navigateur avec plusieurs fonctionnalités
-                            inspirées des jeux originaux.</p>
-
+                        <p>Simulateur de combat pokémon interactif sur navigateur. Gestion des types, attaques et PV.
+                        </p>
+                        <div class="p-stack">
+                            <span>JS</span>
+                            <span>OOP</span>
+                            <span>GAME LOGIC</span>
+                        </div>
                     </div>
                     <div class="project-footer" style="justify-content: flex-end;">
                         <div class="footer-actions">
@@ -502,14 +523,17 @@
                     </div>
                 </article>
 
-                <article class="project-card offline-card">
+                <article class="project-card offline-card" data-category="ydays">
                     <div class="project-header"><span class="p-type">CYBERSECURITY</span><span
                             class="p-status offline">● OFFLINE</span></div>
                     <div class="project-body">
                         <h3>CyberSens</h3>
-                        <p>Plateforme dédiée à la sensibilisation et aux outils de cybersécurité pour les PME et les
-                            particuliers, réalisée dans le cadre des Ydays YNOV</p>
-
+                        <p>Plateforme de sensibilisation à la cybersécurité pour PME et particuliers (Ydays).</p>
+                        <div class="p-stack">
+                            <span>PHP</span>
+                            <span>SQL</span>
+                            <span>SECURITÉ</span>
+                        </div>
                     </div>
                     <div class="project-footer">
                         <div class="feat-box"><span class="feat-label">STATUT</span><span class="warning">🚧 EN

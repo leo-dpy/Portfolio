@@ -838,6 +838,61 @@ h2 {
 }
 
 
+/* --- NOUVEAU DESIGN PROJETS --- */
+
+/* FILTERS */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #aaa;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: #fff;
+    background: rgba(0, 81, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
+}
+
+.filter-btn.active {
+    background: rgba(0, 81, 255, 0.15);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
+    text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
+}
+
+.filter-btn.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 60%;
+    background: var(--accent);
+    transform: translateY(-50%);
+}
+
 /* SECTION PARCOURS */
 .timeline-container {
     position: relative;
