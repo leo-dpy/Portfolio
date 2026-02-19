@@ -1,11 +1,13 @@
 ﻿:root {
-    --bg: #050505;
+    --bg: #0a0a0f;
     --text: #e0e0e0;
     --accent: #0051ff;
     --accent-dim: rgba(0, 81, 255, 0.1);
     --accent-glow: rgba(0, 81, 255, 0.5);
     --border: #1f1f1f;
     --font: 'Space Mono', monospace;
+    --card-bg: rgba(10, 10, 12, 0.85);
+    --btn-bg: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -46,12 +48,12 @@ html {
 .bg-static {
     position: fixed;
     inset: 0;
-    background-color: #050505;
+    background-color: #0a0a0f;
     background-image:
-        linear-gradient(180deg, rgba(0, 12, 40, 0.35) 0%, rgba(0, 0, 0, 0.2) 55%, rgba(0, 0, 0, 0.45) 100%),
-        radial-gradient(120% 80% at 20% 15%, rgba(0, 81, 255, 0.12), transparent 50%),
-        radial-gradient(90% 70% at 80% 20%, rgba(0, 81, 255, 0.08), transparent 60%),
-        radial-gradient(120% 90% at 50% 90%, rgba(0, 0, 0, 0.35), transparent 60%);
+        linear-gradient(180deg, rgba(0, 12, 40, 0.25) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.3) 100%),
+        radial-gradient(120% 80% at 20% 15%, rgba(0, 81, 255, 0.15), transparent 50%),
+        radial-gradient(90% 70% at 80% 20%, rgba(0, 81, 255, 0.1), transparent 60%),
+        radial-gradient(120% 90% at 50% 90%, rgba(0, 0, 0, 0.2), transparent 60%);
     opacity: 1;
     pointer-events: none;
     z-index: 1;
@@ -339,7 +341,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
-    background: rgba(10, 10, 10, 0.85);
+    gap: 3rem;
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
@@ -430,16 +433,16 @@ h1 {
 
 
 .btn-primary {
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #888;
     padding: 12px 32px;
     font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1.5px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
     clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
@@ -447,57 +450,48 @@ h1 {
     cursor: pointer;
     font-family: var(--font);
     text-align: center;
+    border-radius: 0;
 }
 
 .btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--accent);
-    z-index: -1;
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    content: none;
 }
 
 .btn-primary:hover {
+    border-color: var(--accent);
     color: #fff;
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.4);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    background: rgba(0, 81, 255, 0.08);
     transform: translateY(-2px);
-}
-
-.btn-primary:hover::before {
-    transform: translateX(0);
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
+    text-shadow: none;
 }
 
 .btn-outline {
-    background: transparent;
-    border: 1px solid #444;
-    color: #ccc;
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #888;
     padding: 12px 32px;
     font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1.5px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s ease;
     text-align: center;
     position: relative;
     overflow: hidden;
     clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
     font-family: var(--font);
     cursor: pointer;
+    border-radius: 0;
 }
 
 .btn-outline:hover {
     border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(0, 81, 255, 0.05);
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.15);
+    color: #fff;
+    background: rgba(0, 81, 255, 0.08);
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
 }
 
 
@@ -547,7 +541,7 @@ h2 {
 
 
 .project-card {
-    background: linear-gradient(160deg, rgba(15, 15, 20, 0.8) 0%, rgba(5, 5, 5, 0.9) 100%);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 18px;
@@ -581,13 +575,15 @@ h2 {
 
 
 
+
+
 .project-card:hover .btn-project {
-    background: var(--accent);
-    color: #fff;
     border-color: var(--accent);
-    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.4);
+    color: #fff;
+    background: rgba(0, 81, 255, 0.08);
+    /* Harmonized hover bg */
     transform: translateY(-2px);
-    padding-right: 16px;
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
 }
 
 .project-card {
@@ -783,18 +779,18 @@ h2 {
 }
 
 .feat-box a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .btn-project {
-    background: rgba(0, 81, 255, 0.08);
-    border: 1px solid rgba(0, 81, 255, 0.3);
-    color: var(--accent);
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #888;
     padding: 8px 16px;
     font-size: 0.7rem;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-flex;
@@ -804,13 +800,11 @@ h2 {
 }
 
 .btn-project:hover {
-    background: var(--accent);
-    color: #fff;
     border-color: var(--accent);
-    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.4);
+    color: #fff;
+    background: rgba(0, 81, 255, 0.08);
     transform: translateY(-2px);
-    padding-right: 16px;
-
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
 }
 
 .btn-project::after,
@@ -849,7 +843,7 @@ h2 {
 }
 
 .filter-btn {
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--btn-bg);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #aaa;
     padding: 12px 24px;
@@ -881,16 +875,29 @@ h2 {
     text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
 }
 
-.filter-btn.active::before {
-    content: '';
+
+
+.project-count {
     position: absolute;
-    left: 0;
-    top: 50%;
-    width: 3px;
-    height: 60%;
-    background: var(--accent);
-    transform: translateY(-50%);
+    top: 2px;
+    right: 4px;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.4);
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font);
+    font-weight: normal;
+    transition: all 0.3s ease;
 }
+
+.filter-btn.active .project-count {
+    background: transparent;
+    color: var(--accent);
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(0, 81, 255, 0.5);
+}
+
 
 
 .timeline-container {
@@ -947,11 +954,8 @@ h2 {
 
 .timeline-content {
     padding: 20px;
-    background: rgba(10, 10, 10, 0.85);
-    background: rgba(10, 10, 10, 0.85);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
     clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
@@ -1043,7 +1047,7 @@ h2 {
 }
 
 .interest-card {
-    background: linear-gradient(145deg, rgba(10, 10, 10, 0.92), rgba(7, 7, 7, 0.88));
+    background: var(--card-bg);
     border: 1px solid #1d2330;
     padding: 30px;
     position: relative;
@@ -1208,7 +1212,8 @@ footer {
 
 .participation-info {
     flex: 1.2;
-    padding: 40px;
+    padding: 25px;
+    /* Restored padding for better aesthetics */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1216,7 +1221,8 @@ footer {
 
 .participation-image-side {
     flex: 1;
-    min-height: 400px;
+    min-height: 170px;
+    /* Reduced to 170px as requested */
     overflow: hidden;
     border-left: 1px solid #222;
     position: relative;
@@ -1417,146 +1423,10 @@ footer {
 }
 
 
-.email-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
 
-.email-popup.show {
-    display: flex;
-    opacity: 1;
-}
 
-.email-popup-content {
-    background: linear-gradient(135deg, rgba(10, 10, 20, 0.98) 0%, rgba(15, 15, 30, 0.98) 100%);
-    border: 1px solid rgba(0, 81, 255, 0.3);
-    padding: 45px;
-    position: relative;
-    max-width: 450px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 81, 255, 0.15);
-    animation: popupSlide 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-}
-
-@keyframes popupSlide {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.email-popup-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    color: #666;
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: color 0.3s;
-    line-height: 1;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-}
-
-.email-popup-close:hover {
-    color: var(--accent);
-}
-
-.email-popup-content h3 {
-    color: var(--text);
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.email-display {
-    background: rgba(12, 14, 18, 0.6);
-    border: 1px solid rgba(0, 81, 255, 0.2);
-    padding: 18px;
-    margin-bottom: 25px;
-    transition: all 0.3s ease;
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-}
-
-.email-display:hover {
-    border-color: rgba(0, 81, 255, 0.5);
-    background: rgba(0, 81, 255, 0.12);
-}
-
-.email-display span {
-    color: var(--text);
-    font-size: 1rem;
-    font-family: var(--font);
-    letter-spacing: 1px;
-}
-
-.btn-copy {
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 12px 32px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-family: var(--font);
-    position: relative;
-    overflow: hidden;
-    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-    z-index: 1;
-}
-
-.btn-copy::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--accent);
-    z-index: -1;
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.btn-copy:hover {
-    color: #fff;
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.4);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-.btn-copy:hover::before {
-    transform: translateX(0);
-}
-
-#btn-contact {
-    cursor: pointer;
-    font-family: var(--font);
+#btn-copy-email {
+    text-transform: none;
 }
 
 .git-mini {
@@ -1610,15 +1480,15 @@ footer {
 }
 
 .skill-tab {
-    background: rgba(12, 14, 18, 0.8);
-    border: 1px solid rgba(0, 81, 255, 0.2);
-    color: #888;
+    background: var(--btn-bg);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #aaa;
     padding: 12px 24px;
     font-family: var(--font);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1627,21 +1497,23 @@ footer {
     clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
     position: relative;
     overflow: hidden;
+    border-radius: 0;
 }
 
 .skill-tab:hover {
     border-color: var(--accent);
     color: #fff;
-    background: rgba(0, 81, 255, 0.1);
+    background: rgba(0, 81, 255, 0.08);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 81, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
 }
 
 .skill-tab.active {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: rgba(0, 81, 255, 0.15);
     color: #fff;
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.4);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
+    text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
 }
 
 .skills-content {
@@ -1672,7 +1544,7 @@ footer {
 }
 
 .skill-card-modern {
-    background: rgba(12, 14, 18, 0.8);
+    background: var(--card-bg);
     border: 1px solid rgba(0, 81, 255, 0.2);
     padding: 25px;
     clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
@@ -1797,7 +1669,7 @@ footer {
 }
 
 .soft-skill-card {
-    background: rgba(12, 14, 18, 0.8);
+    background: var(--card-bg);
     border: 1px solid rgba(0, 81, 255, 0.15);
     padding: 20px;
     clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
@@ -1853,7 +1725,7 @@ footer {
 .cert-card-horizontal {
     width: 100%;
     max-width: 700px;
-    background: linear-gradient(160deg, rgba(15, 15, 20, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-left: 3px solid rgba(0, 81, 255, 0.3);
@@ -1880,14 +1752,15 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.02);
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 20px;
+    /* background: rgba(255, 255, 255, 0.02); Removed */
+    /* border-right: 1px solid rgba(255, 255, 255, 0.06); Removed */
+    padding: 20px 20px 20px 40px;
+    /* Increased padding to center logo better */
     transition: background 0.3s;
 }
 
 .cert-card-horizontal:hover .cert-visual-side {
-    background: rgba(0, 81, 255, 0.05);
+    background: transparent;
 }
 
 .cert-logo-img {
@@ -2033,6 +1906,10 @@ footer {
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         background: rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-copy {
+        background: var(--btn-bg);
     }
 
     .cert-logo-img {

@@ -85,25 +85,11 @@
                     <div class="contact-buttons">
                         <a href="https://linkedin.com/in/dupuy-leo" target="_blank" class="btn btn-primary"
                             rel="noopener">LINKEDIN</a>
-                        <button id="btn-contact" class="btn btn-outline">CONTACT</button>
+                        <button id="btn-copy-email" class="btn btn-outline">leo.dupuy@ynov.com</button>
                     </div>
                 </div>
             </div>
         </section>
-
-
-        <div id="email-popup" class="email-popup">
-            <div class="email-popup-content">
-                <button class="email-popup-close">&times;</button>
-                <h3>>_ CONTACT</h3>
-                <div class="email-display">
-                    <span id="email-text">leo.dupuy@ynov.com</span>
-                </div>
-                <button id="copy-email-btn" class="btn-copy">
-                    <span id="copy-text">COPIER L'EMAIL</span>
-                </button>
-            </div>
-        </div>
 
         <section id="skills">
             <h2 class="section-title">>_ COMPÉTENCES</h2>
@@ -421,7 +407,7 @@
 
 
             <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">A LA UNE</button>
+                <button class="filter-btn active" data-filter="featured">A LA UNE</button>
                 <button class="filter-btn" data-filter="perso">PROJETS PERSO</button>
                 <button class="filter-btn" data-filter="ynov">PROJETS YNOV</button>
                 <button class="filter-btn" data-filter="ydays">PROJET YDAYS</button>
@@ -430,7 +416,7 @@
 
             <div class="projects-grid">
 
-                <article class="project-card online-card" data-category="ynov">
+                <article class="project-card online-card featured-project" data-category="ynov">
                     <div class="project-header"><span class="p-type">WEB APP</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
@@ -462,7 +448,7 @@
                     </div>
                 </article>
 
-                <article class="project-card online-card" data-category="ynov">
+                <article class="project-card online-card featured-project" data-category="ynov">
                     <div class="project-header"><span class="p-type">GAME ENGINE</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
@@ -494,6 +480,28 @@
                 </article>
 
                 <article class="project-card online-card" data-category="perso">
+                    <div class="project-header"><span class="p-type">TOOLKIT</span><span class="p-status online">●
+                            ONLINE</span></div>
+                    <div class="project-body">
+                        <h3>Aegis</h3>
+                        <p>Boîte à outils de sécurité et confidentialité. Traitement local, analyse IP, et gestion de
+                            fichiers sécurisée.</p>
+                        <div class="p-stack">
+                            <span>JS</span>
+                            <span>SECURITÉ</span>
+                            <span>PRIVACY</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
+                                LE
+                                PROJET</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card online-card featured-project" data-category="perso">
                     <div class="project-header"><span class="p-type">SIMULATEUR</span><span class="p-status online">●
                             ONLINE</span></div>
                     <div class="project-body">
@@ -523,7 +531,7 @@
                     </div>
                 </article>
 
-                <article class="project-card offline-card" data-category="ydays">
+                <article class="project-card offline-card featured-project" data-category="ydays">
                     <div class="project-header"><span class="p-type">CYBERSECURITY</span><span
                             class="p-status offline">● OFFLINE</span></div>
                     <div class="project-body">
@@ -555,8 +563,8 @@
                                 <span class="p-type">COMPÉTITION CTF</span>
                                 <span class="p-status online">🥈 2ème PLACE (LILLE)</span>
                             </div>
-                            <div class="project-body" style="padding: 0; min-height: auto; margin-bottom: 20px;">
-                                <h3 style="margin-top: 10px;">CTF Inter-Campus Ynov</h3>
+                            <div class="project-body" style="padding: 0; min-height: auto; margin-bottom: 10px;">
+                                <h3 style="margin-top: 0;">CTF Inter-Campus Ynov</h3>
                                 <p>Compétition de cybersécurité réunissant les étudiants des différents campus Ynov.
                                     Épreuves de Web Exploitation, Cryptographie et OSINT.</p>
                                 <div class="p-stack">
@@ -565,7 +573,7 @@
                                     <span>CHALLENGE</span>
                                 </div>
                             </div>
-                            <div class="project-footer" style="padding-top: 20px;">
+                            <div class="project-footer" style="padding-top: 10px;">
                                 <div class="feat-box">
                                     <span class="feat-label">ÉDITION</span>
                                     <span>2024-2025</span>
@@ -578,7 +586,7 @@
                         </div>
 
                         <div class="participation-image-side">
-                            <img src="assets/img/CTF-picture.webp" alt="CTF Inter-Campus Ynov">
+                            <img src="assets/img/CTF-picture.jpg" alt="CTF Inter-Campus Ynov">
                         </div>
 
                     </div>

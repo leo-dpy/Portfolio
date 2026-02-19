@@ -84,62 +84,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    const btnContact = document.getElementById('btn-contact');
-    const emailPopup = document.getElementById('email-popup');
-    const popupClose = document.querySelector('.email-popup-close');
-    const copyEmailBtn = document.getElementById('copy-email-btn');
-    const emailText = document.getElementById('email-text');
-    const copyText = document.getElementById('copy-text');
+    const btnCopyEmail = document.getElementById('btn-copy-email');
 
-    if (btnContact && emailPopup) {
+    if (btnCopyEmail) {
+        btnCopyEmail.addEventListener('click', () => {
+            const email = "leo.dupuy@ynov.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = btnCopyEmail.textContent;
+                btnCopyEmail.textContent = '✓ COPIÉ';
+                btnCopyEmail.style.borderColor = '#fff';
+                btnCopyEmail.style.color = '#fff';
+                btnCopyEmail.style.background = 'rgba(255, 255, 255, 0.1)';
 
-        btnContact.addEventListener('click', (e) => {
-            e.preventDefault();
-            emailPopup.classList.add('show');
-        });
-
-
-        if (popupClose) {
-            popupClose.addEventListener('click', () => {
-                emailPopup.classList.remove('show');
+                setTimeout(() => {
+                    btnCopyEmail.textContent = originalText;
+                    btnCopyEmail.style.background = '';
+                    btnCopyEmail.style.borderColor = '';
+                    btnCopyEmail.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Erreur lors de la copie:', err);
             });
-        }
-
-
-        emailPopup.addEventListener('click', (e) => {
-            if (e.target === emailPopup) {
-                emailPopup.classList.remove('show');
-            }
         });
-
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && emailPopup.classList.contains('show')) {
-                emailPopup.classList.remove('show');
-            }
-        });
-
-
-        if (copyEmailBtn && emailText) {
-            copyEmailBtn.addEventListener('click', () => {
-                const email = emailText.textContent;
-                navigator.clipboard.writeText(email).then(() => {
-                    copyText.textContent = '✓ COPIÉ';
-                    copyEmailBtn.style.borderColor = '#fff';
-                    copyEmailBtn.style.color = '#fff';
-                    copyEmailBtn.style.background = '#111';
-
-                    setTimeout(() => {
-                        copyText.textContent = 'COPIER L\'EMAIL';
-                        copyEmailBtn.style.background = '';
-                        copyEmailBtn.style.borderColor = '';
-                        copyEmailBtn.style.color = '';
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Erreur lors de la copie:', err);
-                });
-            });
-        }
     }
 
 
@@ -193,21 +159,50 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridItems = document.querySelectorAll('.projects-grid .project-card');
 
     if (filterBtns.length) {
+        // Initialize counts
         filterBtns.forEach(btn => {
+            const filterValue = btn.getAttribute('data-filter');
+            let count = 0;
+
+            if (filterValue === 'featured') {
+                count = document.querySelectorAll('.projects-grid .project-card.featured-project').length;
+            } else if (filterValue === 'all') {
+                count = gridItems.length;
+            } else {
+                count = document.querySelectorAll(`.projects-grid .project-card[data-category="${filterValue}"]`).length;
+            }
+
+            const countSpan = document.createElement('span');
+            countSpan.classList.add('project-count');
+            countSpan.textContent = count;
+            btn.appendChild(countSpan);
+
             btn.addEventListener('click', () => {
 
                 filterBtns.forEach(b => b.classList.remove('active'));
 
                 btn.classList.add('active');
 
-                const filterValue = btn.getAttribute('data-filter');
+
 
                 gridItems.forEach(card => {
                     const category = card.getAttribute('data-category');
+                    const isFeatured = card.classList.contains('featured-project');
 
-                    if (filterValue === 'all' || category === filterValue) {
+                    let shouldShow = false;
+
+                    if (filterValue === 'featured') {
+                        if (isFeatured) shouldShow = true;
+                    } else if (filterValue === 'all') {
+                        shouldShow = true;
+                    } else {
+                        if (category === filterValue) shouldShow = true;
+                    }
+
+                    if (shouldShow) {
                         card.style.display = 'flex';
-
+                        card.style.animation = 'none';
+                        card.offsetHeight; /* Trigger reflow */
                         card.style.animation = 'fadeIn 0.5s ease forwards';
                     } else {
                         card.style.display = 'none';
@@ -215,6 +210,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         });
+
+        // Initialize view
+        const activeBtn = document.querySelector('.filter-btn.active');
+        if (activeBtn) {
+            const filterValue = activeBtn.getAttribute('data-filter');
+            gridItems.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const isFeatured = card.classList.contains('featured-project');
+                let shouldShow = false;
+
+                if (filterValue === 'featured') {
+                    if (isFeatured) shouldShow = true;
+                } else if (filterValue === 'all') {
+                    shouldShow = true;
+                } else {
+                    if (category === filterValue) shouldShow = true;
+                }
+
+                if (shouldShow) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     }
 
 });
