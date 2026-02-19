@@ -581,7 +581,7 @@ h2 {
     border-color: var(--accent);
     color: #fff;
     background: rgba(0, 81, 255, 0.08);
-    /* Harmonized hover bg */
+    /* Fond harmonisé au survol */
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
 }
@@ -817,7 +817,7 @@ h2 {
 }
 
 
-/* Removed online-card:hover and wip-card:hover rules */
+/* Suppression des règles hover online-card et wip-card */
 .btn-locked {
     border-color: #444;
     color: #555;
@@ -1213,7 +1213,7 @@ footer {
 .participation-info {
     flex: 1.2;
     padding: 25px;
-    /* Restored padding for better aesthetics */
+    /* Rétablissement du padding pour une meilleure esthétique */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1222,7 +1222,7 @@ footer {
 .participation-image-side {
     flex: 1;
     min-height: 170px;
-    /* Reduced to 170px as requested */
+    /* Réduit à 170px comme demandé */
     overflow: hidden;
     border-left: 1px solid #222;
     position: relative;
@@ -1752,10 +1752,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: rgba(255, 255, 255, 0.02); Removed */
-    /* border-right: 1px solid rgba(255, 255, 255, 0.06); Removed */
     padding: 20px 20px 20px 40px;
-    /* Increased padding to center logo better */
+    /* Padding augmenté pour mieux centrer le logo */
     transition: background 0.3s;
 }
 

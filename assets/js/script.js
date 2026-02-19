@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridItems = document.querySelectorAll('.projects-grid .project-card');
 
     if (filterBtns.length) {
-        // Initialize counts
+        // Initialisation des compteurs
         filterBtns.forEach(btn => {
             const filterValue = btn.getAttribute('data-filter');
             let count = 0;
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (shouldShow) {
                         card.style.display = 'flex';
                         card.style.animation = 'none';
-                        card.offsetHeight; /* Trigger reflow */
+                        card.offsetHeight; /* Déclenchement du reflow */
                         card.style.animation = 'fadeIn 0.5s ease forwards';
                     } else {
                         card.style.display = 'none';
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        // Initialize view
+        // Initialisation de la vue
         const activeBtn = document.querySelector('.filter-btn.active');
         if (activeBtn) {
             const filterValue = activeBtn.getAttribute('data-filter');
