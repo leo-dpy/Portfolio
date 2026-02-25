@@ -48,12 +48,9 @@ html {
 .bg-static {
     position: fixed;
     inset: 0;
-    background-color: #0a0a0f;
-    background-image:
-        linear-gradient(180deg, rgba(0, 12, 40, 0.25) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.3) 100%),
-        radial-gradient(120% 80% at 20% 15%, rgba(0, 81, 255, 0.15), transparent 50%),
-        radial-gradient(90% 70% at 80% 20%, rgba(0, 81, 255, 0.1), transparent 60%),
-        radial-gradient(120% 90% at 50% 90%, rgba(0, 0, 0, 0.2), transparent 60%);
+    background-color: #000000;
+    /* Softened linear gradient transition */
+    background-image: linear-gradient(to top, rgba(14, 24, 200, 0.9) 0%, rgba(10, 15, 80, 0.4) 40%, rgba(0, 0, 0, 0) 80%);
     opacity: 1;
     pointer-events: none;
     z-index: 1;
