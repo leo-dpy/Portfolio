@@ -392,6 +392,7 @@ h1 {
     display: flex;
     gap: 10px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .badge {
@@ -426,6 +427,7 @@ h1 {
 .contact-buttons {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 
