@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             const projectBtn = card.querySelector('.btn-project');
             if (projectBtn && projectBtn.hasAttribute('href')) {
-                window.location.href = projectBtn.getAttribute('href');
+                window.open(projectBtn.getAttribute('href'), '_blank');
             }
         });
     });
@@ -141,19 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (filterBtns.length) {
         filterBtns.forEach(btn => {
             const filterValue = btn.getAttribute('data-filter');
-            let count = 0;
-            if (filterValue === 'featured') {
-                count = document.querySelectorAll('#projets .projects-grid .project-card.featured-project').length;
-            } else if (filterValue === 'all') {
-                count = gridItems.length;
-            } else {
-                count = document.querySelectorAll(`#projets .projects-grid .project-card[data-category="${filterValue}"]`).length;
-            }
-            
-            const countSpan = document.createElement('span');
-            countSpan.classList.add('project-count');
-            countSpan.textContent = count;
-            btn.appendChild(countSpan);
 
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));

@@ -281,6 +281,11 @@ nav .logo span {
     justify-content: center;
 }
 
+.btn-locked {
+    cursor: default;
+    opacity: 0.6;
+}
+
 .filter-btn {
     padding: 12px 24px;
     font-size: 0.8rem;
@@ -456,7 +461,7 @@ h1 {
     text-transform: none;
 }
 
-/* --- COMPÉTENCES --- */
+/* --- COMPÃ‰TENCES --- */
 .skills-wrapper-redesign {
     max-width: 900px;
     margin: 0 auto;
@@ -585,21 +590,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-.project-count {
-    position: absolute;
-    top: 2px;
-    right: 4px;
-    font-size: 0.6rem;
-    color: rgba(255, 255, 255, 0.4);
-    transition: all 0.3s;
-}
-
-.filter-btn.active .project-count {
-    color: var(--accent);
-    opacity: 1;
-    text-shadow: 0 0 5px rgba(0, 81, 255, 0.5);
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -710,7 +700,7 @@ h1 {
     overflow: hidden;
 }
 
-/* NOUVELLE RÈGLE : pour empêcher les textes de participations d'être coupés */
+/* NOUVELLE RÃˆGLE : pour empÃªcher les textes de participations d'Ãªtre coupÃ©s */
 p.no-clamp {
     display: block !important;
     -webkit-line-clamp: unset !important;
@@ -1260,4 +1250,8 @@ footer {
     .cert-org::before {
         display: none;
     }
+}
+
+#project-ysync {
+    grid-column: 1 / -1;
 }
