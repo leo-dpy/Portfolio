@@ -1,5 +1,5 @@
 :root {
-    --bg: #1a1a2e;
+    --bg: #0a0a10;
     --text: #e0e0e0;
     --accent: #0051ff;
     --accent-dim: rgba(0, 81, 255, 0.1);
@@ -120,16 +120,19 @@ html {
 .bg-static {
     position: fixed;
     inset: 0;
-    background-color: #080808;
-    background-image: radial-gradient(ellipse at 50% -5%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 40%, transparent 70%);
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(ellipse at 50% 0%, rgba(0, 81, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px;
+    background-position: center top, center center;
     pointer-events: none;
     z-index: 1;
 }
 
 nav,
 .container,
-header.hero-section,
-footer {
+header.hero-section {
     position: relative;
     z-index: 10;
 }
@@ -166,13 +169,21 @@ h2 {
 /* --- NAVIGATION --- */
 nav {
     position: fixed;
-    left: 35px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     z-index: 1000;
-    animation: slideInLeft 0.8s ease-out forwards;
+    background: rgba(10, 10, 12, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 8px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideInUp 0.8s ease-out forwards;
 }
 
 nav .logo {
@@ -186,24 +197,18 @@ nav .logo span {
 
 .nav-links {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
     position: relative;
 }
 
 .nav-links::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, rgba(0, 81, 255, 0.25) 15%, rgba(0, 81, 255, 0.35) 50%, rgba(0, 81, 255, 0.25) 85%, transparent);
-    opacity: 0.8;
+    display: none;
 }
 
 .nav-links a {
-    padding: 12px 22px 12px 28px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -213,12 +218,14 @@ nav .logo span {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: color 0.25s ease;
+    transition: all 0.25s ease;
+    border-radius: 20px;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--accent);
+    background: rgba(0, 81, 255, 0.1);
 }
 
 .nav-links a:focus-visible {
@@ -461,7 +468,7 @@ h1 {
     text-transform: none;
 }
 
-/* --- COMPÃ‰TENCES --- */
+/* --- COMPÉTENCES --- */
 .skills-wrapper-redesign {
     max-width: 900px;
     margin: 0 auto;
@@ -486,7 +493,7 @@ h1 {
 
 .skill-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -498,6 +505,12 @@ h1 {
     gap: 15px;
     transition: all 0.3s;
     border-color: rgba(0, 81, 255, 0.2);
+}
+
+.skill-card-modern:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 81, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 81, 255, 0.1);
 }
 
 .skill-header {
@@ -557,6 +570,13 @@ h1 {
     gap: 10px;
     text-align: center;
     border-color: rgba(0, 81, 255, 0.15);
+    transition: all 0.3s;
+}
+
+.soft-skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 81, 255, 0.4);
+    box-shadow: 0 5px 20px rgba(0, 81, 255, 0.1);
 }
 
 .soft-skill-icon {
@@ -592,8 +612,9 @@ h1 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-items: stretch;
 }
 
 .project-card {
@@ -605,6 +626,12 @@ h1 {
     clip-path: var(--cut-15);
     height: 100%;
     cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 81, 255, 0.4);
+    box-shadow: 0 5px 25px rgba(0, 81, 255, 0.1);
 }
 
 .project-card.online-card {
@@ -658,8 +685,8 @@ h1 {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    clip-path: var(--cut-8);
 }
 
 .p-status.online {
@@ -700,7 +727,6 @@ h1 {
     overflow: hidden;
 }
 
-/* NOUVELLE RÃˆGLE : pour empÃªcher les textes de participations d'Ãªtre coupÃ©s */
 p.no-clamp {
     display: block !important;
     -webkit-line-clamp: unset !important;
@@ -723,9 +749,11 @@ p.no-clamp {
 
 .project-footer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    gap: 15px;
+    padding-top: 15px;
     z-index: 5;
     margin-top: auto;
 }
@@ -744,10 +772,16 @@ p.no-clamp {
 }
 
 .feat-box a {
-    color: var(--accent);
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: bold;
     z-index: 10;
+    transition: color 0.3s;
+}
+
+.feat-box a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .git-mini {
@@ -777,11 +811,22 @@ p.no-clamp {
 }
 
 /* --- PARTICIPATIONS (NOUVEAU DESIGN EN GRILLE) --- */
+
+#participations .project-card {
+    cursor: default;
+}
+
+#participations .project-card:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+}
+
 .participation-img-top {
-    width: 100%;
+    width: calc(100% + 36px);
+    margin: -18px -18px 15px -18px;
     height: 180px;
     background: transparent;
-    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -950,7 +995,6 @@ p.no-clamp {
     bottom: 0;
     left: 50%;
     margin-left: -1px;
-    box-shadow: 0 0 15px rgba(0, 81, 255, 0.5);
 }
 
 .timeline-block {
@@ -967,24 +1011,6 @@ p.no-clamp {
 .timeline-block:nth-child(odd) {
     left: 50%;
     text-align: left;
-}
-
-.timeline-block::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    right: -8px;
-    background-color: #000;
-    border: 2px solid var(--accent);
-    top: 25px;
-    border-radius: 50%;
-    z-index: 1;
-    box-shadow: 0 0 10px var(--accent);
-}
-
-.timeline-block:nth-child(odd)::after {
-    left: -8px;
 }
 
 .timeline-content {
@@ -1017,10 +1043,11 @@ p.no-clamp {
 }
 
 .tl-type {
-    border: 1px solid #333;
-    padding: 2px 6px;
-    color: #666;
-    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    color: #888;
+    clip-path: var(--cut-5);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content h4 {
@@ -1045,30 +1072,36 @@ p.no-clamp {
 
 /* --- FOOTER --- */
 footer {
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 0.8rem;
-    color: #fff;
+    display: none;
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
+
     nav {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        /* Ajout pour centrer correctement les éléments de la nav sur mobile */
         padding: 0 1.5rem;
-        height: 60px;
+        height: 70px;
+        /* Augmentation de la hauteur pour donner de l'espace */
         top: 0;
+        bottom: auto;
         left: 0;
+        margin: 0;
         width: 100%;
-        background: rgba(5, 5, 5, 0.95);
+        border-radius: 0;
+        border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(5, 5, 5, 0.95);
         animation: none;
         transform: none;
     }
 
     nav .logo {
         display: block;
+        margin: 0;
     }
 
     .nav-toggle-label {
@@ -1076,6 +1109,7 @@ footer {
         flex-direction: column;
         gap: 5px;
         padding: 5px;
+        margin: 0;
         z-index: 1001;
         cursor: pointer;
     }
@@ -1091,10 +1125,11 @@ footer {
 
     .nav-links {
         position: fixed;
-        top: 60px;
+        top: 70px;
+        /* Modifié en fonction de la nouvelle hauteur de nav */
         left: 0;
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 70px);
         background: rgba(5, 5, 5, 0.97);
         backdrop-filter: blur(14px);
         flex-direction: column;
@@ -1204,10 +1239,6 @@ footer {
         left: 0 !important;
     }
 
-    .timeline-block::after {
-        left: 11px !important;
-    }
-
     .tl-header {
         flex-direction: row !important;
     }
@@ -1250,8 +1281,4 @@ footer {
     .cert-org::before {
         display: none;
     }
-}
-
-#project-ysync {
-    grid-column: 1 / -1;
 }
