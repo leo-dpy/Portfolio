@@ -166,7 +166,132 @@ h2 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* --- NAVIGATION --- */
+/* --- FACTORISATION GLOBALE DES CARTES, BOUTONS ET BADGES --- */
+/* Pour conserver les coins coupés (clip-path) ET avoir une bordure continue, le background de l'élément sert de bordure */
+.profile-card,
+.skill-card-modern,
+.soft-skill-card,
+.project-card,
+.cert-card-horizontal,
+.timeline-content,
+.btn-primary,
+.btn-outline,
+.btn-project,
+.filter-btn,
+.skill-tab,
+.badge,
+.p-type,
+.p-status,
+.p-stack span,
+.tl-type {
+    border: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Faux fond intérieur noir qui laisse apparaître 1px de couleur (la bordure) */
+.profile-card::before,
+.skill-card-modern::before,
+.soft-skill-card::before,
+.project-card::before,
+.cert-card-horizontal::before,
+.timeline-content::before,
+.btn-primary::before,
+.btn-outline::before,
+.btn-project::before,
+.filter-btn::before,
+.skill-tab::before,
+.badge::before,
+.p-type::before,
+.p-status::before,
+.p-stack span::before,
+.tl-type::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0a0a10;
+    /* Fond principal noir */
+    clip-path: inherit;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* 1) Définition des couleurs des contours (Background Externe) */
+.profile-card,
+.timeline-content,
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-card-modern {
+    background: rgba(0, 81, 255, 0.2);
+}
+
+.soft-skill-card {
+    background: rgba(0, 81, 255, 0.15);
+}
+
+.cert-card-horizontal {
+    background: rgba(0, 81, 255, 0.3);
+}
+
+.btn-primary,
+.btn-outline,
+.btn-project,
+.filter-btn,
+.skill-tab {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.badge,
+.p-stack span,
+.p-status {
+    background: #333;
+}
+
+.badge-glow {
+    background: var(--accent);
+}
+
+.p-type {
+    background: rgba(0, 81, 255, 0.2);
+}
+
+.p-status.online {
+    background: rgba(39, 201, 63, 0.3);
+}
+
+.p-status.warning {
+    background: rgba(255, 189, 46, 0.3);
+}
+
+.p-status.offline {
+    background: rgba(255, 95, 86, 0.3);
+}
+
+.tl-type {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 2) Définition des fonds teintés intérieurs (::before) pour certains badges spéciaux */
+.badge-glow::before,
+.p-type::before {
+    background: #0c1424;
+}
+
+.p-status.online::before {
+    background: #0b1a0e;
+}
+
+.p-status.warning::before {
+    background: #1c180c;
+}
+
+.p-status.offline::before {
+    background: #1f1110;
+}
+
+/* --- NAVIGATION / DOCK --- */
 nav {
     position: fixed;
     bottom: 30px;
@@ -177,13 +302,22 @@ nav {
     display: flex;
     flex-direction: row;
     z-index: 1000;
-    background: rgba(10, 10, 12, 0.65);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    background: rgba(0, 81, 255, 0.4);
+    /* Contour bleu */
+    clip-path: var(--cut-15);
     padding: 8px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     animation: slideInUp 0.8s ease-out forwards;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0a0a10;
+    /* Vrai fond noir opaque */
+    clip-path: inherit;
+    z-index: -1;
 }
 
 nav .logo {
@@ -219,19 +353,40 @@ nav .logo span {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.25s ease;
-    border-radius: 20px;
+    clip-path: var(--cut-8);
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: transparent;
+    clip-path: inherit;
+    z-index: -1;
+    transition: all 0.25s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent);
-    background: rgba(0, 81, 255, 0.1);
+    color: #fff;
+    background: var(--accent);
+    /* Bordure s'allume en bleu */
+    box-shadow: var(--hover-shadow);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    background: #0d1527;
+    /* Fond interne légèrement bleuté */
 }
 
 .nav-links a:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 81, 255, 0.35);
-    border-radius: 4px;
 }
 
 .nav-toggle,
@@ -245,8 +400,6 @@ nav .logo span {
 .btn-project,
 .filter-btn,
 .skill-tab {
-    background: var(--btn-bg);
-    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #888;
     font-family: var(--font);
     font-weight: bold;
@@ -256,19 +409,37 @@ nav .logo span {
     transition: all 0.2s ease;
     cursor: pointer;
     text-align: center;
-    position: relative;
 }
 
 .btn-primary:hover,
 .btn-outline:hover,
 .btn-project:hover,
 .filter-btn:hover,
-.skill-tab:hover {
-    border-color: var(--accent);
+.skill-tab:hover,
+.filter-btn.active,
+.skill-tab.active {
+    background: var(--accent);
+    /* Contour devient bleu pur */
     color: #fff;
-    background: var(--hover-bg);
     transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
+}
+
+/* L'intérieur du bouton s'allume légèrement au survol/active */
+.btn-primary:hover::before,
+.btn-outline:hover::before,
+.btn-project:hover::before,
+.filter-btn:hover::before,
+.skill-tab:hover::before,
+.filter-btn.active::before,
+.skill-tab.active::before {
+    background: #0d1527;
+}
+
+.filter-btn.active,
+.skill-tab.active {
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
+    text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
 }
 
 .btn-primary,
@@ -308,15 +479,6 @@ nav .logo span {
     gap: 10px;
 }
 
-.filter-btn.active,
-.skill-tab.active {
-    background: rgba(0, 81, 255, 0.15);
-    color: #fff;
-    border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
-    text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
-}
-
 /* --- HERO SECTION --- */
 header.hero-section {
     width: 100%;
@@ -342,7 +504,6 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 800;
-
     animation: slideInDown 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     animation-delay: 0.3s;
     opacity: 0;
@@ -366,18 +527,6 @@ h1 {
     letter-spacing: 4px;
 }
 
-/* --- FACTORISATION DES CARTES --- */
-.profile-card,
-.skill-card-modern,
-.soft-skill-card,
-.project-card,
-.cert-card-horizontal,
-.timeline-content {
-    background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-}
-
 /* --- PROFIL --- */
 .profile-card {
     display: grid;
@@ -394,10 +543,13 @@ h1 {
     justify-content: center;
 }
 
+/* Cadre photo sans ::before pour laisser l'image déborder sans problème */
 .img-frame {
     width: 250px;
     height: 320px;
-    border: 1px solid #333;
+    background: #333;
+    padding: 1px;
+    /* Crée une bordure de 1px */
     clip-path: var(--cut-14);
     overflow: hidden;
 }
@@ -408,6 +560,7 @@ h1 {
     object-fit: cover;
     object-position: top center;
     transition: 0.5s;
+    clip-path: inherit;
 }
 
 .profile-title {
@@ -433,16 +586,12 @@ h1 {
 .badge {
     font-size: 0.75rem;
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid #333;
     color: #888;
     clip-path: var(--cut-10);
 }
 
 .badge-glow {
-    border-color: var(--accent);
     color: var(--accent);
-    background: rgba(0, 81, 255, 0.05);
 }
 
 .bio {
@@ -504,13 +653,6 @@ h1 {
     flex-direction: column;
     gap: 15px;
     transition: all 0.3s;
-    border-color: rgba(0, 81, 255, 0.2);
-}
-
-.skill-card-modern:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 81, 255, 0.4);
-    box-shadow: 0 5px 20px rgba(0, 81, 255, 0.1);
 }
 
 .skill-header {
@@ -569,14 +711,7 @@ h1 {
     align-items: center;
     gap: 10px;
     text-align: center;
-    border-color: rgba(0, 81, 255, 0.15);
     transition: all 0.3s;
-}
-
-.soft-skill-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 81, 255, 0.4);
-    box-shadow: 0 5px 20px rgba(0, 81, 255, 0.1);
 }
 
 .soft-skill-icon {
@@ -630,36 +765,39 @@ h1 {
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0, 81, 255, 0.4);
+    background: rgba(0, 81, 255, 0.4);
     box-shadow: 0 5px 25px rgba(0, 81, 255, 0.1);
 }
 
 .project-card.online-card {
-    border-color: rgba(39, 201, 63, 0.4);
+    background: rgba(39, 201, 63, 0.4);
     box-shadow: 0 4px 20px rgba(39, 201, 63, 0.05);
 }
 
 .project-card.online-card:hover {
+    background: rgba(39, 201, 63, 0.8);
     box-shadow: 0 8px 30px rgba(39, 201, 63, 0.15);
-    border-color: rgba(39, 201, 63, 0.8);
 }
 
 .project-card.offline-card {
-    border-color: rgba(255, 95, 86, 0.4);
+    background: rgba(255, 95, 86, 0.4);
     box-shadow: 0 4px 20px rgba(255, 95, 86, 0.05);
 }
 
 .project-card.offline-card:hover {
+    background: rgba(255, 95, 86, 0.8);
     box-shadow: 0 8px 30px rgba(255, 95, 86, 0.15);
-    border-color: rgba(255, 95, 86, 0.8);
 }
 
 .project-card:hover .btn-project {
-    border-color: var(--accent);
+    background: var(--accent);
     color: #fff;
-    background: var(--hover-bg);
     transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
+}
+
+.project-card:hover .btn-project::before {
+    background: #0d1527;
 }
 
 .project-header {
@@ -673,9 +811,7 @@ h1 {
 
 .p-type {
     color: var(--accent);
-    background: rgba(0, 81, 255, 0.08);
     padding: 4px 8px;
-    border: 1px solid rgba(0, 81, 255, 0.2);
     clip-path: var(--cut-8);
 }
 
@@ -690,21 +826,15 @@ h1 {
 }
 
 .p-status.online {
-    border-color: rgba(39, 201, 63, 0.3);
-    background: rgba(39, 201, 63, 0.1);
     color: #27c93f;
     text-shadow: 0 0 5px rgba(39, 201, 63, 0.5);
 }
 
 .p-status.warning {
-    border-color: rgba(255, 189, 46, 0.3);
-    background: rgba(255, 189, 46, 0.1);
     color: #ffbd2e;
 }
 
 .p-status.offline {
-    border-color: rgba(255, 95, 86, 0.3);
-    background: rgba(255, 95, 86, 0.1);
     color: #ff5f56;
     text-shadow: 0 0 5px rgba(255, 95, 86, 0.5);
 }
@@ -742,9 +872,9 @@ p.no-clamp {
 
 .p-stack span {
     font-size: 0.6rem;
-    border: 1px solid #333;
     color: #888;
     padding: 3px 8px;
+    clip-path: var(--cut-5);
 }
 
 .project-footer {
@@ -797,6 +927,7 @@ p.no-clamp {
     opacity: 1;
     transform: scale(1.1);
     background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
 }
 
 .git-mini svg {
@@ -810,15 +941,14 @@ p.no-clamp {
     gap: 15px;
 }
 
-/* --- PARTICIPATIONS (NOUVEAU DESIGN EN GRILLE) --- */
-
+/* --- PARTICIPATIONS --- */
 #participations .project-card {
     cursor: default;
 }
 
 #participations .project-card:hover {
     transform: none;
-    border-color: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: none;
 }
 
@@ -853,7 +983,6 @@ p.no-clamp {
 .cert-card-horizontal {
     width: 100%;
     max-width: 700px;
-    border-left: 3px solid rgba(0, 81, 255, 0.3);
     display: flex;
     align-items: center;
     transition: all 0.4s;
@@ -864,9 +993,8 @@ p.no-clamp {
 
 .cert-card-horizontal:hover {
     transform: translateY(-5px) translateX(5px);
-    border-color: rgba(255, 255, 255, 0.1);
-    border-left-color: var(--accent);
-    box-shadow: -5px 5px 20px rgba(0, 81, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: var(--accent);
+    /* Contour devient entièrement bleu */
 }
 
 .cert-card-horizontal:hover .cert-visual-side {
@@ -882,6 +1010,10 @@ p.no-clamp {
     background: var(--accent);
     color: white;
     box-shadow: 0 0 15px rgba(0, 81, 255, 0.4);
+}
+
+.cert-card-horizontal:hover .cert-tag::before {
+    background: #0d1527;
 }
 
 .cert-card-horizontal:hover .cert-cta {
@@ -932,8 +1064,6 @@ p.no-clamp {
 
 .cert-tag {
     font-size: 0.65rem;
-    background: rgba(0, 81, 255, 0.15);
-    border: 1px solid var(--accent);
     color: var(--accent);
     padding: 4px 12px;
     font-weight: bold;
@@ -1020,8 +1150,7 @@ p.no-clamp {
 }
 
 .active-tl {
-    border-color: var(--accent);
-    background: rgba(0, 81, 255, 0.05);
+    background: var(--accent);
 }
 
 .tl-header {
@@ -1043,11 +1172,9 @@ p.no-clamp {
 }
 
 .tl-type {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 4px 8px;
     color: #888;
+    padding: 4px 8px;
     clip-path: var(--cut-5);
-    background: rgba(0, 0, 0, 0.2);
 }
 
 .timeline-content h4 {
@@ -1077,26 +1204,27 @@ footer {
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
-
     nav {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        /* Ajout pour centrer correctement les éléments de la nav sur mobile */
         padding: 0 1.5rem;
         height: 70px;
-        /* Augmentation de la hauteur pour donner de l'espace */
         top: 0;
         bottom: auto;
         left: 0;
         margin: 0;
         width: 100%;
         border-radius: 0;
-        border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        clip-path: none;
         background: rgba(5, 5, 5, 0.95);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         animation: none;
         transform: none;
+    }
+
+    nav::before {
+        display: none;
     }
 
     nav .logo {
@@ -1126,7 +1254,6 @@ footer {
     .nav-links {
         position: fixed;
         top: 70px;
-        /* Modifié en fonction de la nouvelle hauteur de nav */
         left: 0;
         width: 100%;
         height: calc(100vh - 70px);
@@ -1148,6 +1275,20 @@ footer {
         font-size: 1.15rem;
         width: 100%;
         text-align: center;
+        clip-path: none;
+        background: transparent;
+    }
+
+    .nav-links a::before {
+        display: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        transform: none;
+        background: transparent;
+        border-left: 2px solid var(--accent);
+        box-shadow: none;
     }
 
     #nav-toggle:checked~.nav-links {
