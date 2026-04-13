@@ -16,7 +16,8 @@
     --cut-8: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
     --cut-5: polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
     --hover-bg: rgba(0, 81, 255, 0.08);
-    --hover-shadow: 0 0 15px rgba(0, 81, 255, 0.2);
+    /* Ombre de survol classique mais légèrement plus lumineuse */
+    --hover-shadow: 0 0 25px rgba(0, 81, 255, 0.5);
 }
 
 /* --- ANIMATIONS GLOBALES --- */
@@ -121,9 +122,10 @@ html {
     position: fixed;
     inset: 0;
     background-color: var(--bg);
+    /* Opacités augmentées pour être visibles à basse luminosité */
     background-image:
-        radial-gradient(ellipse at 50% 0%, rgba(0, 81, 255, 0.12) 0%, transparent 60%),
-        radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        radial-gradient(ellipse at 50% 0%, rgba(0, 81, 255, 0.35) 0%, transparent 65%),
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
     background-size: 100% 100%, 30px 30px;
     background-position: center top, center center;
     pointer-events: none;
@@ -146,7 +148,8 @@ header.hero-section {
 section {
     padding: 6rem 0;
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    /* Ligne plus claire */
 }
 
 h2 {
@@ -167,7 +170,6 @@ h2 {
 }
 
 /* --- FACTORISATION GLOBALE DES CARTES, BOUTONS ET BADGES --- */
-/* Pour conserver les coins coupés (clip-path) ET avoir une bordure continue, le background de l'élément sert de bordure */
 .profile-card,
 .skill-card-modern,
 .soft-skill-card,
@@ -189,7 +191,6 @@ h2 {
     z-index: 1;
 }
 
-/* Faux fond intérieur noir qui laisse apparaître 1px de couleur (la bordure) */
 .profile-card::before,
 .skill-card-modern::before,
 .soft-skill-card::before,
@@ -210,29 +211,28 @@ h2 {
     position: absolute;
     inset: 1px;
     background: #0a0a10;
-    /* Fond principal noir */
     clip-path: inherit;
     z-index: -1;
     transition: all 0.3s ease;
 }
 
-/* 1) Définition des couleurs des contours (Background Externe) */
+/* Contours de cartes très légèrement éclaircis */
 .profile-card,
 .timeline-content,
 .project-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .skill-card-modern {
-    background: rgba(0, 81, 255, 0.2);
+    background: rgba(0, 81, 255, 0.25);
 }
 
 .soft-skill-card {
-    background: rgba(0, 81, 255, 0.15);
+    background: rgba(0, 81, 255, 0.20);
 }
 
 .cert-card-horizontal {
-    background: rgba(0, 81, 255, 0.3);
+    background: rgba(0, 81, 255, 0.35);
 }
 
 .btn-primary,
@@ -258,22 +258,21 @@ h2 {
 }
 
 .p-status.online {
-    background: rgba(39, 201, 63, 0.3);
+    background: rgba(39, 201, 63, 0.35);
 }
 
 .p-status.warning {
-    background: rgba(255, 189, 46, 0.3);
+    background: rgba(255, 189, 46, 0.35);
 }
 
 .p-status.offline {
-    background: rgba(255, 95, 86, 0.3);
+    background: rgba(255, 95, 86, 0.35);
 }
 
 .tl-type {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/* 2) Définition des fonds teintés intérieurs (::before) pour certains badges spéciaux */
 .badge-glow::before,
 .p-type::before {
     background: #0c1424;
@@ -302,11 +301,12 @@ nav {
     display: flex;
     flex-direction: row;
     z-index: 1000;
+    /* Retour à la bordure bleue transparente d'origine */
     background: rgba(0, 81, 255, 0.4);
-    /* Contour bleu */
     clip-path: var(--cut-15);
     padding: 8px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Ombre de structure classique */
     animation: slideInUp 0.8s ease-out forwards;
 }
 
@@ -314,8 +314,8 @@ nav::before {
     content: "";
     position: absolute;
     inset: 1px;
+    /* Retour au fond noir pur que vous préférez ! */
     background: #0a0a10;
-    /* Vrai fond noir opaque */
     clip-path: inherit;
     z-index: -1;
 }
@@ -346,7 +346,8 @@ nav .logo span {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #888;
+    color: #a3a3a3;
+    /* Gris plus clair */
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
@@ -373,7 +374,6 @@ nav .logo span {
 .nav-links a.active {
     color: #fff;
     background: var(--accent);
-    /* Bordure s'allume en bleu */
     box-shadow: var(--hover-shadow);
     transform: translateY(-2px);
 }
@@ -381,7 +381,6 @@ nav .logo span {
 .nav-links a:hover::before,
 .nav-links a.active::before {
     background: #0d1527;
-    /* Fond interne légèrement bleuté */
 }
 
 .nav-links a:focus-visible {
@@ -400,7 +399,8 @@ nav .logo span {
 .btn-project,
 .filter-btn,
 .skill-tab {
-    color: #888;
+    color: #a3a3a3;
+    /* Gris plus clair */
     font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
@@ -419,13 +419,11 @@ nav .logo span {
 .filter-btn.active,
 .skill-tab.active {
     background: var(--accent);
-    /* Contour devient bleu pur */
     color: #fff;
     transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
 }
 
-/* L'intérieur du bouton s'allume légèrement au survol/active */
 .btn-primary:hover::before,
 .btn-outline:hover::before,
 .btn-project:hover::before,
@@ -438,7 +436,7 @@ nav .logo span {
 
 .filter-btn.active,
 .skill-tab.active {
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.45);
     text-shadow: 0 0 5px rgba(0, 81, 255, 0.8);
 }
 
@@ -543,13 +541,11 @@ h1 {
     justify-content: center;
 }
 
-/* Cadre photo sans ::before pour laisser l'image déborder sans problème */
 .img-frame {
     width: 250px;
     height: 320px;
     background: #333;
     padding: 1px;
-    /* Crée une bordure de 1px */
     clip-path: var(--cut-14);
     overflow: hidden;
 }
@@ -586,7 +582,7 @@ h1 {
 .badge {
     font-size: 0.75rem;
     padding: 6px 12px;
-    color: #888;
+    color: #a3a3a3;
     clip-path: var(--cut-10);
 }
 
@@ -595,7 +591,7 @@ h1 {
 }
 
 .bio {
-    color: #aaa;
+    color: #c4c4c4;
     line-height: 1.8;
     font-size: 0.95rem;
     margin-bottom: 2rem;
@@ -684,7 +680,7 @@ h1 {
 
 .skill-progress-container {
     height: 4px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     margin-top: auto;
 }
@@ -766,27 +762,27 @@ h1 {
 .project-card:hover {
     transform: translateY(-5px);
     background: rgba(0, 81, 255, 0.4);
-    box-shadow: 0 5px 25px rgba(0, 81, 255, 0.1);
+    box-shadow: 0 5px 25px rgba(0, 81, 255, 0.15);
 }
 
 .project-card.online-card {
     background: rgba(39, 201, 63, 0.4);
-    box-shadow: 0 4px 20px rgba(39, 201, 63, 0.05);
+    box-shadow: 0 4px 20px rgba(39, 201, 63, 0.10);
 }
 
 .project-card.online-card:hover {
     background: rgba(39, 201, 63, 0.8);
-    box-shadow: 0 8px 30px rgba(39, 201, 63, 0.15);
+    box-shadow: 0 8px 30px rgba(39, 201, 63, 0.25);
 }
 
 .project-card.offline-card {
     background: rgba(255, 95, 86, 0.4);
-    box-shadow: 0 4px 20px rgba(255, 95, 86, 0.05);
+    box-shadow: 0 4px 20px rgba(255, 95, 86, 0.10);
 }
 
 .project-card.offline-card:hover {
     background: rgba(255, 95, 86, 0.8);
-    box-shadow: 0 8px 30px rgba(255, 95, 86, 0.15);
+    box-shadow: 0 8px 30px rgba(255, 95, 86, 0.25);
 }
 
 .project-card:hover .btn-project {
@@ -849,7 +845,7 @@ h1 {
 
 .project-body p {
     font-size: 0.8rem;
-    color: #aaa;
+    color: #c4c4c4;
     margin-bottom: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -872,7 +868,7 @@ p.no-clamp {
 
 .p-stack span {
     font-size: 0.6rem;
-    color: #888;
+    color: #a3a3a3;
     padding: 3px 8px;
     clip-path: var(--cut-5);
 }
@@ -896,7 +892,7 @@ p.no-clamp {
 
 .feat-label {
     font-size: 0.65rem;
-    color: #555;
+    color: #777;
     font-weight: bold;
     margin-bottom: 2px;
 }
@@ -915,10 +911,10 @@ p.no-clamp {
 }
 
 .git-mini {
-    color: #666;
+    color: #a3a3a3;
     transition: all 0.3s;
     display: flex;
-    opacity: 0.6;
+    opacity: 0.8;
     padding: 4px;
 }
 
@@ -926,7 +922,7 @@ p.no-clamp {
     color: #fff;
     opacity: 1;
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
 }
 
@@ -948,7 +944,7 @@ p.no-clamp {
 
 #participations .project-card:hover {
     transform: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     box-shadow: none;
 }
 
@@ -960,7 +956,7 @@ p.no-clamp {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
 }
 
@@ -994,7 +990,6 @@ p.no-clamp {
 .cert-card-horizontal:hover {
     transform: translateY(-5px) translateX(5px);
     background: var(--accent);
-    /* Contour devient entièrement bleu */
 }
 
 .cert-card-horizontal:hover .cert-visual-side {
@@ -1072,7 +1067,7 @@ p.no-clamp {
 
 .cert-org {
     display: block;
-    color: #888;
+    color: #a3a3a3;
     font-size: 0.85rem;
     font-weight: bold;
     margin-bottom: 12px;
@@ -1086,27 +1081,27 @@ p.no-clamp {
 }
 
 .cert-date {
-    color: #555;
+    color: #777;
     font-style: italic;
     font-size: 0.8rem;
     margin-left: 5px;
 }
 
 .cert-content-side p {
-    color: #ccc;
+    color: #c4c4c4;
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
 
 .cert-cta {
     font-size: 0.75rem;
-    color: #aaa;
+    color: #a3a3a3;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: auto;
     display: inline-flex;
     gap: 8px;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 /* --- TIMELINE --- */
@@ -1120,7 +1115,7 @@ p.no-clamp {
     content: '';
     position: absolute;
     width: 2px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -1172,7 +1167,7 @@ p.no-clamp {
 }
 
 .tl-type {
-    color: #888;
+    color: #a3a3a3;
     padding: 4px 8px;
     clip-path: var(--cut-5);
 }
@@ -1186,14 +1181,14 @@ p.no-clamp {
 .tl-place {
     display: block;
     font-size: 0.75rem;
-    color: #888;
+    color: #a3a3a3;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .timeline-content p {
     font-size: 0.85rem;
-    color: #aaa;
+    color: #c4c4c4;
     margin: 0;
 }
 
@@ -1218,9 +1213,10 @@ footer {
         border-radius: 0;
         clip-path: none;
         background: rgba(5, 5, 5, 0.95);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         animation: none;
         transform: none;
+        box-shadow: none;
     }
 
     nav::before {
@@ -1394,7 +1390,7 @@ footer {
     .cert-visual-side {
         width: 100%;
         min-height: 120px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         background: rgba(0, 0, 0, 0.2);
     }
 
