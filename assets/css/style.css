@@ -1419,3 +1419,218 @@ footer {
         display: none;
     }
 }
+
+/* --- PROJECT ZERO MEGA CARD --- */
+.mega-card-zero {
+    display: none;
+    max-width: 950px;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    clip-path: var(--cut-20);
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.mega-card-zero::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #0a0a10;
+    clip-path: inherit;
+    z-index: -1;
+}
+
+.zero-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.zero-badge {
+    display: inline-block;
+    background: rgba(0, 81, 255, 0.2);
+    color: var(--accent);
+    padding: 6px 14px;
+    clip-path: var(--cut-8);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.zero-badge::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #0c1424;
+    clip-path: inherit;
+    z-index: -1;
+}
+
+.zero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 15px 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.zero-glow {
+    text-shadow: 0 0 20px rgba(0, 81, 255, 0.5);
+}
+
+.zero-subtitle {
+    color: #a3a3a3;
+    font-size: 0.9rem;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.zero-subtitle strong {
+    color: #fff;
+    border-bottom: 1px solid var(--accent);
+}
+
+.zero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.zero-pillar {
+    background: rgba(255, 255, 255, 0.15);
+    clip-path: var(--cut-15);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.zero-pillar::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #0a0a10;
+    clip-path: inherit;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.zero-pillar:hover {
+    transform: translateY(-5px);
+}
+
+.zero-pillar.online-card {
+    background: rgba(39, 201, 63, 0.4);
+}
+
+.zero-pillar.online-card:hover {
+    background: rgba(39, 201, 63, 0.8);
+    box-shadow: 0 5px 25px rgba(39, 201, 63, 0.25);
+}
+
+.zero-pillar.offline-card {
+    background: rgba(255, 95, 86, 0.4);
+}
+
+.zero-pillar.offline-card:hover {
+    background: rgba(255, 95, 86, 0.8);
+    box-shadow: 0 5px 25px rgba(255, 95, 86, 0.25);
+}
+
+.zero-pillar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.zero-icon {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    clip-path: var(--cut-8);
+    background: rgba(0, 81, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.zero-icon::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #0c1424;
+    clip-path: inherit;
+    z-index: -1;
+}
+
+.zero-pillar h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.zero-pillar h4 span {
+    font-size: 0.65rem;
+    color: var(--accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+}
+
+.zero-pillar p {
+    color: #c4c4c4;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.zero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.zero-pillar:hover .btn-project {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.zero-pillar:hover .btn-project::before {
+    background: #0d1527;
+}
+
+@media (max-width: 900px) {
+    .zero-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .mega-card-zero {
+        padding: 1.5rem;
+    }
+}

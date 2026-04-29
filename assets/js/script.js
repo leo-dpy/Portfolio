@@ -138,59 +138,125 @@ document.addEventListener("DOMContentLoaded", function () {
     // Système de filtrage des projets
     const filterBtns = document.querySelectorAll('.filter-btn');
     const gridItems = document.querySelectorAll('#projets .projects-grid .project-card');
+    const toggleProjetsContainer = document.getElementById('projets-btn-container');
+    const toggleProjetsBtn = document.getElementById('toggle-projets');
+    const zeroDescription = document.getElementById('zero-description');
+    const projectsGrid = document.querySelector('#projets .projects-grid');
+    
+    let currentFilter = 'featured';
+    let isProjetsExpanded = false;
+
+    function applyFilter(filterValue) {
+        currentFilter = filterValue;
+        isProjetsExpanded = false;
+        if (toggleProjetsBtn) toggleProjetsBtn.textContent = 'VOIR PLUS';
+        
+        if (zeroDescription) {
+            zeroDescription.style.display = filterValue === 'zero' ? 'block' : 'none';
+        }
+        if (projectsGrid) {
+            projectsGrid.style.display = filterValue === 'zero' ? 'none' : 'grid';
+        }
+        if (filterValue === 'zero') {
+            if (toggleProjetsContainer) toggleProjetsContainer.style.display = 'none';
+            return;
+        }
+        
+        let visibleCount = 0;
+        const maxVisible = 4;
+        let totalMatched = 0;
+
+        gridItems.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const isFeatured = card.classList.contains('featured-project');
+            let matchesFilter = false;
+
+            if (filterValue === 'featured') {
+                if (isFeatured) matchesFilter = true;
+            } else if (filterValue === 'all') {
+                matchesFilter = true;
+            } else if (filterValue === 'zero') {
+                if (card.classList.contains('project-zero')) matchesFilter = true;
+            } else {
+                if (category === filterValue) matchesFilter = true;
+            }
+
+            if (matchesFilter) {
+                totalMatched++;
+                if (totalMatched <= maxVisible || isProjetsExpanded) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'none';
+                    card.offsetHeight; // Relance l'animation d'apparition
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (toggleProjetsContainer) {
+            if (totalMatched > maxVisible) {
+                toggleProjetsContainer.style.display = 'block';
+            } else {
+                toggleProjetsContainer.style.display = 'none';
+            }
+        }
+    }
+
     if (filterBtns.length) {
         filterBtns.forEach(btn => {
-            const filterValue = btn.getAttribute('data-filter');
-
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                gridItems.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    const isFeatured = card.classList.contains('featured-project');
-                    let shouldShow = false;
-
-                    if (filterValue === 'featured') {
-                        if (isFeatured) shouldShow = true;
-                    } else if (filterValue === 'all') {
-                        shouldShow = true;
-                    } else {
-                        if (category === filterValue) shouldShow = true;
-                    }
-
-                    if (shouldShow) {
-                        card.style.display = 'flex';
-                        card.style.animation = 'none';
-                        card.offsetHeight; // Relance l'animation d'apparition
-                        card.style.animation = 'fadeIn 0.5s ease forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                applyFilter(btn.getAttribute('data-filter'));
             });
         });
 
         // Appliquer le filtre actif par défaut au chargement
         const activeBtn = document.querySelector('.filter-btn.active');
         if (activeBtn) {
-            const filterValue = activeBtn.getAttribute('data-filter');
+            applyFilter(activeBtn.getAttribute('data-filter'));
+        }
+    }
+
+    if (toggleProjetsBtn) {
+        toggleProjetsBtn.addEventListener('click', () => {
+            isProjetsExpanded = !isProjetsExpanded;
+            toggleProjetsBtn.textContent = isProjetsExpanded ? 'VOIR MOINS' : 'VOIR PLUS';
+            
+            let totalMatched = 0;
+            const maxVisible = 4;
+            
             gridItems.forEach(card => {
                 const category = card.getAttribute('data-category');
                 const isFeatured = card.classList.contains('featured-project');
-                let shouldShow = false;
+                let matchesFilter = false;
 
-                if (filterValue === 'featured') {
-                    if (isFeatured) shouldShow = true;
-                } else if (filterValue === 'all') {
-                    shouldShow = true;
+                if (currentFilter === 'featured') {
+                    if (isFeatured) matchesFilter = true;
+                } else if (currentFilter === 'all') {
+                    matchesFilter = true;
+                } else if (currentFilter === 'zero') {
+                    if (card.classList.contains('project-zero')) matchesFilter = true;
                 } else {
-                    if (category === filterValue) shouldShow = true;
+                    if (category === currentFilter) matchesFilter = true;
                 }
 
-                card.style.display = shouldShow ? 'flex' : 'none';
+                if (matchesFilter) {
+                    totalMatched++;
+                    if (totalMatched > maxVisible) {
+                        card.style.display = isProjetsExpanded ? 'flex' : 'none';
+                        if (isProjetsExpanded) {
+                            card.style.animation = 'none';
+                            card.offsetHeight;
+                            card.style.animation = 'fadeIn 0.5s ease forwards';
+                        }
+                    }
+                }
             });
-        }
+        });
     }
 
     // Gestion du bouton "Voir plus" pour les participations
