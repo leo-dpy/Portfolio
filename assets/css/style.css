@@ -1545,19 +1545,6 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    clip-path: var(--cut-8);
-    background: rgba(0, 81, 255, 0.2);
-    position: relative;
-    z-index: 1;
-}
-
-.zero-icon::before {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    background: #0c1424;
-    clip-path: inherit;
-    z-index: -1;
 }
 
 .zero-pillar h4 {
