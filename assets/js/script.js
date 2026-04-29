@@ -103,23 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Gestion des onglets de compétences
-    const skillTabs = document.querySelectorAll('.skill-tab');
-    const skillContents = document.querySelectorAll('.skills-content');
-    if (skillTabs.length && skillContents.length) {
-        skillTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                skillTabs.forEach(t => t.classList.remove('active'));
-                skillContents.forEach(c => c.classList.remove('active'));
-                tab.classList.add('active');
-                const targetId = tab.getAttribute('data-tab');
-                const targetContent = document.getElementById(targetId);
-                if (targetContent) {
-                    targetContent.classList.add('active');
-                }
-            });
-        });
-    }
+    // Les onglets de compétences ont été remplacés par des carrousels infinis purs CSS
 
     // Redirection au clic sur les cartes de projets
     const projectCards = document.querySelectorAll('.project-card');
