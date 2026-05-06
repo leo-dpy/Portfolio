@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleProjetsBtn = document.getElementById('toggle-projets');
     const zeroDescription = document.getElementById('zero-description');
     const projectsGrid = document.querySelector('#projets .projects-grid');
-    
+
     let currentFilter = 'featured';
     let isProjetsExpanded = false;
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentFilter = filterValue;
         isProjetsExpanded = false;
         if (toggleProjetsBtn) toggleProjetsBtn.textContent = 'VOIR PLUS';
-        
+
         if (zeroDescription) {
             zeroDescription.style.display = filterValue === 'zero' ? 'block' : 'none';
         }
@@ -145,9 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (toggleProjetsContainer) toggleProjetsContainer.style.display = 'none';
             return;
         }
-        
+
         let visibleCount = 0;
-        const maxVisible = 4;
+        const maxVisible = 6;
         let totalMatched = 0;
 
         gridItems.forEach(card => {
@@ -209,10 +209,10 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleProjetsBtn.addEventListener('click', () => {
             isProjetsExpanded = !isProjetsExpanded;
             toggleProjetsBtn.textContent = isProjetsExpanded ? 'VOIR MOINS' : 'VOIR PLUS';
-            
+
             let totalMatched = 0;
-            const maxVisible = 4;
-            
+            const maxVisible = 6;
+
             gridItems.forEach(card => {
                 const category = card.getAttribute('data-category');
                 const isFeatured = card.classList.contains('featured-project');
@@ -248,15 +248,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleParticipationsBtn = document.getElementById('toggle-participations');
     if (participationsGrid && toggleParticipationsBtn) {
         const participationCards = participationsGrid.querySelectorAll('.project-card');
-        if (participationCards.length > 2) {
-            for (let i = 2; i < participationCards.length; i++) {
+        if (participationCards.length > 3) {
+            for (let i = 3; i < participationCards.length; i++) {
                 participationCards[i].style.display = 'none';
             }
 
             let isExpanded = false;
             toggleParticipationsBtn.addEventListener('click', () => {
                 isExpanded = !isExpanded;
-                for (let i = 2; i < participationCards.length; i++) {
+                for (let i = 3; i < participationCards.length; i++) {
                     participationCards[i].style.display = isExpanded ? 'flex' : 'none';
                     if (isExpanded) {
                         participationCards[i].style.animation = 'none';

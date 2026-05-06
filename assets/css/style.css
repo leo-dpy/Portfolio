@@ -140,7 +140,7 @@ header.hero-section {
 }
 
 .container {
-    max-width: 950px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -455,6 +455,7 @@ nav .logo span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .btn-locked {
@@ -707,13 +708,23 @@ h1 {
 }
 
 @keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333333%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / var(--copies, 3)));
+    }
 }
 
 @keyframes scrollRight {
-    0% { transform: translateX(-33.333333%); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(calc(-100% / var(--copies, 3)));
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* --- PROJETS --- */
@@ -727,7 +738,7 @@ h1 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
     align-items: stretch;
 }
@@ -859,39 +870,19 @@ p.no-clamp {
 
 .project-footer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding-top: 15px;
     z-index: 5;
     margin-top: auto;
 }
 
-.feat-box {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.8rem;
-}
-
 .feat-label {
     font-size: 0.65rem;
-    color: #777;
+    color: var(--accent);
     font-weight: bold;
-    margin-bottom: 2px;
-}
-
-.feat-box a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 10;
-    transition: color 0.3s;
-}
-
-.feat-box a:hover {
-    color: #fff;
-    text-decoration: underline;
+    letter-spacing: 1px;
 }
 
 .git-mini {
@@ -918,7 +909,8 @@ p.no-clamp {
 .footer-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 /* --- PARTICIPATIONS --- */
@@ -956,13 +948,13 @@ p.no-clamp {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .cert-card-horizontal {
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     display: flex;
     align-items: center;
     transition: all 0.4s;
@@ -1407,7 +1399,7 @@ footer {
 /* --- PROJECT ZERO MEGA CARD --- */
 .mega-card-zero {
     display: none;
-    max-width: 950px;
+    max-width: 1200px;
     margin: 0 auto 3rem auto;
     padding: 2.5rem;
     background: rgba(255, 255, 255, 0.15);
@@ -1601,6 +1593,7 @@ footer {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+
     .mega-card-zero {
         padding: 1.5rem;
     }
