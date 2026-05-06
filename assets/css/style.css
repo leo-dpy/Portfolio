@@ -14,7 +14,9 @@
     --cut-14: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
     --cut-10: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px);
     --cut-8: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+    --cut-6: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
     --cut-5: polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
+    --cut-4: polygon(4px 0, calc(100% - 4px) 0, 100% 4px, 100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0 calc(100% - 4px), 0 4px);
     --hover-bg: rgba(0, 81, 255, 0.08);
     /* Ombre de survol classique mais légèrement plus lumineuse */
     --hover-shadow: 0 0 25px rgba(0, 81, 255, 0.5);
@@ -294,7 +296,7 @@ nav {
     z-index: 1000;
     /* Retour à la bordure bleue transparente d'origine */
     background: rgba(0, 81, 255, 0.4);
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     padding: 8px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     /* Ombre de structure classique */
@@ -345,7 +347,7 @@ nav .logo span {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.25s ease;
-    clip-path: var(--cut-8);
+    clip-path: var(--cut-6);
     background: transparent;
     position: relative;
     z-index: 1;
@@ -435,14 +437,14 @@ nav .logo span {
 .btn-outline {
     padding: 12px 32px;
     font-size: 0.85rem;
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-8);
     letter-spacing: 1.5px;
 }
 
 .btn-project {
     padding: 8px 16px;
     font-size: 0.7rem;
-    clip-path: var(--cut-10);
+    clip-path: var(--cut-6);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -457,76 +459,36 @@ nav .logo span {
 .filter-btn {
     padding: 12px 24px;
     font-size: 0.8rem;
-    clip-path: var(--cut-10);
+    clip-path: var(--cut-8);
 }
 
 .skill-tab {
     padding: 12px 24px;
     font-size: 0.85rem;
-    clip-path: var(--cut-10);
+    clip-path: var(--cut-8);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* --- BOUTON CONTACT CYBER --- */
-.btn-cyber-contact {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(0, 81, 255, 0.1);
-    border: 1px solid var(--accent);
+/* --- BOUTON CONTACT HYBRIDE --- */
+.btn-contact-pulse {
+    background: rgba(0, 81, 255, 0.6);
+    /* Bordure bleue permanente */
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.15);
     color: #fff;
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    padding: 14px 32px;
-    clip-path: var(--cut-15);
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: inset 0 0 15px rgba(0, 81, 255, 0.2), 0 0 20px rgba(0, 81, 255, 0.2);
-    text-transform: uppercase;
-    overflow: hidden;
 }
 
-.btn-cyber-contact .cmd-prompt {
+.btn-contact-pulse .cyber-icon {
     color: var(--accent);
     font-weight: 900;
+    margin-right: 6px;
     animation: blink 1s step-end infinite;
     transition: color 0.3s;
-    font-size: 1.1rem;
 }
 
-.btn-cyber-contact::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: none;
-    z-index: 1;
-    transform: skewX(-20deg);
-}
-
-.btn-cyber-contact:hover {
-    background: rgba(0, 81, 255, 0.25);
-    box-shadow: inset 0 0 25px rgba(0, 81, 255, 0.4), 0 0 35px rgba(0, 81, 255, 0.6);
-    transform: translateY(-3px);
-    border-color: #fff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.btn-cyber-contact:hover .cmd-prompt {
+.btn-contact-pulse:hover .cyber-icon {
     color: #fff;
-}
-
-.btn-cyber-contact:hover::after {
-    transition: left 0.6s ease;
-    left: 200%;
 }
 
 /* --- HERO SECTION --- */
@@ -585,7 +547,7 @@ h1 {
     align-items: center;
     padding: 3rem;
     margin-top: 2rem;
-    clip-path: var(--cut-16);
+    clip-path: var(--cut-10);
 }
 
 .profile-visual {
@@ -598,7 +560,7 @@ h1 {
     height: 320px;
     background: #333;
     padding: 1px;
-    clip-path: var(--cut-14);
+    clip-path: var(--cut-10);
     overflow: hidden;
 }
 
@@ -635,7 +597,7 @@ h1 {
     font-size: 0.75rem;
     padding: 6px 12px;
     color: #a3a3a3;
-    clip-path: var(--cut-10);
+    clip-path: var(--cut-4);
 }
 
 .badge-glow {
@@ -726,7 +688,7 @@ h1 {
     background: rgba(255, 255, 255, 0.15);
     min-width: 130px;
     height: 120px;
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
@@ -800,7 +762,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     height: 100%;
     cursor: pointer;
 }
@@ -854,7 +816,7 @@ h1 {
 .p-type {
     color: var(--accent);
     padding: 4px 8px;
-    clip-path: var(--cut-8);
+    clip-path: var(--cut-4);
 }
 
 .p-status {
@@ -864,7 +826,7 @@ h1 {
     align-items: center;
     gap: 6px;
     padding: 4px 10px;
-    clip-path: var(--cut-8);
+    clip-path: var(--cut-4);
 }
 
 .p-status.online {
@@ -916,7 +878,7 @@ p.no-clamp {
     font-size: 0.6rem;
     color: #a3a3a3;
     padding: 3px 8px;
-    clip-path: var(--cut-5);
+    clip-path: var(--cut-4);
 }
 
 .project-footer {
@@ -1009,7 +971,7 @@ p.no-clamp {
     display: flex;
     align-items: center;
     transition: all 0.4s;
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     text-decoration: none;
     cursor: pointer;
 }
@@ -1089,7 +1051,7 @@ p.no-clamp {
     color: var(--accent);
     padding: 4px 12px;
     font-weight: bold;
-    clip-path: var(--cut-5);
+    clip-path: var(--cut-4);
 }
 
 .cert-org {
@@ -1167,7 +1129,7 @@ p.no-clamp {
 
 .timeline-content {
     padding: 20px;
-    clip-path: var(--cut-14);
+    clip-path: var(--cut-10);
     transition: 0.3s;
 }
 
@@ -1196,7 +1158,7 @@ p.no-clamp {
 .tl-type {
     color: #a3a3a3;
     padding: 4px 8px;
-    clip-path: var(--cut-5);
+    clip-path: var(--cut-4);
 }
 
 .timeline-content h4 {
@@ -1246,7 +1208,7 @@ p.no-clamp {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 600px;
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     position: relative;
     transform: translateY(20px) scale(0.95);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1332,7 +1294,7 @@ p.no-clamp {
     background: rgba(255, 255, 255, 0.15);
     border: none;
     padding: 15px 20px;
-    clip-path: var(--cut-10);
+    clip-path: var(--cut-8);
     text-decoration: none;
     color: #e0e0e0;
     cursor: pointer;
@@ -1353,13 +1315,14 @@ p.no-clamp {
 }
 
 .contact-card:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--hover-shadow);
 }
 
 .contact-card:hover::before {
-    background: #111;
+    background: #0a0a10;
+    /* Fond noir pur pour ne garder QUE le contour bleu */
 }
 
 .contact-card img,
@@ -1373,8 +1336,6 @@ p.no-clamp {
 .contact-card:hover img,
 .contact-card:hover svg {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-    /* Lueur sur l'icône */
 }
 
 .contact-info {
@@ -1395,7 +1356,6 @@ p.no-clamp {
 
 .contact-card:hover .contact-info span {
     color: #fff;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .contact-info strong {
@@ -1641,7 +1601,7 @@ footer {
     margin: 0 auto 3rem auto;
     padding: 2.5rem;
     background: rgba(255, 255, 255, 0.15);
-    clip-path: var(--cut-20);
+    clip-path: var(--cut-14);
     position: relative;
     z-index: 1;
     animation: fadeIn 0.5s ease forwards;
@@ -1666,7 +1626,7 @@ footer {
     background: rgba(0, 81, 255, 0.2);
     color: var(--accent);
     padding: 6px 14px;
-    clip-path: var(--cut-8);
+    clip-path: var(--cut-4);
     font-size: 0.7rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -1718,7 +1678,7 @@ footer {
 
 .zero-pillar {
     background: rgba(255, 255, 255, 0.15);
-    clip-path: var(--cut-15);
+    clip-path: var(--cut-10);
     padding: 22px;
     display: flex;
     flex-direction: column;
