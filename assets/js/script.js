@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Défilement fluide pour les ancres
+    /* Scroll fluide */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -18,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Fermeture du menu mobile lors du clic sur un lien
+    /* Menu mobile */
     const navToggle = document.getElementById('nav-toggle');
+
     const navLinks = document.querySelectorAll('.nav-links a');
     if (navToggle) {
         navLinks.forEach(link => {
@@ -29,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Gestion du menu actif au défilement
+    /* Menu actif au scroll */
     const linkSections = Array.from(navLinks).map(link => {
+
         const hash = link.getAttribute('href');
         if (!hash || !hash.startsWith('#')) return null;
         const id = hash.slice(1);

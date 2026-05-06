@@ -22,8 +22,9 @@
     --hover-shadow: 0 0 25px rgba(0, 81, 255, 0.5);
 }
 
-/* --- ANIMATIONS GLOBALES --- */
+/* Animations */
 @keyframes slideInDown {
+
     from {
         opacity: 0;
         transform: translateY(-50px) scale(0.9);
@@ -89,8 +90,9 @@
     }
 }
 
-/* --- BASE --- */
+/* Base */
 * {
+
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -171,8 +173,9 @@ h2 {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-/* --- FACTORISATION GLOBALE DES CARTES, BOUTONS ET BADGES --- */
+/* Elements globaux (cartes, boutons, badges) */
 .profile-card,
+
 .skill-card-modern,
 .soft-skill-card,
 .project-card,
@@ -284,8 +287,9 @@ h2 {
     background: #1f1110;
 }
 
-/* --- NAVIGATION / DOCK --- */
+/* Navigation */
 nav {
+
     position: fixed;
     bottom: 30px;
     left: 0;
