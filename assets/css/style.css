@@ -183,6 +183,7 @@ h2 {
 .btn-project,
 .filter-btn,
 .skill-tab,
+.subfilter-btn,
 .badge,
 .p-type,
 .p-status,
@@ -368,7 +369,7 @@ nav .logo span {
     color: #fff;
     background: var(--accent);
     box-shadow: var(--hover-shadow);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
 }
 
 .nav-links a:hover::before,
@@ -413,7 +414,7 @@ nav .logo span {
 .skill-tab.active {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: var(--hover-shadow);
 }
 
@@ -761,43 +762,39 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s ease;
+
     clip-path: var(--cut-10);
     height: 100%;
     cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    background: rgba(0, 81, 255, 0.4);
-    box-shadow: 0 5px 25px rgba(0, 81, 255, 0.15);
+    transform: translateY(-2px) scale(1.02) !important;
+
+    background: var(--accent);
+    box-shadow: var(--hover-shadow);
+    z-index: 10;
 }
 
-.project-card.online-card {
-    background: rgba(39, 201, 63, 0.4);
-    box-shadow: 0 4px 20px rgba(39, 201, 63, 0.10);
+.project-card:hover::before {
+    background: #0a0a10;
 }
 
-.project-card.online-card:hover {
-    background: rgba(39, 201, 63, 0.8);
-    box-shadow: 0 8px 30px rgba(39, 201, 63, 0.25);
-}
+/* Les styles spécifiques online/offline ont été supprimés pour harmonisation */
 
-.project-card.offline-card {
-    background: rgba(255, 95, 86, 0.4);
-    box-shadow: 0 4px 20px rgba(255, 95, 86, 0.10);
-}
-
-.project-card.offline-card:hover {
-    background: rgba(255, 95, 86, 0.8);
-    box-shadow: 0 8px 30px rgba(255, 95, 86, 0.25);
-}
 
 .project-card:hover .btn-project {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: var(--hover-shadow);
+}
+
+.project-card:hover .git-mini {
+    color: #fff;
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .project-card:hover .btn-project::before {
@@ -900,7 +897,7 @@ p.no-clamp {
 
 .git-mini {
     color: #a3a3a3;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
     display: flex;
     opacity: 0.8;
     padding: 4px;
@@ -927,16 +924,6 @@ p.no-clamp {
 }
 
 /* --- PARTICIPATIONS --- */
-#participations .project-card {
-    cursor: default;
-}
-
-#participations .project-card:hover {
-    transform: none;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: none;
-}
-
 .participation-img-top {
     width: calc(100% + 36px);
     margin: -18px -18px 15px -18px;
@@ -954,6 +941,22 @@ p.no-clamp {
     height: 100%;
     object-fit: cover;
 }
+
+/* --- DÉSACTIVER LES EFFETS SUR LES PARTICIPATIONS --- */
+#participations .project-card {
+    cursor: default;
+}
+
+#participations .project-card:hover {
+    transform: none !important;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+}
+
+#participations .project-card:hover::before {
+    background: #0a0a10;
+}
+
 
 /* --- CERTIFICATIONS --- */
 .certifications-container {
@@ -977,8 +980,13 @@ p.no-clamp {
 }
 
 .cert-card-horizontal:hover {
-    transform: translateY(-5px) translateX(5px);
+    transform: translateY(-5px) scale(1.02);
     background: var(--accent);
+    box-shadow: var(--hover-shadow);
+}
+
+.cert-card-horizontal:hover::before {
+    background: #0a0a10;
 }
 
 .cert-card-horizontal:hover .cert-visual-side {
@@ -1316,7 +1324,7 @@ p.no-clamp {
 
 .contact-card:hover {
     background: var(--accent);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: var(--hover-shadow);
 }
 
@@ -1604,7 +1612,8 @@ footer {
     clip-path: var(--cut-14);
     position: relative;
     z-index: 1;
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 0.5s ease;
+
 }
 
 .mega-card-zero::before {
@@ -1684,7 +1693,8 @@ footer {
     flex-direction: column;
     position: relative;
     z-index: 1;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.2s ease;
+
 }
 
 .zero-pillar::before {
@@ -1698,26 +1708,19 @@ footer {
 }
 
 .zero-pillar:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px) scale(1.02) !important;
+
+    background: var(--accent);
+    box-shadow: var(--hover-shadow);
+    z-index: 10;
 }
 
-.zero-pillar.online-card {
-    background: rgba(39, 201, 63, 0.4);
+.zero-pillar:hover::before {
+    background: #0a0a10;
 }
 
-.zero-pillar.online-card:hover {
-    background: rgba(39, 201, 63, 0.8);
-    box-shadow: 0 5px 25px rgba(39, 201, 63, 0.25);
-}
+/* Les styles spécifiques online/offline pour zero-pillar ont été supprimés pour harmonisation */
 
-.zero-pillar.offline-card {
-    background: rgba(255, 95, 86, 0.4);
-}
-
-.zero-pillar.offline-card:hover {
-    background: rgba(255, 95, 86, 0.8);
-    box-shadow: 0 5px 25px rgba(255, 95, 86, 0.25);
-}
 
 .zero-pillar-header {
     display: flex;
@@ -1778,8 +1781,14 @@ footer {
 .zero-pillar:hover .btn-project {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: var(--hover-shadow);
+}
+
+.zero-pillar:hover .git-mini {
+    color: #fff;
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .zero-pillar:hover .btn-project::before {

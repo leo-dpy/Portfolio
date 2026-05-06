@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const zeroDescription = document.getElementById('zero-description');
     const projectsGrid = document.querySelector('#projets .projects-grid');
 
-    let currentFilter = 'featured';
+    let currentFilter = 'ynov-b1';
     let isProjetsExpanded = false;
 
     function applyFilter(filterValue) {
@@ -190,7 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     card.style.display = 'flex';
                     card.style.animation = 'none';
                     card.offsetHeight; // Relance l'animation d'apparition
-                    card.style.animation = 'fadeIn 0.5s ease forwards';
+                    card.style.animation = 'fadeIn 0.5s ease';
+
                 } else {
                     card.style.display = 'none';
                 }
@@ -254,7 +255,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (isProjetsExpanded) {
                             card.style.animation = 'none';
                             card.offsetHeight;
-                            card.style.animation = 'fadeIn 0.5s ease forwards';
+                            card.style.animation = 'fadeIn 0.5s ease';
+
                         }
                     }
                 }
@@ -280,7 +282,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (isExpanded) {
                         participationCards[i].style.animation = 'none';
                         participationCards[i].offsetHeight;
-                        participationCards[i].style.animation = 'fadeIn 0.5s ease forwards';
+                        participationCards[i].style.animation = 'fadeIn 0.5s ease';
+
                     }
                 }
                 toggleParticipationsBtn.textContent = isExpanded ? 'VOIR MOINS' : 'VOIR PLUS';
