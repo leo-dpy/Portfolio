@@ -79,9 +79,9 @@
                             toujours, j'ai construit mon parcours autour de cette vocation.</p>
                     </div>
                     <div class="contact-buttons">
-                        <a href="https://linkedin.com/in/dupuy-leo" target="_blank" class="btn btn-primary"
-                            rel="noopener">LINKEDIN</a>
-                        <button id="btn-copy-email" class="btn btn-outline">leo.dupuy@ynov.com</button>
+                        <button id="btn-open-contact" class="btn-cyber-contact">
+                            <span class="cmd-prompt">>_</span> CONTACT & RÉSEAUX
+                        </button>
                     </div>
                 </div>
             </div>
@@ -823,6 +823,74 @@
         </section>
 
     </main>
+
+    <!-- Modal Contact & Réseaux -->
+    <div id="contact-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <h3 class="modal-title">>_ CONNEXION</h3>
+                    <button id="btn-close-contact" class="modal-close" aria-label="Fermer">✕</button>
+                </div>
+                <div class="modal-desc">
+                    <p>N'hésitez pas à me contacter pour une opportunité, un projet ou simplement pour échanger.</p>
+                </div>
+                <div class="contact-links-grid">
+                    <button id="btn-copy-email-modal" class="contact-card">
+                        <img src="assets/img/ynov-logo.png" width="24" height="24" alt="Ynov Campus"
+                            style="object-fit: contain;">
+                        <div class="contact-info">
+                            <span>EMAIL</span>
+                            <strong>leo.dupuy@ynov.com</strong>
+                        </div>
+                    </button>
+                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="contact-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                            width="24" height="24" alt="LinkedIn">
+                        <div class="contact-info">
+                            <span>LINKEDIN</span>
+                            <strong>@dupuy-leo</strong>
+                        </div>
+                    </a>
+                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="contact-card">
+                        <!-- On inverse l'icône noire de Github pour qu'elle devienne blanche -->
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                            style="filter: invert(1);" width="24" height="24" alt="GitHub">
+                        <div class="contact-info">
+                            <span>GITHUB</span>
+                            <strong>@leo-dpy</strong>
+                        </div>
+                    </a>
+                    <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="contact-card">
+                        <!-- Icône de téléchargement -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <div class="contact-info">
+                            <span>MON CV</span>
+                            <strong>CV Léo Dupuy</strong>
+                        </div>
+                    </a>
+                    <a href="https://tryhackme.com/p/leodupuy" target="_blank" rel="noopener" class="contact-card">
+                        <!-- Icône de bouclier Cyber -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <div class="contact-info">
+                            <span>TRYHACKME</span>
+                            <strong>@leodupuy</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

@@ -80,25 +80,44 @@ document.addEventListener("DOMContentLoaded", function () {
         updateActive();
     }
 
-    // Copie de l'adresse email au clic
-    const btnCopyEmail = document.getElementById('btn-copy-email');
-    if (btnCopyEmail) {
-        btnCopyEmail.addEventListener('click', () => {
+    // Gestion de la modale de contact
+    const btnOpenContact = document.getElementById('btn-open-contact');
+    const modalContact = document.getElementById('contact-modal');
+    const btnCloseContact = document.getElementById('btn-close-contact');
+    const btnCopyEmailModal = document.getElementById('btn-copy-email-modal');
+
+    if (btnOpenContact && modalContact && btnCloseContact) {
+        btnOpenContact.addEventListener('click', () => {
+            modalContact.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Empêche de scroller la page derrière
+        });
+
+        const closeModal = () => {
+            modalContact.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        btnCloseContact.addEventListener('click', closeModal);
+        modalContact.addEventListener('click', (e) => {
+            if (e.target === modalContact) closeModal(); // Clic à côté de la modale
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalContact.classList.contains('active')) closeModal();
+        });
+    }
+
+    if (btnCopyEmailModal) {
+        btnCopyEmailModal.addEventListener('click', () => {
             const email = "leo.dupuy@ynov.com";
             navigator.clipboard.writeText(email).then(() => {
-                const originalText = btnCopyEmail.textContent;
-                btnCopyEmail.textContent = '✓ COPIÉ';
-                btnCopyEmail.style.borderColor = '#fff';
-                btnCopyEmail.style.color = '#fff';
-                btnCopyEmail.style.background = 'rgba(255, 255, 255, 0.1)';
+                const strongTag = btnCopyEmailModal.querySelector('strong');
+                const originalText = strongTag.textContent;
+                strongTag.textContent = '✓ EMAIL COPIÉ !';
+                strongTag.style.color = '#27c93f'; // Vert succès
                 setTimeout(() => {
-                    btnCopyEmail.textContent = originalText;
-                    btnCopyEmail.style.background = '';
-                    btnCopyEmail.style.borderColor = '';
-                    btnCopyEmail.style.color = '';
+                    strongTag.textContent = originalText;
+                    strongTag.style.color = '';
                 }, 2000);
-            }).catch(err => {
-                console.error('Erreur lors de la copie:', err);
             });
         });
     }
