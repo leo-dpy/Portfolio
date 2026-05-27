@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridItems = document.querySelectorAll('#projets .projects-grid .project-card');
     const toggleProjetsContainer = document.getElementById('projets-btn-container');
     const toggleProjetsBtn = document.getElementById('toggle-projets');
-    const zeroDescription = document.getElementById('zero-description');
+
     const projectsGrid = document.querySelector('#projets .projects-grid');
 
     let currentFilter = 'ynov-b1';
@@ -157,16 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
         isProjetsExpanded = false;
         if (toggleProjetsBtn) toggleProjetsBtn.textContent = 'VOIR PLUS';
 
-        if (zeroDescription) {
-            zeroDescription.style.display = filterValue === 'zero' ? 'block' : 'none';
-        }
-        if (projectsGrid) {
-            projectsGrid.style.display = filterValue === 'zero' ? 'none' : 'grid';
-        }
-        if (filterValue === 'zero') {
-            if (toggleProjetsContainer) toggleProjetsContainer.style.display = 'none';
-            return;
-        }
+
 
         let visibleCount = 0;
         const maxVisible = 6;
@@ -181,8 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (isFeatured) matchesFilter = true;
             } else if (filterValue === 'all') {
                 matchesFilter = true;
-            } else if (filterValue === 'zero') {
-                if (card.classList.contains('project-zero')) matchesFilter = true;
+
             } else {
                 if (category === filterValue) matchesFilter = true;
             }
@@ -245,8 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (isFeatured) matchesFilter = true;
                 } else if (currentFilter === 'all') {
                     matchesFilter = true;
-                } else if (currentFilter === 'zero') {
-                    if (card.classList.contains('project-zero')) matchesFilter = true;
+
                 } else {
                     if (category === currentFilter) matchesFilter = true;
                 }
