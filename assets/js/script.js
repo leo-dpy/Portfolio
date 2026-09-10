@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalContact = document.getElementById('contact-modal');
     const btnCloseContact = document.getElementById('btn-close-contact');
     const btnCopyEmailModal = document.getElementById('btn-copy-email-modal');
+    const btnCopyPhoneModal = document.getElementById('btn-copy-phone-modal');
 
     if (btnOpenContact && modalContact && btnCloseContact) {
         btnOpenContact.addEventListener('click', () => {
@@ -116,6 +117,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 const strongTag = btnCopyEmailModal.querySelector('strong');
                 const originalText = strongTag.textContent;
                 strongTag.textContent = '✓ EMAIL COPIÉ !';
+                strongTag.style.color = '#27c93f'; // Vert succès
+                setTimeout(() => {
+                    strongTag.textContent = originalText;
+                    strongTag.style.color = '';
+                }, 2000);
+            });
+        });
+    }
+
+    if (btnCopyPhoneModal) {
+        btnCopyPhoneModal.addEventListener('click', () => {
+            const phone = "07 71 59 90 71";
+            navigator.clipboard.writeText(phone).then(() => {
+                const strongTag = btnCopyPhoneModal.querySelector('strong');
+                const originalText = strongTag.textContent;
+                strongTag.textContent = '✓ NUMÉRO COPIÉ !';
                 strongTag.style.color = '#27c93f'; // Vert succès
                 setTimeout(() => {
                     strongTag.textContent = originalText;
@@ -283,6 +300,33 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             toggleParticipationsBtn.style.display = 'none';
         }
+    }
+
+    // Gestion des onglets de Parcours (Formations / Stages / Autres)
+    const expTabBtns = document.querySelectorAll('.exp-tab-btn');
+    const expPanels = document.querySelectorAll('.exp-panel');
+
+    if (expTabBtns.length && expPanels.length) {
+        expTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+
+                expTabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                expPanels.forEach(panel => {
+                    if (panel.id === `panel-${targetTab}`) {
+                        panel.classList.add('active');
+                    } else {
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
     }
 
 });

@@ -8,7 +8,7 @@
 
     <title>Léo Dupuy | Portfolio </title>
     <meta name="description"
-        content="Découvrez mon Portfolio d'étudiant en Bachelor 1 Cybersécurité à Lille Ynov Campus. Découvrez mes projets personnels et éducatifs ainsi que mon parcours.">
+        content="Découvrez mon Portfolio d'étudiant en Bachelor 2 Cybersécurité à Lille Ynov Campus. Découvrez mes projets personnels et éducatifs ainsi que mon parcours.">
     <link rel="canonical" href="https://leodupuy.fr/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@
         <div class="hero-content">
             <h1>Léo Dupuy</h1>
             <div class="typewriter">
-                <span class="hero-subtitle">ÉTUDIANT B1 CYBERSÉCURITÉ</span>
+                <span class="hero-subtitle">ÉTUDIANT B2 CYBERSÉCURITÉ</span>
             </div>
         </div>
     </header>
@@ -74,7 +74,7 @@
                         <span class="badge">PERMIS B</span>
                     </div>
                     <div class="bio">
-                        <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en première année de <strong>Bachelor
+                        <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en deuxième année de <strong>Bachelor
                                 Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis
                             toujours, j'ai construit mon parcours autour de cette vocation.</p>
                     </div>
@@ -534,7 +534,8 @@
                     </div>
                 </article>
 
-                <article id="project-cybersens" class="project-card offline-card featured-project" data-category="ydays">
+                <article id="project-cybersens" class="project-card offline-card featured-project"
+                    data-category="ydays">
                     <div class="project-header">
                         <span class="p-type">CYBERSECURITY</span><span class="p-status offline">● HORS LIGNE</span>
                     </div>
@@ -680,42 +681,106 @@
         </section>
 
         <section id="exp">
-            <h2 class="section-title">>_ EXPÉRIENCES & FORMATIONS</h2>
-            <div class="timeline-container">
-                <div class="timeline-block">
-                    <div class="timeline-content active-tl">
-                        <div class="tl-header"><span class="tl-date">2025+</span><span class="tl-type">FORMATION</span>
-                        </div>
-                        <h4>Bachelor Cybersécurité</h4>
-                        <span class="tl-place">LILLE YNOV CAMPUS</span>
-                        <p>Spécialisation sécurité systèmes & réseaux.</p>
+            <h2 class="section-title">>_ PARCOURS</h2>
+
+            <div class="exp-tabs-nav" role="tablist">
+                <button class="exp-tab-btn active" role="tab" aria-selected="true"
+                    data-tab="formations">FORMATIONS</button>
+                <button class="exp-tab-btn" role="tab" aria-selected="false" data-tab="stages">EXPÉRIENCES CYBER &
+                    IT</button>
+                <button class="exp-tab-btn" role="tab" aria-selected="false" data-tab="autres">AUTRES
+                    EXPÉRIENCES</button>
+            </div>
+
+            <div class="exp-tab-content">
+                <!-- Formations -->
+                <div id="panel-formations" class="exp-panel active" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card exp-card-current">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2025 - EN COURS</span>
+                                    <span class="exp-badge exp-badge-current">EN COURS</span>
+                                </div>
+                                <span class="exp-company">LILLE YNOV CAMPUS</span>
+                            </div>
+                            <h3 class="exp-card-title">Bachelor Cybersécurité</h3>
+                            <p class="exp-card-desc">Spécialisation sécurité systèmes et réseaux, administration système
+                                et fondamentaux de la cybersécurité.</p>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2022 - 2025</span>
+                                    <span class="exp-badge">DIPLÔME</span>
+                                </div>
+                                <span class="exp-company">LYCÉE DU HAINAUT &bull; VALENCIENNES</span>
+                            </div>
+                            <h3 class="exp-card-title">Baccalauréat STI2D</h3>
+                            <p class="exp-card-desc">Option Systèmes d'Information et Numérique (SIN). Mention Bien.</p>
+                        </article>
                     </div>
                 </div>
-                <div class="timeline-block">
-                    <div class="timeline-content">
-                        <div class="tl-header"><span class="tl-date">2023</span><span class="tl-type">EXPÉRIENCE</span>
-                        </div>
-                        <h4>Stage Cybersécurité (SOC)</h4>
-                        <span class="tl-place">IBM FRANCE & Lille</span>
-                        <p>Immersion dans un SOC et découverte des métiers de la cybersécurité.</p>
+
+                <!-- Stages & Tech -->
+                <div id="panel-stages" class="exp-panel" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2023</span>
+                                    <span class="exp-badge">STAGE</span>
+                                </div>
+                                <span class="exp-company">IBM FRANCE &bull; LILLE</span>
+                            </div>
+                            <h3 class="exp-card-title">Stage Cybersécurité (SOC)</h3>
+                            <p class="exp-card-desc">Immersion dans un Security Operations Center (SOC) et découverte
+                                approfondie des métiers et outils de la cybersécurité.</p>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2022</span>
+                                    <span class="exp-badge">STAGE</span>
+                                </div>
+                                <span class="exp-company">MICRO LOGIS &bull; PECQUENCOURT</span>
+                            </div>
+                            <h3 class="exp-card-title">Stage Réparateur Informatique</h3>
+                            <p class="exp-card-desc">Diagnostic matériel, réparations de parcs informatiques,
+                                installation de systèmes d'exploitation et gestion autonome de l'atelier technique.</p>
+                        </article>
                     </div>
                 </div>
-                <div class="timeline-block">
-                    <div class="timeline-content">
-                        <div class="tl-header"><span class="tl-date">2022-25</span><span
-                                class="tl-type">FORMATION</span></div>
-                        <h4>Baccalauréat STI2D</h4>
-                        <span class="tl-place">LYCÉE DU HAINAUT</span>
-                        <p>Option SIN. Mention Bien.</p>
-                    </div>
-                </div>
-                <div class="timeline-block">
-                    <div class="timeline-content">
-                        <div class="tl-header"><span class="tl-date">2022</span><span class="tl-type">EXPÉRIENCE</span>
-                        </div>
-                        <h4>Réparateur Informatique</h4>
-                        <span class="tl-place">MICRO LOGIS & Pecquencourt</span>
-                        <p>Gestion autonome de l'atelier technique.</p>
+
+                <!-- Autres Expériences -->
+                <div id="panel-autres" class="exp-panel" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">JUIN - AOÛT 2026</span>
+                                    <span class="exp-badge">JOB ÉTUDIANT</span>
+                                </div>
+                                <span class="exp-company">LA CROIX OU PILE</span>
+                            </div>
+                            <h3 class="exp-card-title">Saisonnier en Restauration</h3>
+                            <p class="exp-card-desc">Plonge, préparation des commandes, mise en place de la terrasse et
+                                service.</p>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2025 - 2026</span>
+                                    <span class="exp-badge">JOB ÉTUDIANT</span>
+                                </div>
+                                <span class="exp-company">SERVICES & TRAVAUX EXTÉRIEURS</span>
+                            </div>
+                            <h3 class="exp-card-title">Entretien de Terrains & Espaces Verts</h3>
+                            <p class="exp-card-desc">Tonte de pelouse, désherbage, entretien de terrains et divers
+                                travaux d'extérieur.</p>
                     </div>
                 </div>
             </div>
@@ -723,7 +788,7 @@
 
     </main>
 
-    <!-- Modal Contact & Réseaux -->
+    <!-- Contact & Réseaux -->
     <div id="contact-modal" class="modal-overlay" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-inner">
@@ -735,12 +800,26 @@
                     <p>N'hésitez pas à me contacter pour une opportunité, un projet ou simplement pour échanger.</p>
                 </div>
                 <div class="contact-links-grid">
-                    <button id="btn-copy-email-modal" class="contact-card">
+                    <button id="btn-copy-email-modal" class="contact-card" type="button"
+                        aria-label="Copier l'adresse email">
                         <img src="assets/img/ynov-logo.png" width="24" height="24" alt="Ynov Campus"
                             style="object-fit: contain;">
                         <div class="contact-info">
                             <span>EMAIL</span>
                             <strong>leo.dupuy@ynov.com</strong>
+                        </div>
+                    </button>
+                    <button id="btn-copy-phone-modal" class="contact-card" type="button"
+                        aria-label="Copier le numéro de téléphone">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <div class="contact-info">
+                            <span>TÉLÉPHONE</span>
+                            <strong>07 71 59 90 71</strong>
                         </div>
                     </button>
                     <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="contact-card">
