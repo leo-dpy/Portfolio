@@ -193,7 +193,7 @@
             <div class="panel-scroll-container">
                 <div class="overview-grid">
 
-                    <!-- Col 1 : Profil & Positionnement Opérationnel -->
+                    <!-- Col 1 : Synthèse Opérationnelle Agrandie -->
                     <div class="dash-card profile-executive-card">
                         <div class="dash-card-header">
                             <div class="card-tag">>_ SYNTHÈSE OPÉRATIONNELLE</div>
@@ -203,7 +203,7 @@
                             <div class="profile-header-inline">
                                 <div class="profile-avatar-box">
                                     <img src="assets/img/photo-professionelle.webp" alt="Léo Dupuy" class="exec-avatar"
-                                        width="80" height="80">
+                                        width="92" height="92">
                                 </div>
                                 <div class="profile-meta-lead">
                                     <h3>Léo Dupuy</h3>
@@ -220,8 +220,36 @@
                             <p class="exec-bio">
                                 Spécialisé dans la <strong>défense des systèmes</strong>, l'<strong>administration réseau</strong>,
                                 l'<strong>investigation numérique (Forensic)</strong> et la <strong>gestion sécurisée des bases de données</strong>.
-                                Autonome, rigoureux et passionné de défis techniques (CTFs militaires &amp; inter-campus).
+                                Fort d'une première immersion opérationnelle en <strong>SOC chez IBM France</strong> et de participations à des exercices de cyberdéfense d'envergure nationale (CTFs militaires et inter-campus), j'applique une rigueur méthodique au durcissement des infrastructures et à la protection des données.
                             </p>
+
+                            <!-- Pôles d'intervention prioritaires -->
+                            <div class="exec-focus-box">
+                                <div class="focus-title">>_ PÔLES D'INTERVENTION</div>
+                                <div class="focus-items-grid">
+                                    <div class="focus-chip">
+                                        <span class="f-dot cyber"></span>
+                                        <div class="f-txt">
+                                            <strong>Défense &amp; Forensic :</strong>
+                                            <span>Investigation d'artefacts, analyse PCAP Wireshark, conformité ANSSI.</span>
+                                        </div>
+                                    </div>
+                                    <div class="focus-chip">
+                                        <span class="f-dot network"></span>
+                                        <div class="f-txt">
+                                            <strong>Réseaux &amp; Segmentation :</strong>
+                                            <span>Architecture TCP/IP, VLANs 802.1Q, pare-feu pfSense, P2P/WebRTC.</span>
+                                        </div>
+                                    </div>
+                                    <div class="focus-chip">
+                                        <span class="f-dot data"></span>
+                                        <div class="f-txt">
+                                            <strong>Hardening Systèmes &amp; BDD :</strong>
+                                            <span>Administration Linux/Windows Server, GPO, MySQL durci &amp; anti-SQLi.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="kpi-mini-strip">
                                 <div class="kpi-box">
@@ -237,107 +265,76 @@
                                     <span class="kpi-legend">SecNumAcadémie ANSSI</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="exec-actions">
-                                <button type="button" class="btn-action-primary" data-jump="skills">
-                                    <span>Explorer les Compétences</span> &rarr;
-                                </button>
-                                <button type="button" class="btn-action-secondary" data-jump="labs">
-                                    <span>Voir les Labs</span> &rarr;
-                                </button>
-                                <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="btn-action-outline">
-                                    <span>Télécharger le CV</span>
+                    <!-- Col 2 : Dernier Projet en Vedette -->
+                    <div class="dash-card last-project-featured-card">
+                        <div class="dash-card-header">
+                            <div class="card-tag">>_ DERNIER PROJET</div>
+                            <span class="badge-valid">● EN LIGNE</span>
+                        </div>
+                        <div class="dash-card-body last-project-body">
+                            <div class="proj-badge-top">
+                                <span class="p-type-tag">CYBER TOOLKIT &amp; PRIVACY</span>
+                                <span class="badge-cyan">PROJET PHARE</span>
+                            </div>
+                            <h3 class="last-proj-title">Aegis</h3>
+                            <p class="last-proj-pitch">Boîte à outils de sécurité défensive et de confidentialité numérique garantissant un traitement 100% local et hermétique.</p>
+
+                            <div class="last-proj-features">
+                                <div class="feat-bullet">
+                                    <span class="f-icon">🔒</span>
+                                    <div>
+                                        <strong>Intégrité Cryptographique SHA-256 :</strong>
+                                        <p>Calcul et vérification d'empreintes de fichiers pour détecter immédiatement toute corruption ou injection de code malveillant.</p>
+                                    </div>
+                                </div>
+                                <div class="feat-bullet">
+                                    <span class="f-icon">🌐</span>
+                                    <div>
+                                        <strong>Diagnostic &amp; Analyse IP :</strong>
+                                        <p>Inspection approfondie des adresses, localisation et en-têtes réseau pour identifier des connexions non autorisées.</p>
+                                    </div>
+                                </div>
+                                <div class="feat-bullet">
+                                    <span class="f-icon">🛡️</span>
+                                    <div>
+                                        <strong>Traitement Hermétique :</strong>
+                                        <p>Zéro exfiltration vers des serveurs tiers, fonctionnement intégral dans l'environnement local de l'utilisateur.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="proj-stack-tags">
+                                <span>Cryptographie</span>
+                                <span>SHA-256</span>
+                                <span>Analyse IP</span>
+                                <span>Privacy First</span>
+                                <span>Sécurité Locale</span>
+                            </div>
+
+                            <div class="last-proj-actions">
+                                <a href="https://github.com/leo-dpy/aegis" target="_blank" rel="noopener" class="btn-git-soc">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                    <span>Code Source</span>
+                                </a>
+                                <a href="https://aegis.leodupuy.fr" target="_blank" rel="noopener" class="btn-demo-soc">
+                                    <span>Accéder à l'Outil</span> &rarr;
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Col 2 : Matrice Rapide des Pôles Techniques (100% Cyber, Réseau, BDD, Systèmes) -->
-                    <div class="dash-card">
-                        <div class="dash-card-header">
-                            <div class="card-tag">>_ MATRICE DES SPÉCIALITÉS</div>
-                            <span class="badge-cyan">SOC &amp; INFRA</span>
-                        </div>
-                        <div class="dash-card-body">
-                            <div class="skills-summary-list">
-
-                                <!-- Pôle Cyber -->
-                                <div class="skill-domain-item">
-                                    <div class="domain-top">
-                                        <span class="domain-name">CYBERSÉCURITÉ DÉFENSIVE &amp; FORENSIC</span>
-                                        <span class="domain-badge">PÔLE MAJEUR</span>
-                                    </div>
-                                    <p class="domain-desc">Investigation numérique, analyse d'artefacts mémoire &amp; disques, détection d'intrusions, OSINT et hygiène ANSSI.</p>
-                                    <div class="domain-pills">
-                                        <span>Forensic</span>
-                                        <span>Wireshark</span>
-                                        <span>OSINT</span>
-                                        <span>Cryptographie</span>
-                                        <span>ANSSI</span>
-                                        <span>Analyse PCAP</span>
-                                    </div>
-                                </div>
-
-                                <!-- Pôle Réseau -->
-                                <div class="skill-domain-item">
-                                    <div class="domain-top">
-                                        <span class="domain-name">RÉSEAUX &amp; ARCHITECTURES SÉCURISÉES</span>
-                                        <span class="domain-badge">INFRA</span>
-                                    </div>
-                                    <p class="domain-desc">Segmentation VLAN (802.1Q), sous-réseaux CIDR, pare-feu pfSense, routage &amp; commutation, protocoles P2P / WebRTC.</p>
-                                    <div class="domain-pills">
-                                        <span>TCP/IP &amp; OSI</span>
-                                        <span>VLANs</span>
-                                        <span>pfSense</span>
-                                        <span>DNS / DHCP</span>
-                                        <span>SSH / VPN</span>
-                                        <span>WebRTC</span>
-                                    </div>
-                                </div>
-
-                                <!-- Pôle Données -->
-                                <div class="skill-domain-item">
-                                    <div class="domain-top">
-                                        <span class="domain-name">BASES DE DONNÉES &amp; GESTION DE DONNÉES</span>
-                                        <span class="domain-badge">DATA</span>
-                                    </div>
-                                    <p class="domain-desc">Conception relationnelle, requêtage avancé, hardening de SGBD, protection contre injections SQL et extraction de logs.</p>
-                                    <div class="domain-pills">
-                                        <span>MySQL</span>
-                                        <span>SQLite</span>
-                                        <span>SQL Hardening</span>
-                                        <span>Audit Logs</span>
-                                        <span>Modélisation</span>
-                                    </div>
-                                </div>
-
-                                <!-- Pôle Systèmes -->
-                                <div class="skill-domain-item">
-                                    <div class="domain-top">
-                                        <span class="domain-name">SYSTÈMES &amp; AUTOMATISATION</span>
-                                        <span class="domain-badge">ADMIN SYS</span>
-                                    </div>
-                                    <p class="domain-desc">Administration Linux (Debian/Ubuntu), Windows Server &amp; Active Directory (GPO), Docker et scripting Bash/outillage.</p>
-                                    <div class="domain-pills">
-                                        <span>Linux</span>
-                                        <span>Active Directory</span>
-                                        <span>Bash</span>
-                                        <span>Docker</span>
-                                        <span>Git</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Col 3 : Accréditation ANSSI & Dernières Alertes / CTF -->
+                    <!-- Col 3 : Dernière Certif & Dernières Alertes / CTF -->
                     <div class="overview-subgrid">
 
                         <!-- Certification ANSSI Card -->
                         <div class="dash-card cert-featured-card">
                             <div class="dash-card-header">
-                                <div class="card-tag">>_ ACCRÉDITATION OFFICIELLE</div>
+                                <div class="card-tag">>_ DERNIÈRE CERTIF</div>
                                 <span class="badge-valid">VALIDÉ</span>
                             </div>
                             <div class="dash-card-body cert-card-body-flex">

@@ -726,11 +726,11 @@ button {
    ========================================================================== */
 .overview-grid {
     display: grid;
-    grid-template-columns: 1.15fr 1fr 1fr;
+    grid-template-columns: 1.38fr 1.05fr 1fr;
     gap: 1.25rem;
 }
 
-/* Profil Synthétique */
+/* Profil Synthétique Agrandi */
 .profile-executive-card .profile-header-inline {
     display: flex;
     align-items: center;
@@ -739,12 +739,12 @@ button {
 }
 
 .profile-avatar-box {
-    width: 76px;
-    height: 76px;
+    width: 88px;
+    height: 88px;
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 2px solid var(--cyan-cyber);
-    box-shadow: 0 0 16px var(--cyan-glow);
+    box-shadow: 0 0 18px var(--cyan-glow);
     flex-shrink: 0;
 }
 
@@ -756,7 +756,7 @@ button {
 }
 
 .profile-meta-lead h3 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: #fff;
     margin-bottom: 2px;
@@ -798,11 +798,60 @@ button {
     font-size: 0.8rem;
     line-height: 1.6;
     color: #c0ccdf;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .exec-bio strong {
     color: #fff;
+}
+
+/* Pôles d'intervention prioritaires */
+.exec-focus-box {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    margin-bottom: 1.1rem;
+}
+
+.focus-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: var(--cyan-cyber);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+}
+
+.focus-items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.focus-chip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: #b0bfd8;
+}
+
+.f-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.f-dot.cyber { background: var(--cyan-cyber); box-shadow: 0 0 6px var(--cyan-glow); }
+.f-dot.network { background: var(--blue-primary); box-shadow: 0 0 6px var(--blue-glow); }
+.f-dot.data { background: var(--emerald-live); box-shadow: 0 0 6px var(--emerald-glow); }
+
+.focus-chip strong {
+    color: #fff;
+    margin-right: 4px;
 }
 
 /* KPI Strip */
@@ -810,7 +859,6 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    margin-bottom: 1.25rem;
 }
 
 .kpi-box {
@@ -843,133 +891,75 @@ button {
     line-height: 1.2;
 }
 
-.exec-actions {
+/* Dernier Projet en Vedette */
+.last-project-featured-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
 }
 
-.btn-action-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: var(--cyan-cyber);
-    color: #000;
-    font-size: 0.75rem;
-    font-weight: 800;
-    border-radius: var(--radius-sm);
-    box-shadow: 0 0 12px var(--cyan-glow);
-    transition: all var(--transition-fast);
-}
-
-.btn-action-primary:hover {
-    background: #fff;
-    box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
-    transform: translateY(-1px);
-}
-
-.btn-action-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
-    background: rgba(0, 102, 255, 0.15);
-    border: 1px solid rgba(0, 102, 255, 0.4);
-    color: #8bb2ff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-fast);
-}
-
-.btn-action-secondary:hover {
-    background: rgba(0, 102, 255, 0.3);
-    color: #fff;
-    border-color: var(--blue-primary);
-}
-
-.btn-action-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-main);
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-fast);
-}
-
-.btn-action-outline:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #fff;
-}
-
-/* Matrice Pôles Synthétiques */
-.skills-summary-list {
+.last-project-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
 }
 
-.skill-domain-item {
-    background: rgba(255, 255, 255, 0.02);
+.last-proj-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.last-proj-pitch {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+.last-proj-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-sm);
     padding: 10px 12px;
-    transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 
-.skill-domain-item:hover {
-    background: rgba(0, 229, 255, 0.03);
-    border-color: rgba(0, 229, 255, 0.2);
+.feat-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: #b0bfd8;
 }
 
-.domain-top {
+.feat-bullet .f-icon {
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.feat-bullet strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 1px;
+}
+
+.feat-bullet p {
+    color: #a0b0ca;
+    font-size: 0.68rem;
+}
+
+.last-proj-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4px;
-}
-
-.domain-name {
-    font-size: 0.76rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 0.04em;
-}
-
-.domain-badge {
-    font-size: 0.62rem;
-    padding: 1px 5px;
-    border-radius: 3px;
-    background: rgba(0, 229, 255, 0.1);
-    color: var(--cyan-cyber);
-}
-
-.domain-desc {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
-
-.domain-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-}
-
-.domain-pills span {
-    font-size: 0.64rem;
-    padding: 1px 6px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 3px;
-    color: #b0bfd8;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Overview Sous-Grille Droite */
