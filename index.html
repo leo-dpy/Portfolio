@@ -38,7 +38,7 @@
 
                 <!-- Profil & Identité -->
                 <div class="brand-zone">
-                    <div class="avatar-ring" id="btn-avatar-modal" title="Voir le profil">
+                    <div class="avatar-ring" title="Léo Dupuy - Profil">
                         <img src="assets/img/photo-professionelle.webp" alt="Léo Dupuy" class="avatar-img" width="46"
                             height="46">
                         <span class="live-pulse" title="Statut actif"></span>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <!-- Coordonnées rapides & Actions -->
+                <!-- Coordonnées directes & Liens (Tout dans le bandeau) -->
                 <div class="quick-contact-zone">
                     <div class="contact-chips">
                         <!-- Copie rapide Email -->
@@ -119,11 +119,6 @@
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
                                 width="18" height="18" alt="GitHub" class="invert-icon">
                         </a>
-
-                        <!-- Bouton Connexion / Fiche Contact -->
-                        <button type="button" class="btn-contact-hub" id="btn-open-contact" aria-label="Ouvrir la modale de contact">
-                            <span class="hud-symbol">>_</span> CONTACT
-                        </button>
                     </div>
                 </div>
 
@@ -1277,112 +1272,7 @@
 
     </main>
 
-    <!-- MODALE / VOLET DE CONTACT DÉTAILLÉ -->
-    <div id="contact-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true"
-        aria-labelledby="modal-contact-title">
-        <div class="modal-content">
-            <div class="modal-inner">
-                <div class="modal-header">
-                    <div class="modal-header-tag">
-                        <span class="pulse-dot"></span>
-                        <h3 id="modal-contact-title" class="modal-title">>_ CANAUX DE COMMUNICATION</h3>
-                    </div>
-                    <button type="button" id="btn-close-contact" class="modal-close" aria-label="Fermer la modale">✕</button>
-                </div>
-
-                <div class="modal-desc">
-                    <p>
-                        Actuellement à la recherche d'une opportunité de <strong>stage ou d'alternance</strong> en <strong>cybersécurité</strong>, <strong>administration réseau</strong> ou <strong>gestion de bases de données</strong>. Échangeons sur vos besoins !
-                    </p>
-                </div>
-
-                <div class="contact-links-grid">
-                    <!-- Email Copie -->
-                    <button id="btn-copy-email-modal" class="contact-card" type="button"
-                        aria-label="Copier l'adresse email de Léo Dupuy">
-                        <div class="card-icon-wrap">
-                            <img src="assets/img/ynov-logo.png" width="26" height="26" alt="Ynov Campus"
-                                style="object-fit: contain;">
-                        </div>
-                        <div class="contact-info">
-                            <span class="c-legend">EMAIL ACADÉMIQUE / PRO</span>
-                            <strong class="c-val" id="modal-email-val">leo.dupuy@ynov.com</strong>
-                        </div>
-                        <span class="copy-badge">Cliquer pour copier</span>
-                    </button>
-
-                    <!-- Téléphone Copie -->
-                    <button id="btn-copy-phone-modal" class="contact-card" type="button"
-                        aria-label="Copier le numéro de téléphone de Léo Dupuy">
-                        <div class="card-icon-wrap">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00e5ff" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="contact-info">
-                            <span class="c-legend">TÉLÉPHONE DIRECT</span>
-                            <strong class="c-val" id="modal-phone-val">07 71 59 90 71</strong>
-                        </div>
-                        <span class="copy-badge">Cliquer pour copier</span>
-                    </button>
-
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="contact-card">
-                        <div class="card-icon-wrap">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
-                                width="24" height="24" alt="LinkedIn">
-                        </div>
-                        <div class="contact-info">
-                            <span class="c-legend">LINKEDIN PROFESSIONNEL</span>
-                            <strong class="c-val">linkedin.com/in/dupuy-leo</strong>
-                        </div>
-                        <span class="open-badge">Ouvrir &rarr;</span>
-                    </a>
-
-                    <!-- GitHub -->
-                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="contact-card">
-                        <div class="card-icon-wrap">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                style="filter: invert(1);" width="24" height="24" alt="GitHub">
-                        </div>
-                        <div class="contact-info">
-                            <span class="c-legend">PROJETS &amp; CODE GITHUB</span>
-                            <strong class="c-val">github.com/leo-dpy</strong>
-                        </div>
-                        <span class="open-badge">Ouvrir &rarr;</span>
-                    </a>
-
-                    <!-- CV PDF -->
-                    <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="contact-card highlight-card">
-                        <div class="card-icon-wrap">
-                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00e5ff" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
-                        </div>
-                        <div class="contact-info">
-                            <span class="c-legend">CURRICULUM VITAE</span>
-                            <strong class="c-val">CV - Léo Dupuy (PDF)</strong>
-                        </div>
-                        <span class="open-badge">Télécharger &rarr;</span>
-                    </a>
-                </div>
-
-                <div class="modal-footer-note">
-                    <span>Statut : Disponible immédiatement &bull; Mobilité Lille &amp; Métropole Européenne de Lille &bull; Permis B</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notification Toast Flottant -->
+    <!-- Notification Toast Flottant pour confirmation de copie (Email & Téléphone) -->
     <div id="toast-notify" class="toast-popup" aria-live="polite" aria-hidden="true">
         <span class="toast-icon">✓</span>
         <span class="toast-message" id="toast-message">Copié dans le presse-papiers !</span>

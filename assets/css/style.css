@@ -308,17 +308,17 @@ button {
 .contact-chips {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
 }
 
 .chip-action {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    height: 32px;
-    padding: 0 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-subtle);
+    gap: 7px;
+    height: 34px;
+    padding: 0 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-sm);
     color: var(--text-main);
     font-size: 0.74rem;
@@ -330,6 +330,8 @@ button {
     background: rgba(0, 229, 255, 0.08);
     border-color: rgba(0, 229, 255, 0.4);
     color: var(--cyan-cyber);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+    transform: translateY(-1px);
 }
 
 .chip-icon {
@@ -342,22 +344,24 @@ button {
     background: rgba(0, 102, 255, 0.12);
     border-color: rgba(0, 102, 255, 0.35);
     color: #8bb2ff;
+    font-weight: 700;
 }
 
 .chip-cv:hover {
     background: rgba(0, 102, 255, 0.25);
     color: #fff;
     border-color: var(--blue-primary);
+    box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
 }
 
 .chip-social {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-subtle);
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
 }
@@ -365,44 +369,12 @@ button {
 .chip-social:hover {
     background: rgba(0, 229, 255, 0.1);
     border-color: var(--cyan-cyber);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
     transform: translateY(-1px);
 }
 
 .invert-icon {
     filter: invert(1);
-}
-
-.btn-contact-hub {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    height: 32px;
-    padding: 0 14px;
-    background: linear-gradient(135deg, rgba(0, 229, 255, 0.18), rgba(0, 102, 255, 0.28));
-    border: 1px solid var(--cyan-cyber);
-    border-radius: var(--radius-sm);
-    color: #fff;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
-    transition: all var(--transition-fast);
-}
-
-.btn-contact-hub:hover {
-    background: linear-gradient(135deg, var(--cyan-cyber), var(--blue-primary));
-    color: #000;
-    box-shadow: 0 0 16px var(--cyan-glow);
-    transform: translateY(-1px);
-}
-
-.hud-symbol {
-    font-weight: 900;
-    color: var(--cyan-cyber);
-}
-
-.btn-contact-hub:hover .hud-symbol {
-    color: #000;
 }
 
 /* --- BANDEAU 2 : NAVIGATION DU DASHBOARD & TÉLÉMÉTRIE --- */
@@ -1863,188 +1835,6 @@ button {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.06);
     color: #a0b0ca;
-}
-
-/* ==========================================================================
-   MODALE DE CONTACT & CANAUX
-   ========================================================================== */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(4, 6, 10, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.modal-overlay.active {
-    display: flex;
-    opacity: 1;
-}
-
-.modal-content {
-    background: var(--bg-surface-elevated);
-    border: 1px solid var(--border-active);
-    border-radius: var(--radius-lg);
-    width: 100%;
-    max-width: 620px;
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.2), 0 20px 40px rgba(0, 0, 0, 0.8);
-    transform: scale(0.96);
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    overflow: hidden;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-inner {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-}
-
-.modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.modal-header-tag {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--cyan-cyber);
-    box-shadow: 0 0 8px var(--cyan-cyber);
-}
-
-.modal-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 0.06em;
-}
-
-.modal-close {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--text-muted);
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-fast);
-}
-
-.modal-close:hover {
-    background: rgba(255, 51, 102, 0.2);
-    color: #ff6688;
-}
-
-.modal-desc p {
-    font-size: 0.8rem;
-    color: #b0bfd8;
-    line-height: 1.5;
-}
-
-.modal-desc strong {
-    color: #fff;
-}
-
-.contact-links-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-sm);
-    transition: all var(--transition-fast);
-    text-align: left;
-    width: 100%;
-}
-
-.contact-card:hover {
-    background: rgba(0, 229, 255, 0.06);
-    border-color: rgba(0, 229, 255, 0.35);
-    transform: translateX(3px);
-}
-
-.contact-card.highlight-card {
-    border-color: rgba(0, 102, 255, 0.4);
-    background: rgba(0, 102, 255, 0.08);
-}
-
-.card-icon-wrap {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.c-legend {
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-}
-
-.c-val {
-    font-size: 0.84rem;
-    color: #fff;
-    font-weight: 700;
-}
-
-.copy-badge, .open-badge {
-    font-size: 0.65rem;
-    color: var(--cyan-cyber);
-    background: rgba(0, 229, 255, 0.1);
-    padding: 3px 8px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 229, 255, 0.25);
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.modal-footer-note {
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.7rem;
-    color: var(--emerald-live);
-    text-align: center;
 }
 
 /* ==========================================================================
