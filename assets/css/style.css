@@ -926,80 +926,229 @@ button {
     gap: clamp(8px, 1.1vh, 12px);
 }
 
-.contract-card {
-    border-radius: 8px;
-    padding: clamp(7px, 1vh, 11px) clamp(9px, 1.1vw, 13px);
+/* ==========================================================================
+   CARTE STATUT : STAGE, ALTERNANCE & EN CE MOMENT (.status-card-body)
+   ========================================================================== */
+.status-card-body {
+    padding: clamp(10px, 1.4vh, 16px) clamp(12px, 1.6vw, 18px);
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    transition: border-color var(--transition-fast), background var(--transition-fast);
+    flex: 1;
+    min-height: 0;
+    justify-content: center;
+}
+
+.badge-status-active {
+    font-size: 0.78rem !important;
+    padding: 3px 10px !important;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+
+.status-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 1.4vw, 16px);
+    flex: 1;
+    align-items: stretch;
+}
+
+.status-side-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(6px, 0.9vh, 9px);
+    height: 100%;
+}
+
+.side-col-header {
+    display: flex;
+    align-items: center;
+}
+
+.side-col-tag {
+    font-size: clamp(0.72rem, 0.95vh, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.side-col-tag.emerald {
+    color: var(--emerald-live);
+    background: rgba(0, 255, 157, 0.12);
+    border: 1px solid rgba(0, 255, 157, 0.35);
+}
+
+.side-col-tag.cyan {
+    color: var(--cyan-cyber);
+    background: rgba(0, 229, 255, 0.12);
+    border: 1px solid rgba(0, 229, 255, 0.35);
+}
+
+/* Cartes Stage / Alternance compactes */
+.contract-card.compact {
+    border-radius: 8px;
+    padding: clamp(7px, 1vh, 10px) clamp(10px, 1.2vw, 13px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4px, 0.7vh, 7px);
+    transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
 
 .contract-card.stage-card {
-    background: rgba(0, 229, 255, 0.04);
-    border: 1px solid rgba(0, 229, 255, 0.22);
+    background: rgba(0, 229, 255, 0.05);
+    border: 1.5px solid rgba(0, 229, 255, 0.28);
 }
 
 .contract-card.stage-card:hover {
-    border-color: rgba(0, 229, 255, 0.5);
-    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.6);
+    background: rgba(0, 229, 255, 0.09);
+    transform: translateY(-1px);
 }
 
 .contract-card.alt-card {
-    background: rgba(0, 255, 157, 0.04);
-    border: 1px solid rgba(0, 255, 157, 0.22);
+    background: rgba(0, 255, 157, 0.05);
+    border: 1.5px solid rgba(0, 255, 157, 0.28);
 }
 
 .contract-card.alt-card:hover {
-    border-color: rgba(0, 255, 157, 0.5);
-    background: rgba(0, 255, 157, 0.08);
+    border-color: rgba(0, 255, 157, 0.6);
+    background: rgba(0, 255, 157, 0.09);
+    transform: translateY(-1px);
 }
 
 .contract-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 6px;
+    gap: 8px;
 }
 
 .contract-badge {
-    font-size: 0.65rem;
+    font-size: clamp(0.74rem, 0.95vh, 0.82rem);
     font-weight: 800;
     letter-spacing: 0.05em;
-    padding: 2px 7px;
+    padding: 3px 8px;
     border-radius: 4px;
 }
 
 .contract-badge.stage {
-    background: rgba(0, 229, 255, 0.12);
+    background: rgba(0, 229, 255, 0.16);
     color: var(--cyan-cyber);
-    border: 1px solid rgba(0, 229, 255, 0.35);
+    border: 1px solid rgba(0, 229, 255, 0.45);
 }
 
 .contract-badge.alt {
-    background: rgba(0, 255, 157, 0.12);
+    background: rgba(0, 255, 157, 0.16);
     color: var(--emerald-live);
-    border: 1px solid rgba(0, 255, 157, 0.35);
+    border: 1px solid rgba(0, 255, 157, 0.45);
 }
 
-.contract-year {
-    font-size: 0.68rem;
+.contract-duration {
+    font-size: clamp(0.76rem, 1vh, 0.84rem);
     font-weight: 700;
-    color: #e2eaf8;
+    color: #e6efff;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.contract-body strong {
-    font-size: clamp(0.72rem, 1vh, 0.80rem);
-    color: #fff;
-    display: block;
-    margin-bottom: 3px;
-}
-
-.contract-body p {
-    font-size: clamp(0.66rem, 0.9vh, 0.73rem);
-    line-height: 1.35;
-    color: #9cb0ce;
+.contract-availability {
+    font-size: clamp(0.84rem, 1.1vh, 0.92rem);
+    line-height: 1.4;
+    color: #d2e0f5;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.contract-availability strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.contract-availability .cal-icon {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* Geo pill */
+.status-geo-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: clamp(0.80rem, 1.05vh, 0.88rem);
+    color: #e2eaf8;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: clamp(5px, 0.8vh, 7px) 10px;
+}
+
+.status-geo-pill strong {
+    color: #ffffff;
+}
+
+.status-geo-pill .geo-icon {
+    font-size: 0.95rem;
+}
+
+/* Carte En ce moment */
+.now-card {
+    background: rgba(0, 229, 255, 0.03);
+    border: 1.5px solid rgba(0, 229, 255, 0.22);
+    border-radius: 8px;
+    padding: clamp(9px, 1.2vh, 13px) clamp(11px, 1.3vw, 15px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.now-card:hover {
+    border-color: rgba(0, 229, 255, 0.5);
+    background: rgba(0, 229, 255, 0.06);
+}
+
+.now-items-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: clamp(7px, 1vh, 11px);
+    height: 100%;
+}
+
+.now-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: clamp(0.82rem, 1.08vh, 0.90rem);
+    line-height: 1.42;
+    color: #cdd9e8;
+}
+
+.now-bullet {
+    color: var(--cyan-cyber);
+    font-weight: bold;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+}
+
+.now-text {
+    flex: 1;
+}
+
+.now-text .domain-label {
+    color: #00e5ff;
+    font-weight: 700;
 }
 
 /* Encadré Objectif & Mobilité (Horizontalisé compact) */
@@ -2299,7 +2448,16 @@ button {
     }
 
     .exec-target-banner,
-    .opp-contracts-grid {
+    .opp-contracts-grid,
+    .status-grid,
+    .contracts-dual-grid,
+    .status-split-grid {
         grid-template-columns: 1fr;
+    }
+
+    .status-footer-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
     }
 }
