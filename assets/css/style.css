@@ -774,70 +774,101 @@ button {
     height: 100%;
 }
 
-/* Profil Synthétique Majeur (.profile-executive-card) */
-.profile-executive-card {
+/* Colonne Gauche : Synthèse & Objectif (.overview-profile-column) */
+.overview-profile-column {
     display: flex;
     flex-direction: column;
+    gap: clamp(0.55rem, 1.1vh, 0.9rem);
     height: 100%;
     min-height: 0;
 }
 
-.profile-exec-body {
-    flex: 1;
-    min-height: 0;
-    padding: clamp(10px, 1.6vh, 18px) clamp(12px, 1.6vw, 18px);
+/* 1. Carte Synthèse Professionnelle (.profile-executive-card) */
+.profile-executive-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: clamp(8px, 1.2vh, 14px);
+    flex: 1.15;
+    min-height: 0;
 }
 
-.profile-executive-card .profile-header-inline {
+.profile-exec-body {
+    padding: clamp(10px, 1.3vh, 16px) clamp(14px, 1.6vw, 18px);
     display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.1vh, 13px);
+}
+
+.profile-top-lead {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(14px, 1.8vw, 20px);
     align-items: center;
-    gap: clamp(12px, 1.4vw, 18px);
 }
 
 .profile-avatar-box {
-    width: clamp(76px, 9vh, 94px);
-    height: clamp(76px, 9vh, 94px);
+    width: clamp(145px, 16.5vw, 180px);
+    height: clamp(175px, 21vh, 205px);
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 2px solid var(--cyan-cyber);
-    box-shadow: 0 0 16px var(--cyan-glow);
+    box-shadow: 0 0 20px var(--cyan-glow);
     flex-shrink: 0;
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .exec-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 12%;
     display: block;
 }
 
-.profile-meta-lead h3 {
-    font-size: clamp(1.22rem, 1.7vh, 1.45rem);
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 3px;
-}
-
-.role-desc {
-    font-size: clamp(0.74rem, 1.05vh, 0.82rem);
-    color: var(--text-muted);
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
-
-.role-desc strong {
-    color: var(--cyan-cyber);
-}
-
-.mini-tags-wrap {
+.profile-meta-lead {
+    flex: 1;
+    min-width: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(8px, 1.3vh, 16px);
+}
+
+.profile-about-tag {
+    font-size: clamp(0.95rem, 1.4vh, 1.25rem);
+    font-weight: 800;
+    color: var(--cyan-cyber);
+    letter-spacing: 0.12em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.profile-name-lead {
+    font-size: clamp(2rem, 3.8vh, 2.9rem);
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.03em;
+    line-height: 1.08;
+    text-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+}
+
+/* 2. Carte Objectif : Stage & Alternance (.objective-executive-card) */
+.objective-executive-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+.objective-card-body {
+    padding: clamp(10px, 1.3vh, 15px) clamp(12px, 1.6vw, 18px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(7px, 1vh, 11px);
+    flex: 1;
+    min-height: 0;
 }
 
 .tag-meta {
@@ -856,9 +887,15 @@ button {
     font-weight: 700;
 }
 
+.exec-bio-block {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1vh, 10px);
+}
+
 .exec-bio {
-    font-size: clamp(0.75rem, 1.05vh, 0.83rem);
-    line-height: 1.6;
+    font-size: clamp(0.76rem, 1.05vh, 0.84rem);
+    line-height: 1.62;
     color: #b9c7dc;
     margin: 0;
 }
@@ -893,8 +930,8 @@ button {
 }
 
 .opp-box-text {
-    font-size: clamp(0.72rem, 1vh, 0.79rem);
-    line-height: 1.5;
+    font-size: clamp(0.72rem, 1vh, 0.80rem);
+    line-height: 1.48;
     color: #c2d0e6;
     margin: 0;
 }
@@ -906,15 +943,15 @@ button {
 .opp-contracts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(6px, 1vw, 10px);
+    gap: clamp(8px, 1.1vh, 12px);
 }
 
 .contract-card {
-    border-radius: 6px;
-    padding: clamp(6px, 0.9vh, 8px) 10px;
+    border-radius: 8px;
+    padding: clamp(7px, 1vh, 11px) clamp(9px, 1.1vw, 13px);
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 4px;
     transition: border-color var(--transition-fast), background var(--transition-fast);
 }
 
@@ -946,11 +983,11 @@ button {
 }
 
 .contract-badge {
-    font-size: 0.62rem;
+    font-size: 0.65rem;
     font-weight: 800;
     letter-spacing: 0.05em;
-    padding: 1px 6px;
-    border-radius: 3px;
+    padding: 2px 7px;
+    border-radius: 4px;
 }
 
 .contract-badge.stage {
@@ -966,21 +1003,21 @@ button {
 }
 
 .contract-year {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: #e2eaf8;
 }
 
 .contract-body strong {
-    font-size: clamp(0.70rem, 0.95vh, 0.76rem);
+    font-size: clamp(0.72rem, 1vh, 0.80rem);
     color: #fff;
     display: block;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
 }
 
 .contract-body p {
-    font-size: clamp(0.64rem, 0.88vh, 0.70rem);
-    line-height: 1.3;
+    font-size: clamp(0.66rem, 0.9vh, 0.73rem);
+    line-height: 1.35;
     color: #9cb0ce;
     margin: 0;
 }
@@ -990,10 +1027,10 @@ button {
     background: rgba(0, 229, 255, 0.02);
     border: 1px solid rgba(0, 229, 255, 0.12);
     border-radius: var(--radius-sm);
-    padding: clamp(6px, 1vh, 10px);
+    padding: clamp(5px, 0.8vh, 8px) clamp(6px, 0.8vw, 10px);
     display: grid;
-    grid-template-columns: 1.25fr 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 0.9fr 0.9fr 1.6fr;
+    gap: 7px;
 }
 
 .target-col {
@@ -1003,20 +1040,31 @@ button {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 4px;
-    padding: 6px 9px;
+    padding: clamp(5px, 0.7vh, 7px) clamp(7px, 0.9vw, 10px);
 }
 
 .target-col .t-label {
-    font-size: 0.62rem;
+    font-size: 0.60rem;
     font-weight: 800;
     color: var(--cyan-cyber);
     letter-spacing: 0.05em;
 }
 
 .target-col .t-val {
-    font-size: clamp(0.68rem, 0.98vh, 0.76rem);
+    font-size: clamp(0.68rem, 0.92vh, 0.75rem);
     color: #e2e8f0;
-    line-height: 1.35;
+    line-height: 1.25;
+}
+
+.t-val-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.t-val-lines strong {
+    color: #fff;
+    font-weight: 700;
 }
 
 /* KPIs Majeurs */
@@ -2196,6 +2244,17 @@ button {
         grid-template-columns: 1fr;
     }
 
+    .overview-profile-column,
+    .overview-latest-column {
+        height: auto;
+    }
+
+    .profile-executive-card,
+    .objective-executive-card,
+    .overview-feed-card {
+        flex: none;
+    }
+
     .lab-card.featured-lab {
         grid-column: span 1;
     }
@@ -2222,6 +2281,25 @@ button {
 
     .name-row {
         justify-content: center;
+    }
+
+    .profile-exec-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-top-lead {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile-avatar-box {
+        width: 150px;
+        height: 190px;
+        margin: 0 auto;
     }
 
     .opp-meta {
