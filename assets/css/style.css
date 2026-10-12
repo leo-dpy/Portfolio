@@ -792,22 +792,19 @@ button {
 }
 
 .profile-exec-body {
-    padding: clamp(10px, 1.3vh, 16px) clamp(14px, 1.6vw, 18px);
-    display: flex;
-    flex-direction: column;
-    gap: clamp(8px, 1.1vh, 13px);
-}
-
-.profile-top-lead {
+    padding: clamp(12px, 1.5vh, 18px) clamp(14px, 1.6vw, 20px);
     display: flex;
     flex-direction: row;
-    gap: clamp(14px, 1.8vw, 20px);
-    align-items: center;
+    gap: clamp(16px, 2vw, 24px);
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
 }
 
 .profile-avatar-box {
-    width: clamp(145px, 16.5vw, 180px);
-    height: clamp(175px, 21vh, 205px);
+    width: clamp(155px, 18vw, 210px);
+    height: 100%;
+    align-self: stretch;
     border-radius: var(--radius-md);
     overflow: hidden;
     border: 2px solid var(--cyan-cyber);
@@ -825,32 +822,13 @@ button {
     display: block;
 }
 
-.profile-meta-lead {
+.profile-info-lead {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: clamp(8px, 1.3vh, 16px);
-}
-
-.profile-about-tag {
-    font-size: clamp(0.95rem, 1.4vh, 1.25rem);
-    font-weight: 800;
-    color: var(--cyan-cyber);
-    letter-spacing: 0.12em;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.profile-name-lead {
-    font-size: clamp(2rem, 3.8vh, 2.9rem);
-    font-weight: 900;
-    color: #fff;
-    margin: 0;
-    letter-spacing: 0.03em;
-    line-height: 1.08;
-    text-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+    align-items: center;
 }
 
 /* 2. Carte Objectif : Stage & Alternance (.objective-executive-card) */
@@ -890,13 +868,15 @@ button {
 .exec-bio-block {
     display: flex;
     flex-direction: column;
-    gap: clamp(6px, 1vh, 10px);
+    gap: clamp(10px, 1.4vh, 16px);
+    text-align: center;
 }
 
 .exec-bio {
-    font-size: clamp(0.76rem, 1.05vh, 0.84rem);
-    line-height: 1.62;
-    color: #b9c7dc;
+    font-size: clamp(0.88rem, 1.3vh, 1.04rem);
+    line-height: 1.68;
+    color: #cdd9e8;
+    text-align: center;
     margin: 0;
 }
 
@@ -2289,8 +2269,7 @@ button {
         text-align: center;
     }
 
-    .profile-top-lead {
-        flex-direction: column;
+    .profile-info-lead {
         align-items: center;
         text-align: center;
         gap: 12px;
