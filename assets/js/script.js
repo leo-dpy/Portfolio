@@ -4,22 +4,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    // --- 1. HORLOGE TÉLÉMÉTRIE EN TEMPS RÉEL ---
-    const clockEl = document.getElementById("live-clock");
-    const updateClock = () => {
-        if (!clockEl) return;
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, "0");
-        const minutes = String(now.getMinutes()).padStart(2, "0");
-        const seconds = String(now.getSeconds()).padStart(2, "0");
-        clockEl.textContent = `${hours}:${minutes}:${seconds}`;
-    };
-    updateClock();
-    setInterval(updateClock, 1000);
-
-
-    // --- 2. GESTION DES ONGLETS DU DASHBOARD (ROUTAGE ZÉRO-SCROLL) ---
+    // --- 1. GESTION DES ONGLETS DU DASHBOARD (ROUTAGE ZÉRO-SCROLL) ---
     const navTabs = document.querySelectorAll(".nav-tab");
     const panels = document.querySelectorAll(".dashboard-panel");
 
@@ -72,13 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Restauration de l'onglet actif via l'URL (ex: #labs)
     const initialHash = window.location.hash.replace("#", "");
-    const validTabs = ["overview", "skills", "labs", "projects", "ctf", "parcours"];
-    if (initialHash && validTabs.includes(initialHash)) {
+    const validTabs = ["overview", "skills", "labs", "ctf", "parcours"];
+    if (initialHash === "projects") {
+        switchTab("labs");
+    } else if (initialHash && validTabs.includes(initialHash)) {
         switchTab(initialHash);
     }
 
 
-    // --- 3. TOAST FLOTTANT DE NOTIFICATION ---
+    // --- 2. TOAST FLOTTANT DE NOTIFICATION ---
     const toast = document.getElementById("toast-notify");
     const toastMsg = document.getElementById("toast-message");
     let toastTimeout = null;
@@ -98,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    // --- 4. COPIE RAPIDE DANS LE PRESSE-PAPIERS (EMAIL / TÉLÉPHONE) ---
+    // --- 3. COPIE RAPIDE DANS LE PRESSE-PAPIERS (EMAIL / TÉLÉPHONE) ---
     const copyToClipboard = (text, successMsg) => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(() => {
