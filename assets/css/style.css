@@ -92,17 +92,20 @@
 
 /* Base */
 * {
-
     box-sizing: border-box;
-    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font);
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
     position: relative;
 }
@@ -136,13 +139,6 @@ html {
     z-index: 1;
 }
 
-nav,
-.container,
-header.hero-section {
-    position: relative;
-    z-index: 10;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -150,10 +146,9 @@ header.hero-section {
 }
 
 section {
-    padding: 6rem 0;
+    padding: 1rem 0 2.5rem 0;
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    /* Ligne plus claire */
+    border-bottom: none;
 }
 
 h2 {
@@ -317,7 +312,273 @@ h2 {
     background: #0a0a10;
 }
 
-/* Navigation */
+/* ==========================================================================
+   BANDEAU SUPÉRIEUR STYLE GNOME LINUX (TOP BAR)
+   ========================================================================== */
+.gnome-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 42px;
+    background: rgba(10, 11, 16, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    z-index: 10000;
+}
+
+.topbar-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    gap: 12px;
+}
+
+/* Gauche : Identité & Activités */
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.gnome-activity-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.8px;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.gnome-activity-chip:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gnome-icon-terminal {
+    color: #38bdf8;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4));
+}
+
+.topbar-role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: #a3a3a3;
+    font-weight: 500;
+}
+
+.role-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #27c93f;
+    box-shadow: 0 0 8px #27c93f;
+}
+
+/* Centre : Recherche Stage & Alternance */
+.topbar-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.search-opp-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 16px;
+    background: rgba(0, 81, 255, 0.12);
+    border: 1px solid rgba(0, 81, 255, 0.4);
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.15);
+    transition: all 0.25s ease;
+}
+
+.search-opp-pill:hover {
+    background: rgba(0, 81, 255, 0.2);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.3);
+}
+
+.opp-radar-beacon {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 8px #38bdf8;
+    flex-shrink: 0;
+}
+
+.opp-radar-beacon::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1.5px solid #38bdf8;
+    animation: oppPulse 2s infinite ease-out;
+}
+
+@keyframes oppPulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Droite : Quick Contacts & Tray style GNOME */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.topbar-chip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: #d1d5db;
+    font-size: 0.72rem;
+    font-family: var(--font);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.topbar-chip-btn:hover {
+    background: rgba(0, 81, 255, 0.18);
+    border-color: rgba(0, 81, 255, 0.5);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.topbar-chip-btn.cv-btn {
+    background: rgba(0, 81, 255, 0.15);
+    border-color: rgba(0, 81, 255, 0.35);
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.topbar-chip-btn.cv-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.topbar-socials {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.topbar-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.topbar-social-link:hover {
+    background: rgba(0, 81, 255, 0.2);
+    border-color: rgba(0, 81, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.topbar-social-link img[alt="GitHub"],
+.invert-icon {
+    filter: invert(1) !important;
+}
+
+/* ==========================================================================
+   ESPACE DE TRAVAIL DESKTOP & SYSTÈME SANS SCROLL
+   ========================================================================== */
+.desktop-workspace {
+    position: fixed;
+    top: 42px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.desktop-view {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem 2rem 110px 2rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.99);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+.desktop-view.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    z-index: 5;
+}
+
+/* Scrollbar interne épurée pour les vues */
+.desktop-view::-webkit-scrollbar {
+    width: 6px;
+}
+
+.desktop-view::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.desktop-view::-webkit-scrollbar-thumb {
+    background: rgba(0, 81, 255, 0.3);
+    border-radius: 4px;
+}
+
+.desktop-view::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 81, 255, 0.6);
+}
+
+.view-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+   DOCK FLOTTANT ORIGINAL (CYBER CUTS)
+   ========================================================================== */
 nav {
     position: fixed;
     bottom: 30px;
@@ -328,7 +589,6 @@ nav {
     display: flex;
     flex-direction: row;
     z-index: 1000;
-    /* Retour à la bordure bleue transparente d'origine */
     background: rgba(0, 81, 255, 0.4);
     clip-path: var(--cut-10);
     padding: 8px 15px;
@@ -382,6 +642,7 @@ nav .logo span {
     background: transparent;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .nav-links a::before {
@@ -412,9 +673,42 @@ nav .logo span {
     box-shadow: 0 0 0 2px rgba(0, 81, 255, 0.35);
 }
 
-.nav-toggle,
-.nav-toggle-label {
-    display: none;
+/* ==========================================================================
+   TOAST NOTIFICATION FLOTTANT
+   ========================================================================== */
+.toast-popup {
+    position: fixed;
+    top: 54px;
+    right: 20px;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(10, 15, 26, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #27c93f;
+    border-radius: 8px;
+    color: #27c93f;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(39, 201, 63, 0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-popup.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.toast-icon {
+    font-size: 0.9rem;
 }
 
 /* --- BOUTONS & FILTRES CYBER AVEC CONTOUR FERMÉ --- */
@@ -620,7 +914,9 @@ nav .logo span {
 /* --- HERO SECTION --- */
 header.hero-section {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: auto;
+    padding: 1rem 0 0.5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -635,7 +931,7 @@ header.hero-section {
 }
 
 h1 {
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     margin: 0;
     line-height: 1.1;
     color: #fff;
@@ -1543,151 +1839,41 @@ footer {
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
-@media (max-width: 1024px) {
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1.5rem;
-        height: 70px;
-        top: 0;
-        bottom: auto;
-        left: 0;
-        margin: 0;
-        width: 100%;
-        border-radius: 0;
-        clip-path: none;
-        background: rgba(5, 5, 5, 0.95);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        animation: none;
-        transform: none;
-        box-shadow: none;
-    }
-
-    nav::before {
+@media (max-width: 1100px) {
+    .topbar-role-badge {
         display: none;
     }
 
-    nav .logo {
-        display: block;
-        margin: 0;
-    }
-
-    .nav-toggle-label {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 5px;
-        margin: 0;
-        z-index: 1001;
-        cursor: pointer;
-    }
-
-    .nav-toggle-label span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        transition: 0.3s;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(5, 5, 5, 0.97);
-        backdrop-filter: blur(14px);
-        flex-direction: column;
-        padding: 2rem 1rem;
-        transform: translateX(100%);
-        transition: 0.3s;
-        opacity: 0;
-        z-index: 999;
-    }
-
-    .nav-links::before {
+    .topbar-chip-btn .chip-text {
         display: none;
     }
 
-    .nav-links a {
-        font-size: 1.15rem;
-        width: 100%;
-        text-align: center;
-        clip-path: none;
-        background: transparent;
-    }
-
-    .nav-links a::before {
-        display: none;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-        transform: none;
-        background: transparent;
-        border-left: 2px solid var(--accent);
-        box-shadow: none;
-    }
-
-    #nav-toggle:checked~.nav-links {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    #nav-toggle:checked~.nav-toggle-label span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    #nav-toggle:checked~.nav-toggle-label span:nth-child(2) {
-        opacity: 0;
-    }
-
-    #nav-toggle:checked~.nav-toggle-label span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 0.8rem;
-    }
-
-    .profile-card {
-        padding: 1.5rem;
-        margin-top: 0;
-    }
-
-    .img-frame {
-        width: 200px;
-        height: 250px;
-    }
-
-    .profile-title {
-        font-size: 1.5rem;
-    }
-
-    section {
-        padding: 4rem 0;
-    }
-
-    .container {
-        padding: 0 1.5rem;
-    }
-
-    .hero-section {
-        padding-top: 90px;
-    }
-
-    main.container {
-        padding-top: 80px;
+    .topbar-chip-btn {
+        padding: 5px 7px;
     }
 }
 
 @media (max-width: 900px) {
+    .topbar-center {
+        display: none;
+    }
+
+    .dock-label {
+        display: none;
+    }
+
+    .dock-item {
+        padding: 8px 12px;
+    }
+
+    .desktop-view {
+        padding: 1rem 1rem 95px 1rem;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
     .profile-card {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1710,6 +1896,44 @@ footer {
 
     .exp-card {
         padding: 16px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        bottom: 12px;
+        padding: 5px 8px;
+    }
+
+    .nav-links {
+        gap: 3px;
+    }
+
+    .nav-links a {
+        padding: 6px 8px;
+        font-size: 0.65rem;
+        letter-spacing: 0.4px;
+    }
+
+    .topbar-left {
+        gap: 6px;
+    }
+
+    .user-fullname {
+        font-size: 0.75rem;
+    }
+
+    .topbar-inner {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
     }
 }
 

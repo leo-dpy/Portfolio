@@ -1,112 +1,170 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* Scroll fluide */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    /* ==========================================================================
+       SYSTÈME ZÉRO-SCROLL & COMMUTATEUR DE VUES DESKTOP (STYLE GNOME LINUX)
+       ========================================================================== */
+    const viewsList = ['about', 'skills', 'projets', 'participations', 'certifications', 'exp'];
+    const dockLinks = document.querySelectorAll('.nav-links a[data-view]');
+    const desktopViews = document.querySelectorAll('.desktop-view');
+    let currentViewIndex = 0;
 
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                const headerHeight = 80;
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerHeight;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
+    function switchView(targetViewId, pushToHistory = true) {
+        if (!targetViewId) return;
+
+        const cleanId = targetViewId.replace('#', '');
+        const targetView = document.getElementById(`view-${cleanId}`);
+        const targetDockLink = document.querySelector(`.nav-links a[data-view="${cleanId}"]`);
+
+        if (!targetView) return;
+
+        // Désactiver toutes les vues et liens du dock
+        desktopViews.forEach(v => v.classList.remove('active'));
+        dockLinks.forEach(b => b.classList.remove('active'));
+
+        // Activer la vue et le lien du dock cibles
+        targetView.classList.add('active');
+        if (targetDockLink) {
+            targetDockLink.classList.add('active');
+        }
+
+        // Remettre le scroll interne de la vue à zéro
+        targetView.scrollTop = 0;
+
+        // Mettre à jour l'index courant
+        const idx = viewsList.indexOf(cleanId);
+        if (idx !== -1) {
+            currentViewIndex = idx;
+        }
+
+        // Synchroniser le hash dans l'URL sans saut de scroll
+        if (pushToHistory) {
+            try {
+                history.pushState(null, '', `#${cleanId}`);
+            } catch (e) {
+                location.hash = cleanId;
             }
+        }
+    }
+
+    // Gestion du clic sur les liens du dock
+    dockLinks.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const viewId = this.getAttribute('data-view');
+            switchView(viewId);
         });
     });
 
-    /* Menu mobile */
-    const navToggle = document.getElementById('nav-toggle');
+    // Navigation par l'historique du navigateur (Précédent / Suivant)
+    window.addEventListener('popstate', function () {
+        const hash = window.location.hash.slice(1);
+        if (hash && viewsList.includes(hash)) {
+            switchView(hash, false);
+        } else {
+            switchView('about', false);
+        }
+    });
 
-    const navLinks = document.querySelectorAll('.nav-links a');
-    if (navToggle) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.checked = false;
+    // Charger la vue demandée par le hash initial ou par défaut 'about'
+    const initialHash = window.location.hash.slice(1);
+    if (initialHash && viewsList.includes(initialHash)) {
+        switchView(initialHash, false);
+    } else {
+        switchView('about', false);
+    }
+
+    // Raccourcis clavier style Espaces de travail GNOME (Flèches Gauche/Droite ou Chiffres 1 à 6)
+    document.addEventListener('keydown', function (e) {
+        // Ignorer si l'utilisateur tape dans un champ de saisie
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        if (e.key === 'ArrowRight') {
+            const nextIndex = (currentViewIndex + 1) % viewsList.length;
+            switchView(viewsList[nextIndex]);
+        } else if (e.key === 'ArrowLeft') {
+            const prevIndex = (currentViewIndex - 1 + viewsList.length) % viewsList.length;
+            switchView(viewsList[prevIndex]);
+        } else if (e.key >= '1' && e.key <= '6') {
+            const numIndex = parseInt(e.key, 10) - 1;
+            if (numIndex >= 0 && numIndex < viewsList.length) {
+                switchView(viewsList[numIndex]);
+            }
+        }
+    });
+
+    /* ==========================================================================
+       TOAST NOTIFICATION FLOTTANT & ACTIONS BANDEAU SUPÉRIEUR
+       ========================================================================== */
+    const toastNotify = document.getElementById('toast-notify');
+    const toastMessage = document.getElementById('toast-message');
+    let toastTimer = null;
+
+    function showToast(message) {
+        if (!toastNotify) return;
+        if (toastMessage) toastMessage.textContent = message;
+        toastNotify.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+            toastNotify.classList.remove('show');
+        }, 2500);
+    }
+
+    const btnTopbarEmail = document.getElementById('btn-topbar-email');
+    if (btnTopbarEmail) {
+        btnTopbarEmail.addEventListener('click', () => {
+            const email = "leo.dupuy@ynov.com";
+            navigator.clipboard.writeText(email).then(() => {
+                showToast("✓ Email copié : leo.dupuy@ynov.com");
+            }).catch(() => {
+                showToast("leo.dupuy@ynov.com");
             });
         });
     }
 
-    /* Menu actif au scroll */
-    const linkSections = Array.from(navLinks).map(link => {
-
-        const hash = link.getAttribute('href');
-        if (!hash || !hash.startsWith('#')) return null;
-        const id = hash.slice(1);
-        const section = document.getElementById(id);
-        return section ? { section, link } : null;
-    }).filter(Boolean);
-
-    if (linkSections.length) {
-        const clearActive = () => linkSections.forEach(({ link }) => link.classList.remove('active'));
-        const setActive = (target) => {
-            clearActive();
-            const match = linkSections.find(({ section }) => section === target);
-            if (match) match.link.classList.add('active');
-        };
-
-        let ticking = false;
-        const updateActive = () => {
-            const viewportMid = window.scrollY + window.innerHeight * 0.4;
-            const firstTop = linkSections[0].section.getBoundingClientRect().top + window.scrollY;
-
-            if (viewportMid < firstTop - 10) {
-                clearActive();
-            } else {
-                let current = linkSections[0];
-                for (const entry of linkSections) {
-                    const rect = entry.section.getBoundingClientRect();
-                    const top = rect.top + window.scrollY;
-                    const bottom = top + rect.height;
-                    if (viewportMid >= top && viewportMid < bottom) {
-                        current = entry;
-                        break;
-                    }
-                }
-                setActive(current.section);
-            }
-            ticking = false;
-        };
-
-        const onScroll = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(updateActive);
-                ticking = true;
-            }
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        updateActive();
+    const btnTopbarPhone = document.getElementById('btn-topbar-phone');
+    if (btnTopbarPhone) {
+        btnTopbarPhone.addEventListener('click', () => {
+            const phone = "07 71 59 90 71";
+            navigator.clipboard.writeText(phone).then(() => {
+                showToast("✓ Numéro copié : 07 71 59 90 71");
+            }).catch(() => {
+                showToast("07 71 59 90 71");
+            });
+        });
     }
 
     // Gestion de la modale de contact
     const btnOpenContact = document.getElementById('btn-open-contact');
+    const dockBtnContact = document.getElementById('dock-btn-contact');
+    const btnTopbarOpp = document.getElementById('btn-topbar-opp');
     const modalContact = document.getElementById('contact-modal');
     const btnCloseContact = document.getElementById('btn-close-contact');
     const btnCopyEmailModal = document.getElementById('btn-copy-email-modal');
     const btnCopyPhoneModal = document.getElementById('btn-copy-phone-modal');
 
-    if (btnOpenContact && modalContact && btnCloseContact) {
-        btnOpenContact.addEventListener('click', () => {
+    const openContactModal = () => {
+        if (modalContact) {
             modalContact.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Empêche de scroller la page derrière
-        });
+        }
+    };
 
-        const closeModal = () => {
+    const closeContactModal = () => {
+        if (modalContact) {
             modalContact.classList.remove('active');
-            document.body.style.overflow = '';
-        };
+        }
+    };
 
-        btnCloseContact.addEventListener('click', closeModal);
+    if (btnOpenContact) btnOpenContact.addEventListener('click', openContactModal);
+    if (dockBtnContact) dockBtnContact.addEventListener('click', openContactModal);
+    if (btnTopbarOpp) btnTopbarOpp.addEventListener('click', openContactModal);
+
+    if (btnCloseContact && modalContact) {
+        btnCloseContact.addEventListener('click', closeContactModal);
         modalContact.addEventListener('click', (e) => {
-            if (e.target === modalContact) closeModal(); // Clic à côté de la modale
+            if (e.target === modalContact) closeContactModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modalContact.classList.contains('active')) closeModal();
+            if (e.key === 'Escape' && modalContact.classList.contains('active')) closeContactModal();
         });
     }
 

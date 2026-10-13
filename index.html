@@ -28,34 +28,89 @@
 
     <div class="bg-static"></div>
 
-    <nav role="navigation">
-        <div class="logo">LÉO<span> DUPUY</span></div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
-        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <div class="nav-links">
-            <a href="#about">PROFIL</a>
-            <a href="#skills">COMPÉTENCES</a>
-            <a href="#projets">PROJETS</a>
-            <a href="#participations">PARTICIPATIONS</a>
-            <a href="#certifications">CERTIFICATIONS</a>
-            <a href="#exp">PARCOURS</a>
-        </div>
-    </nav>
+    <!-- BANDEAU SUPÉRIEUR STYLE GNOME LINUX -->
+    <header id="gnome-topbar" class="gnome-topbar" role="banner">
+        <div class="topbar-inner">
+            <!-- Gauche : Identité & Indicateur Terminal / Activités -->
+            <div class="topbar-left">
+                <div class="gnome-activity-chip" title="Terminal Léo Dupuy">
+                    <svg class="gnome-icon-terminal" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                    <span class="user-fullname">LÉO DUPUY</span>
+                </div>
+                <div class="topbar-role-badge">
+                    <span class="role-dot"></span>
+                    <span class="role-text">B2 Cybersécurité &bull; Lille Ynov Campus</span>
+                </div>
+            </div>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Léo Dupuy</h1>
-            <div class="typewriter">
-                <span class="hero-subtitle">ÉTUDIANT B2 CYBERSÉCURITÉ</span>
+            <!-- Centre : Recherche Stage & Alternance -->
+            <div class="topbar-center">
+                <div class="search-opp-pill" title="Disponibilité professionnelle">
+                    <span class="opp-radar-beacon"></span>
+                    <span class="opp-title">RECHERCHE STAGE &amp; ALTERNANCE</span>
+                </div>
+            </div>
+
+            <!-- Droite : Quick Contacts & Tray style GNOME -->
+            <div class="topbar-right">
+                <!-- Copie rapide Email -->
+                <button type="button" class="topbar-chip-btn" id="btn-topbar-email" title="Cliquer pour copier l'email" aria-label="Copier l'adresse email leo.dupuy@ynov.com">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span class="chip-text" id="topbar-email-text">leo.dupuy@ynov.com</span>
+                </button>
+
+                <!-- Copie rapide Téléphone -->
+                <button type="button" class="topbar-chip-btn" id="btn-topbar-phone" title="Cliquer pour copier le numéro" aria-label="Copier le numéro de téléphone 07 71 59 90 71">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span class="chip-text" id="topbar-phone-text">07 71 59 90 71</span>
+                </button>
+
+                <!-- Téléchargement CV -->
+                <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="topbar-chip-btn cv-btn" title="Télécharger le CV (PDF)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="12" y1="18" x2="12" y2="12" />
+                        <polyline points="9 15 12 18 15 15" />
+                    </svg>
+                    <span class="chip-text">CV.PDF</span>
+                </a>
+
+                <!-- Liens Sociaux -->
+                <div class="topbar-socials">
+                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="topbar-social-link" title="LinkedIn Léo Dupuy" aria-label="LinkedIn">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="topbar-social-link" title="GitHub Léo Dupuy" aria-label="GitHub">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="16" height="16" alt="GitHub" class="invert-icon" style="filter: invert(1);">
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <!-- ESPACE DE TRAVAIL DESKTOP MULTI-VUES (SANS SCROLL DE FENÊTRE) -->
+    <main id="desktop-workspace" class="desktop-workspace" role="main">
+
+        <!-- VUE 1 : PROFIL & À PROPOS -->
+        <div id="view-about" class="desktop-view active" role="region" aria-label="Vue Profil">
+            <div class="view-content-wrapper">
+                <header class="hero-section">
+                    <div class="hero-content">
+                        <h1>Léo Dupuy</h1>
+                        <div class="typewriter">
+                            <span class="hero-subtitle">ÉTUDIANT B2 CYBERSÉCURITÉ</span>
+                        </div>
+                    </div>
+                </header>
 
         <section id="about">
             <div class="profile-card">
@@ -85,7 +140,12 @@
                 </div>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 2 : COMPÉTENCES -->
+        <div id="view-skills" class="desktop-view" role="region" aria-label="Vue Compétences">
+            <div class="view-content-wrapper">
         <section id="skills">
             <h2 class="section-title">>_ COMPÉTENCES</h2>
 
@@ -288,7 +348,12 @@
 
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 3 : PROJETS -->
+        <div id="view-projets" class="desktop-view" role="region" aria-label="Vue Projets">
+            <div class="view-content-wrapper">
         <section id="projets">
             <h2 class="section-title">>_ PROJETS</h2>
 
@@ -583,7 +648,12 @@
                 <button id="toggle-projets" class="btn-outline">VOIR PLUS</button>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 4 : PARTICIPATIONS -->
+        <div id="view-participations" class="desktop-view" role="region" aria-label="Vue Participations">
+            <div class="view-content-wrapper">
         <section id="participations">
             <h2 class="section-title">>_ PARTICIPATIONS</h2>
             <div class="projects-grid">
@@ -689,7 +759,12 @@
                 <button id="toggle-participations" class="btn-outline">VOIR PLUS</button>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 5 : CERTIFICATIONS -->
+        <div id="view-certifications" class="desktop-view" role="region" aria-label="Vue Certifications">
+            <div class="view-content-wrapper">
         <section id="certifications">
             <h2 class="section-title">>_ CERTIFICATIONS</h2>
             <div class="certifications-container">
@@ -710,7 +785,12 @@
                 </a>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 6 : PARCOURS -->
+        <div id="view-exp" class="desktop-view" role="region" aria-label="Vue Parcours">
+            <div class="view-content-wrapper">
         <section id="exp">
             <h2 class="section-title">>_ PARCOURS</h2>
 
@@ -817,8 +897,28 @@
                 </div>
             </div>
         </section>
+            </div>
+        </div>
 
     </main>
+
+    <!-- DOCK FLOTTANT ORIGINAL (CYBER CUTS) -->
+    <nav role="navigation" aria-label="Navigation principale">
+        <div class="nav-links">
+            <a href="#about" class="active" data-view="about">PROFIL</a>
+            <a href="#skills" data-view="skills">COMPÉTENCES</a>
+            <a href="#projets" data-view="projets">PROJETS</a>
+            <a href="#participations" data-view="participations">PARTICIPATIONS</a>
+            <a href="#certifications" data-view="certifications">CERTIFICATIONS</a>
+            <a href="#exp" data-view="exp">PARCOURS</a>
+        </div>
+    </nav>
+
+    <!-- Notification Toast Flottant -->
+    <div id="toast-notify" class="toast-popup" aria-live="polite" aria-hidden="true">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toast-message">Copié dans le presse-papiers !</span>
+    </div>
 
     <!-- Contact & Réseaux -->
     <div id="contact-modal" class="modal-overlay" aria-hidden="true">
