@@ -194,89 +194,84 @@
                             </div>
                         </div>
 
-                        <!-- 2. Carte Statut & En ce moment -->
-                        <div class="dash-card objective-executive-card">
-                            <div class="dash-card-header">
-                                <div class="card-tag">>_ STATUT &amp; EN CE MOMENT</div>
-                                <span class="badge-emerald badge-status-active">● EN RECHERCHE ACTIVE</span>
-                            </div>
-                            <div class="dash-card-body status-card-body">
-                                <div class="status-split-grid">
-                                    <!-- Côté Gauche : Stage & Alternance -->
-                                    <div class="status-side-column status-side-contracts">
-                                        <div class="side-col-header">
-                                            <span class="side-col-tag emerald">🎯 RECHERCHE ACTIVE</span>
-                                        </div>
+                        <!-- 2. Rangée des 2 Cartes Carrées : Statut & En ce moment -->
+                        <div class="status-dual-row">
 
-                                        <!-- Mini-carte Stage B2 -->
-                                        <div class="contract-card stage-card compact">
-                                            <div class="contract-head">
-                                                <span class="contract-badge stage">STAGE B2</span>
-                                                <span class="contract-duration">1 à 2 mois</span>
-                                            </div>
-                                            <div class="contract-body">
-                                                <p class="contract-availability">
-                                                    <span class="cal-icon">📅</span>
-                                                    <span><strong>Dispo :</strong> Dès fin mai / juin 2027</span>
-                                                </p>
-                                            </div>
+                            <!-- Carte Carrée 1 : Statut / Recherche Active -->
+                            <div class="dash-card status-square-card">
+                                <div class="dash-card-header">
+                                    <div class="card-tag">>_ STATUT &amp; OBJECTIF</div>
+                                    <span class="badge-emerald badge-status-active">● RECHERCHE ACTIVE</span>
+                                </div>
+                                <div class="dash-card-body status-square-body">
+                                    <!-- Mini-carte Stage B2 -->
+                                    <div class="contract-card stage-card compact">
+                                        <div class="contract-head">
+                                            <span class="contract-badge stage">STAGE B2</span>
+                                            <span class="contract-duration">1 mois minimum</span>
                                         </div>
-
-                                        <!-- Mini-carte Alternance B3 -->
-                                        <div class="contract-card alt-card compact">
-                                            <div class="contract-head">
-                                                <span class="contract-badge alt">ALTERNANCE B3</span>
-                                                <span class="contract-duration">12 mois</span>
-                                            </div>
-                                            <div class="contract-body">
-                                                <p class="contract-availability">
-                                                    <span class="cal-icon">📅</span>
-                                                    <span><strong>Rentrée :</strong> Sept. 2027 &bull; Rythme Ynov</span>
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Localisation -->
-                                        <div class="status-geo-pill">
-                                            <span class="geo-icon">📍</span>
-                                            <span class="geo-text"><strong>Lille &amp; Métropole</strong> &bull; Permis B</span>
+                                        <div class="contract-body">
+                                            <p class="contract-availability">
+                                                <span class="cal-icon">📅</span>
+                                                <span><strong>Dispo :</strong> Dès fin mai / juin 2027</span>
+                                            </p>
                                         </div>
                                     </div>
 
-                                    <!-- Côté Droit : En ce moment -->
-                                    <div class="status-side-column status-side-now">
-                                        <div class="side-col-header">
-                                            <span class="side-col-tag cyan">⚡ EN CE MOMENT</span>
+                                    <!-- Mini-carte Alternance B3 -->
+                                    <div class="contract-card alt-card compact">
+                                        <div class="contract-head">
+                                            <span class="contract-badge alt">ALTERNANCE B3</span>
                                         </div>
+                                        <div class="contract-body">
+                                            <p class="contract-availability">
+                                                <span class="cal-icon">📅</span>
+                                                <span><strong>Rentrée :</strong> Sept. 2027 &bull; Rythme Ynov</span>
+                                            </p>
+                                        </div>
+                                    </div>
 
-                                        <div class="now-card">
-                                            <div class="now-items-list">
-                                                <div class="now-item">
-                                                    <span class="now-bullet">&bull;</span>
-                                                    <div class="now-text">
-                                                        <strong class="domain-label">Réseau :</strong>
-                                                        <span>Préparation CCNA, routage inter-VLAN &amp; services DHCP/DNS</span>
-                                                    </div>
-                                                </div>
-                                                <div class="now-item">
-                                                    <span class="now-bullet">&bull;</span>
-                                                    <div class="now-text">
-                                                        <strong class="domain-label">Système :</strong>
-                                                        <span>Durcissement VPS Linux OVH (pare-feu, Fail2ban, conteneurs)</span>
-                                                    </div>
-                                                </div>
-                                                <div class="now-item">
-                                                    <span class="now-bullet">&bull;</span>
-                                                    <div class="now-text">
-                                                        <strong class="domain-label">Veille :</strong>
-                                                        <span>Référentiel de sécurité ANSSI</span>
-                                                    </div>
-                                                </div>
+                                    <!-- Localisation -->
+                                    <div class="status-geo-pill">
+                                        <span class="geo-icon">📍</span>
+                                        <span class="geo-text"><strong>Lille &amp; Métropole</strong> &bull; Permis B</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Carte Carrée 2 : En ce moment -->
+                            <div class="dash-card now-square-card">
+                                <div class="dash-card-header">
+                                    <div class="card-tag">>_ EN CE MOMENT</div>
+                                    <span class="badge-cyan badge-status-active">● EN COURS</span>
+                                </div>
+                                <div class="dash-card-body now-square-body">
+                                    <div class="now-items-list">
+                                        <div class="now-item">
+                                            <span class="now-bullet">&bull;</span>
+                                            <div class="now-text">
+                                                <strong class="domain-label">Réseau :</strong>
+                                                <span>Préparation CCNA, routage inter-VLAN &amp; services DHCP/DNS</span>
+                                            </div>
+                                        </div>
+                                        <div class="now-item">
+                                            <span class="now-bullet">&bull;</span>
+                                            <div class="now-text">
+                                                <strong class="domain-label">Système :</strong>
+                                                <span>Durcissement VPS Linux OVH (pare-feu, Fail2ban, conteneurs)</span>
+                                            </div>
+                                        </div>
+                                        <div class="now-item">
+                                            <span class="now-bullet">&bull;</span>
+                                            <div class="now-text">
+                                                <strong class="domain-label">Veille :</strong>
+                                                <span>Référentiel de sécurité ANSSI</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>

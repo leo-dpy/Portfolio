@@ -927,6 +927,74 @@ button {
 }
 
 /* ==========================================================================
+   CARTES CARRÉES : STATUT & EN CE MOMENT (.status-dual-row)
+   ========================================================================== */
+.status-dual-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(0.55rem, 1.1vh, 0.9rem);
+    flex: 1;
+    min-height: 0;
+}
+
+.status-square-card,
+.now-square-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+.status-square-body {
+    padding: clamp(8px, 1.2vh, 12px) clamp(10px, 1.2vw, 14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(6px, 0.8vh, 9px);
+    flex: 1;
+    min-height: 0;
+}
+
+.now-square-body {
+    padding: clamp(8px, 1.2vh, 12px) clamp(10px, 1.2vw, 14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(6px, 0.8vh, 9px);
+    flex: 1;
+    min-height: 0;
+}
+
+.now-square-body .now-items-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(5px, 0.8vh, 8px);
+    height: 100%;
+    flex: 1;
+}
+
+.now-square-body .now-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 229, 255, 0.03);
+    border: 1px solid rgba(0, 229, 255, 0.16);
+    border-radius: 6px;
+    padding: clamp(6px, 0.8vh, 8px) clamp(8px, 1vw, 11px);
+    font-size: clamp(0.76rem, 1vh, 0.84rem);
+    line-height: 1.35;
+    color: #cdd9e8;
+    transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.now-square-body .now-item:hover {
+    border-color: rgba(0, 229, 255, 0.45);
+    background: rgba(0, 229, 255, 0.07);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
    CARTE STATUT : STAGE, ALTERNANCE & EN CE MOMENT (.status-card-body)
    ========================================================================== */
 .status-card-body {
@@ -2380,6 +2448,9 @@ button {
 
     .profile-executive-card,
     .objective-executive-card,
+    .status-dual-row,
+    .status-square-card,
+    .now-square-card,
     .overview-feed-card {
         flex: none;
     }
@@ -2451,7 +2522,8 @@ button {
     .opp-contracts-grid,
     .status-grid,
     .contracts-dual-grid,
-    .status-split-grid {
+    .status-split-grid,
+    .status-dual-row {
         grid-template-columns: 1fr;
     }
 
