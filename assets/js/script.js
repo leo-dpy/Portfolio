@@ -93,43 +93,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     /* ==========================================================================
-       TOAST NOTIFICATION FLOTTANT & ACTIONS BANDEAU SUPÉRIEUR
+       ACTIONS COPIE DIRECTE BANDEAU SUPÉRIEUR (SANS POP-UP)
        ========================================================================== */
-    const toastNotify = document.getElementById('toast-notify');
-    const toastMessage = document.getElementById('toast-message');
-    let toastTimer = null;
-
-    function showToast(message) {
-        if (!toastNotify) return;
-        if (toastMessage) toastMessage.textContent = message;
-        toastNotify.classList.add('show');
-        if (toastTimer) clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-            toastNotify.classList.remove('show');
-        }, 2500);
-    }
-
     const btnTopbarEmail = document.getElementById('btn-topbar-email');
     if (btnTopbarEmail) {
         btnTopbarEmail.addEventListener('click', () => {
             const email = "leo.dupuy@ynov.com";
-            navigator.clipboard.writeText(email).then(() => {
-                showToast("✓ Email copié : leo.dupuy@ynov.com");
-            }).catch(() => {
-                showToast("leo.dupuy@ynov.com");
-            });
-        });
-    }
-
-    const btnTopbarPhone = document.getElementById('btn-topbar-phone');
-    if (btnTopbarPhone) {
-        btnTopbarPhone.addEventListener('click', () => {
-            const phone = "07 71 59 90 71";
-            navigator.clipboard.writeText(phone).then(() => {
-                showToast("✓ Numéro copié : 07 71 59 90 71");
-            }).catch(() => {
-                showToast("07 71 59 90 71");
-            });
+            navigator.clipboard.writeText(email).catch(() => {});
+            const textSpan = document.getElementById('topbar-email-text');
+            if (textSpan) {
+                const original = textSpan.textContent;
+                textSpan.textContent = "COPIÉ !";
+                textSpan.style.color = "#38bdf8";
+                setTimeout(() => {
+                    textSpan.textContent = original;
+                    textSpan.style.color = "";
+                }, 1500);
+            }
         });
     }
 

@@ -41,7 +41,6 @@
                     <span class="user-fullname">LÉO DUPUY</span>
                 </div>
                 <div class="topbar-role-badge">
-                    <span class="role-dot"></span>
                     <span class="role-text">B2 Cybersécurité &bull; Lille Ynov Campus</span>
                 </div>
             </div>
@@ -49,7 +48,6 @@
             <!-- Centre : Recherche Stage & Alternance -->
             <div class="topbar-center">
                 <div class="search-opp-pill" title="Disponibilité professionnelle">
-                    <span class="opp-radar-beacon"></span>
                     <span class="opp-title">RECHERCHE STAGE &amp; ALTERNANCE</span>
                 </div>
             </div>
@@ -65,13 +63,13 @@
                     <span class="chip-text" id="topbar-email-text">leo.dupuy@ynov.com</span>
                 </button>
 
-                <!-- Copie rapide Téléphone -->
-                <button type="button" class="topbar-chip-btn" id="btn-topbar-phone" title="Cliquer pour copier le numéro" aria-label="Copier le numéro de téléphone 07 71 59 90 71">
+                <!-- Téléphone (info statique) -->
+                <div class="topbar-chip-static" title="Téléphone : 07 71 59 90 71">
                     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
-                    <span class="chip-text" id="topbar-phone-text">07 71 59 90 71</span>
-                </button>
+                    <span class="chip-text">07 71 59 90 71</span>
+                </div>
 
                 <!-- Téléchargement CV -->
                 <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="topbar-chip-btn cv-btn" title="Télécharger le CV (PDF)">
@@ -132,10 +130,6 @@
                         <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en deuxième année de <strong>Bachelor
                                 Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis
                             toujours, j'ai construit mon parcours autour de cette vocation.</p>
-                    </div>
-                    <div class="contact-buttons">
-                        <button id="btn-open-contact" class="btn-primary btn-contact-pulse"><span
-                                class="cyber-icon">>_</span> CONTACT & RÉSEAUX</button>
                     </div>
                 </div>
             </div>
@@ -913,12 +907,6 @@
             <a href="#exp" data-view="exp">PARCOURS</a>
         </div>
     </nav>
-
-    <!-- Notification Toast Flottant -->
-    <div id="toast-notify" class="toast-popup" aria-live="polite" aria-hidden="true">
-        <span class="toast-icon">✓</span>
-        <span class="toast-message" id="toast-message">Copié dans le presse-papiers !</span>
-    </div>
 
     <!-- Contact & Réseaux -->
     <div id="contact-modal" class="modal-overlay" aria-hidden="true">

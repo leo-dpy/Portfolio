@@ -93,13 +93,30 @@
 /* Base */
 * {
     box-sizing: border-box;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar,
+::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    background: transparent !important;
 }
 
 html, body {
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden !important;
     margin: 0;
     padding: 0;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 }
 
 body {
@@ -108,21 +125,6 @@ body {
     font-family: var(--font);
     line-height: 1.6;
     position: relative;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
-html {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
 }
 
 .bg-static {
@@ -317,26 +319,38 @@ h2 {
    ========================================================================== */
 .gnome-topbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 42px;
-    background: rgba(10, 11, 16, 0.88);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    top: 10px;
+    left: 14px;
+    right: 14px;
+    margin: 0 auto;
+    max-width: 1560px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 81, 255, 0.4);
+    clip-path: var(--cut-10);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
     z-index: 10000;
 }
 
+.gnome-topbar::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: rgba(10, 11, 16, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    clip-path: inherit;
+    z-index: -1;
+}
+
 .topbar-inner {
-    max-width: 1600px;
-    margin: 0 auto;
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 14px;
     gap: 12px;
 }
 
@@ -352,21 +366,27 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
+    padding: 4px 12px;
+    background: rgba(0, 81, 255, 0.35);
+    clip-path: var(--cut-6);
+    position: relative;
+    z-index: 1;
+    border: none;
     font-size: 0.8rem;
     font-weight: 700;
     color: #fff;
     letter-spacing: 0.8px;
     cursor: default;
-    transition: all 0.2s ease;
+    user-select: none;
 }
 
-.gnome-activity-chip:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+.gnome-activity-chip::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0d0f17;
+    clip-path: inherit;
+    z-index: -1;
 }
 
 .gnome-icon-terminal {
@@ -378,20 +398,30 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: var(--cut-5);
+    position: relative;
+    z-index: 1;
+    border: none;
     font-size: 0.72rem;
     color: #a3a3a3;
     font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: default;
+    user-select: none;
 }
 
-.role-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #27c93f;
-    box-shadow: 0 0 8px #27c93f;
+.topbar-role-badge::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0a0a10;
+    clip-path: inherit;
+    z-index: -1;
 }
 
-/* Centre : Recherche Stage & Alternance */
+/* Centre : Recherche Stage & Alternance (Non-cliquable) */
 .topbar-center {
     display: flex;
     align-items: center;
@@ -402,48 +432,30 @@ h2 {
 .search-opp-pill {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
     padding: 5px 16px;
-    background: rgba(0, 81, 255, 0.12);
-    border: 1px solid rgba(0, 81, 255, 0.4);
-    border-radius: 20px;
-    font-size: 0.74rem;
+    background: rgba(0, 81, 255, 0.45);
+    clip-path: var(--cut-6);
+    position: relative;
+    z-index: 1;
+    border: none;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #fff;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
     white-space: nowrap;
-    box-shadow: 0 0 15px rgba(0, 81, 255, 0.15);
-    transition: all 0.25s ease;
+    box-shadow: 0 0 16px rgba(0, 81, 255, 0.2);
+    cursor: default;
+    user-select: none;
 }
 
-.search-opp-pill:hover {
-    background: rgba(0, 81, 255, 0.2);
-    border-color: rgba(56, 189, 248, 0.6);
-    box-shadow: 0 0 20px rgba(0, 81, 255, 0.3);
-}
-
-.opp-radar-beacon {
-    position: relative;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #38bdf8;
-    box-shadow: 0 0 8px #38bdf8;
-    flex-shrink: 0;
-}
-
-.opp-radar-beacon::after {
+.search-opp-pill::before {
     content: "";
     position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    border: 1.5px solid #38bdf8;
-    animation: oppPulse 2s infinite ease-out;
-}
-
-@keyframes oppPulse {
-    0% { transform: scale(0.6); opacity: 1; }
-    100% { transform: scale(2.2); opacity: 0; }
+    inset: 1px;
+    background: #090e18;
+    clip-path: inherit;
+    z-index: -1;
 }
 
 /* Droite : Quick Contacts & Tray style GNOME */
@@ -459,34 +471,85 @@ h2 {
     align-items: center;
     gap: 6px;
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: var(--cut-6);
+    position: relative;
+    z-index: 1;
+    border: none;
     color: #d1d5db;
     font-size: 0.72rem;
     font-family: var(--font);
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+}
+
+.topbar-chip-btn::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0d0f17;
+    clip-path: inherit;
+    z-index: -1;
+    transition: all 0.25s ease;
 }
 
 .topbar-chip-btn:hover {
-    background: rgba(0, 81, 255, 0.18);
-    border-color: rgba(0, 81, 255, 0.5);
+    background: var(--accent);
     color: #fff;
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.4);
     transform: translateY(-1px);
 }
 
+.topbar-chip-btn:hover::before {
+    background: #111728;
+}
+
+/* Puce contact statique (non cliquable, pas de survol) */
+.topbar-chip-static {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    clip-path: var(--cut-6);
+    position: relative;
+    z-index: 1;
+    border: none;
+    color: #a3a3a3;
+    font-size: 0.72rem;
+    font-family: var(--font);
+    cursor: default;
+    user-select: text;
+}
+
+.topbar-chip-static::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0d0f17;
+    clip-path: inherit;
+    z-index: -1;
+}
+
 .topbar-chip-btn.cv-btn {
-    background: rgba(0, 81, 255, 0.15);
-    border-color: rgba(0, 81, 255, 0.35);
+    background: rgba(0, 81, 255, 0.45);
     color: #38bdf8;
     font-weight: 700;
+}
+
+.topbar-chip-btn.cv-btn::before {
+    background: #081220;
 }
 
 .topbar-chip-btn.cv-btn:hover {
     background: var(--accent);
     color: #fff;
+    box-shadow: 0 0 18px rgba(0, 81, 255, 0.55);
+}
+
+.topbar-chip-btn.cv-btn:hover::before {
+    background: #0d1a30;
 }
 
 .topbar-socials {
@@ -501,16 +564,32 @@ h2 {
     justify-content: center;
     width: 28px;
     height: 28px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: var(--cut-5);
+    position: relative;
+    z-index: 1;
+    border: none;
+    transition: all 0.25s ease;
+}
+
+.topbar-social-link::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #0d0f17;
+    clip-path: inherit;
+    z-index: -1;
+    transition: all 0.25s ease;
 }
 
 .topbar-social-link:hover {
-    background: rgba(0, 81, 255, 0.2);
-    border-color: rgba(0, 81, 255, 0.5);
+    background: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 81, 255, 0.4);
     transform: translateY(-1px);
+}
+
+.topbar-social-link:hover::before {
+    background: #111728;
 }
 
 .topbar-social-link img[alt="GitHub"],
@@ -523,25 +602,26 @@ h2 {
    ========================================================================== */
 .desktop-workspace {
     position: fixed;
-    top: 42px;
+    top: 64px;
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: hidden;
+    overflow: hidden !important;
     z-index: 10;
 }
 
 .desktop-view {
     position: absolute;
     inset: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1.5rem 2rem 110px 2rem;
+    overflow: hidden !important;
+    padding: 1rem 2rem 85px 2rem;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transform: translateY(12px) scale(0.99);
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 }
 
 .desktop-view.active {
@@ -552,28 +632,27 @@ h2 {
     z-index: 5;
 }
 
-/* Scrollbar interne épurée pour les vues */
-.desktop-view::-webkit-scrollbar {
-    width: 6px;
-}
-
-.desktop-view::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.desktop-view::-webkit-scrollbar-thumb {
-    background: rgba(0, 81, 255, 0.3);
-    border-radius: 4px;
-}
-
-.desktop-view::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 81, 255, 0.6);
-}
-
 .view-content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.desktop-view h2.section-title {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.desktop-view section {
+    padding: 0.5rem 0 1rem 0;
+}
+
+.desktop-view .project-filters {
+    margin: 0.8rem 0 1.2rem 0;
 }
 
 /* ==========================================================================
@@ -593,7 +672,6 @@ nav {
     clip-path: var(--cut-10);
     padding: 8px 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: slideInUp 0.8s ease-out forwards;
 }
 
 nav::before {
@@ -660,7 +738,7 @@ nav .logo span {
     color: #fff;
     background: var(--accent);
     box-shadow: var(--hover-shadow);
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
 }
 
 .nav-links a:hover::before,
@@ -671,44 +749,6 @@ nav .logo span {
 .nav-links a:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 81, 255, 0.35);
-}
-
-/* ==========================================================================
-   TOAST NOTIFICATION FLOTTANT
-   ========================================================================== */
-.toast-popup {
-    position: fixed;
-    top: 54px;
-    right: 20px;
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(10, 15, 26, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid #27c93f;
-    border-radius: 8px;
-    color: #27c93f;
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(39, 201, 63, 0.2);
-    transform: translateY(-20px);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.toast-popup.show {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.toast-icon {
-    font-size: 0.9rem;
 }
 
 /* --- BOUTONS & FILTRES CYBER AVEC CONTOUR FERMÉ --- */
@@ -755,7 +795,7 @@ nav .logo span {
 .filter-btn.active {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
 }
 
@@ -785,7 +825,7 @@ nav .logo span {
 
 .btn-primary:hover {
     background: #38bdf8;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 81, 255, 0.6);
 }
 
@@ -814,7 +854,7 @@ nav .logo span {
 .btn-outline:hover {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
 }
 
@@ -851,7 +891,7 @@ nav .logo span {
 .btn-project:hover {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
 }
 
@@ -887,7 +927,7 @@ nav .logo span {
 .btn-contact-pulse:hover {
     background: var(--accent);
     box-shadow: 0 0 25px rgba(0, 81, 255, 0.5);
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
 }
 
 .btn-contact-pulse:hover::before {
@@ -938,9 +978,6 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 800;
-    animation: slideInDown 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    animation-delay: 0.3s;
-    opacity: 0;
 }
 
 .typewriter {
@@ -1208,7 +1245,7 @@ h1 {
 }
 
 .project-card:hover {
-    transform: translateY(-2px) scale(1.02) !important;
+    transform: translateY(-2px) !important;
     background: var(--accent);
     box-shadow: var(--hover-shadow);
     z-index: 10;
@@ -1221,14 +1258,14 @@ h1 {
 .project-card:hover .btn-project {
     background: var(--accent);
     color: #fff;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
     box-shadow: var(--hover-shadow);
 }
 
 .project-card:hover .git-mini {
     color: #fff;
     opacity: 1;
-    transform: scale(1.1);
+    transform: none;
 }
 
 .project-card:hover .btn-project::before {
@@ -1304,7 +1341,7 @@ p.no-clamp {
 .git-mini:hover {
     color: #fff;
     opacity: 1;
-    transform: scale(1.1);
+    transform: none;
     background: rgba(255, 255, 255, 0.1);
     clip-path: var(--cut-4);
 }
@@ -1398,7 +1435,7 @@ p.no-clamp {
 
 .cert-card-horizontal:hover {
     background: var(--accent);
-    transform: translateY(-3px) scale(1.01);
+    transform: translateY(-3px);
     box-shadow: var(--hover-shadow);
 }
 
@@ -1426,7 +1463,7 @@ p.no-clamp {
 }
 
 .cert-card-horizontal:hover .cert-logo-img {
-    transform: scale(1.04);
+    transform: none;
 }
 
 .cert-content-side {
@@ -1541,7 +1578,7 @@ p.no-clamp {
     background: var(--accent);
     color: #fff;
     box-shadow: 0 0 16px rgba(0, 81, 255, 0.4);
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px);
 }
 
 .exp-tab-btn:hover::before,
@@ -1784,7 +1821,7 @@ p.no-clamp {
 
 .contact-card:hover {
     background: var(--accent);
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-4px);
     box-shadow: var(--hover-shadow);
 }
 
@@ -1803,7 +1840,7 @@ p.no-clamp {
 
 .contact-card:hover img,
 .contact-card:hover svg {
-    transform: scale(1.1);
+    transform: none;
 }
 
 .contact-info {
@@ -1844,11 +1881,13 @@ footer {
         display: none;
     }
 
-    .topbar-chip-btn .chip-text {
+    .topbar-chip-btn .chip-text,
+    .topbar-chip-static .chip-text {
         display: none;
     }
 
-    .topbar-chip-btn {
+    .topbar-chip-btn,
+    .topbar-chip-static {
         padding: 5px 7px;
     }
 }
@@ -1900,6 +1939,17 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .gnome-topbar {
+        top: 6px;
+        left: 8px;
+        right: 8px;
+        height: 40px;
+    }
+
+    .desktop-workspace {
+        top: 54px;
+    }
+
     nav {
         bottom: 12px;
         padding: 5px 8px;
