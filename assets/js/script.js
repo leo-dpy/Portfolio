@@ -180,29 +180,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Gestion des onglets de Compétences (Sécurité & Analyse / Systèmes & Réseaux / Outils & Scripting)
-    const skillsTabBtns = document.querySelectorAll('.skills-tab-btn');
-    const skillsPanels = document.querySelectorAll('.skills-panel');
+    // Gestion des onglets de Compétences (Design avec barre de progression)
+    const skillsTabPills = document.querySelectorAll('.skills-tab-pill, .skills-tab-btn');
+    const skillProgCards = document.querySelectorAll('.skill-prog-card, .skill-mini-card');
 
-    if (skillsTabBtns.length && skillsPanels.length) {
-        skillsTabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const targetTab = btn.getAttribute('data-tab');
+    if (skillsTabPills.length) {
+        skillsTabPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                const targetTab = pill.getAttribute('data-tab');
 
-                skillsTabBtns.forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-selected', 'false');
+                skillsTabPills.forEach(p => {
+                    p.classList.remove('active');
+                    p.setAttribute('aria-selected', 'false');
                 });
-                btn.classList.add('active');
-                btn.setAttribute('aria-selected', 'true');
+                pill.classList.add('active');
+                pill.setAttribute('aria-selected', 'true');
 
-                skillsPanels.forEach(panel => {
-                    if (panel.id === `panel-skills-${targetTab}`) {
-                        panel.classList.add('active');
-                    } else {
-                        panel.classList.remove('active');
-                    }
-                });
+                if (skillProgCards.length) {
+                    skillProgCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        if (targetTab === 'all' || category === targetTab) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeIn 0.25s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
             });
         });
     }

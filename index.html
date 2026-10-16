@@ -143,144 +143,400 @@
         <section id="skills">
             <h2 class="section-title">>_ COMPÉTENCES</h2>
 
-            <div class="skills-tabs-nav" role="tablist">
-                <button class="skills-tab-btn active" role="tab" aria-selected="true"
-                    data-tab="cyber-defense">SÉCURITÉ &amp; ANALYSE</button>
-                <button class="skills-tab-btn" role="tab" aria-selected="false"
-                    data-tab="reseaux-sys">SYSTÈMES &amp; RÉSEAUX</button>
-                <button class="skills-tab-btn" role="tab" aria-selected="false"
-                    data-tab="outils-dev">OUTILS &amp; MÉTHODES</button>
+            <!-- Barre d'onglets (style capture d'écran) -->
+            <div class="skills-tab-bar-container">
+                <div class="skills-tab-bar" role="tablist">
+                    <button class="skills-tab-pill active" role="tab" aria-selected="true" data-tab="cyber">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Cybersécurité
+                    </button>
+                    <button class="skills-tab-pill" role="tab" aria-selected="false" data-tab="sys-net">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Systèmes &amp; Réseaux
+                    </button>
+                    <button class="skills-tab-pill" role="tab" aria-selected="false" data-tab="tools">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                        Outils &amp; Méthodes
+                    </button>
+                </div>
             </div>
 
-            <div class="skills-tab-content">
-                <!-- Panneau 1 : Sécurité & Analyse (Forensic & OSINT) -->
-                <div id="panel-skills-cyber-defense" class="skills-panel active" role="tabpanel">
-                    <div class="skills-cards-list">
-                        <article class="exp-card exp-card-current">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">AVANCÉ</span>
-                                    <span class="exp-badge exp-badge-current">ANALYSE POST-INCIDENT</span>
-                                </div>
-                                <span class="exp-company">INVESTIGATION NUMÉRIQUE</span>
+            <div class="skills-progress-grid" id="skills-progress-grid">
+                <!-- ================= CYBERSÉCURITÉ ================= -->
+                <!-- 1. Investigation Forensic (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="cyber">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
                             </div>
-                            <h3 class="exp-card-title">Investigation Numérique &amp; Forensic</h3>
-                            <p class="exp-card-desc">Analyse d'artefacts disques et mémoires (dumps RAM), extraction de traces et préservation de la chaîne de preuve numérique.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>Forensic</span>
-                                <span>Autopsy</span>
-                                <span>Volatility</span>
-                                <span>Dumps RAM</span>
-                                <span>Analyse de Traces</span>
-                            </div>
-                        </article>
-
-                        <article class="exp-card">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">OPÉRATIONNEL</span>
-                                    <span class="exp-badge">EXERCICE ORION 2026</span>
-                                </div>
-                                <span class="exp-company">THREAT INTELLIGENCE</span>
-                            </div>
-                            <h3 class="exp-card-title">OSINT &amp; Reconnaissance de Menaces</h3>
-                            <p class="exp-card-desc">Collecte et corrélation de renseignements en sources ouvertes, cartographie d'empreintes numériques et analyse de désinformation.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>OSINT</span>
-                                <span>Shodan</span>
-                                <span>Maltego</span>
-                                <span>Reconnaissance</span>
-                                <span>Veille Menaces</span>
-                            </div>
-                        </article>
+                            <h3 class="skill-prog-title">Investigation Forensic</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Panneau 2 : Systèmes & Réseaux (Linux, Windows, Réseau, Modèle OSI) -->
-                <div id="panel-skills-reseaux-sys" class="skills-panel" role="tabpanel">
-                    <div class="skills-cards-list">
-                        <article class="exp-card exp-card-current">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">OPÉRATIONNEL</span>
-                                    <span class="exp-badge exp-badge-current">ADMIN SYS &amp; HARDENING</span>
-                                </div>
-                                <span class="exp-company">SYSTÈMES IT</span>
-                            </div>
-                            <h3 class="exp-card-title">Administration Systèmes Linux &amp; Windows</h3>
-                            <p class="exp-card-desc">Administration quotidienne Linux (Debian, Ubuntu, Kali) et parcs Windows / Active Directory, permissions Unix, GPO et durcissement.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>Linux</span>
-                                <span>Debian / Kali</span>
-                                <span>Windows Server</span>
-                                <span>Active Directory</span>
-                                <span>Bash</span>
-                            </div>
-                        </article>
-
-                        <article class="exp-card">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">MAÎTRISÉ</span>
-                                    <span class="exp-badge">ARCHITECTURE &amp; PROTOCOLES</span>
-                                </div>
-                                <span class="exp-company">RÉSEAU IT</span>
-                            </div>
-                            <h3 class="exp-card-title">Réseaux &amp; Modèle OSI</h3>
-                            <p class="exp-card-desc">Maîtrise des protocoles fondamentaux (TCP/IP, DNS, DHCP), découpage en sous-réseaux (CIDR/VLSM) et capture/analyse de trames avec Wireshark.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>Réseau</span>
-                                <span>Modèle OSI</span>
-                                <span>TCP/IP</span>
-                                <span>Wireshark</span>
-                                <span>DNS / DHCP</span>
-                            </div>
-                        </article>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
                     </div>
-                </div>
+                </article>
 
-                <!-- Panneau 3 : Outils & Méthodes (VMware, GitHub, Jira, Ticketing) -->
-                <div id="panel-skills-outils-dev" class="skills-panel" role="tabpanel">
-                    <div class="skills-cards-list">
-                        <article class="exp-card exp-card-current">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">OPÉRATIONNEL</span>
-                                    <span class="exp-badge exp-badge-current">LABS &amp; VERSIONING</span>
-                                </div>
-                                <span class="exp-company">ENVIRONNEMENT TECHNIQUE</span>
+                <!-- 2. Autopsy (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="cyber">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
                             </div>
-                            <h3 class="exp-card-title">Virtualisation &amp; GitHub (VMware / Docker)</h3>
-                            <p class="exp-card-desc">Déploiement d'environnements de test et labs cyber sous VMware et VirtualBox, gestion de dépôts et suivi de versions avec Git &amp; GitHub.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>VMware</span>
-                                <span>VirtualBox</span>
-                                <span>Docker</span>
-                                <span>GitHub</span>
-                                <span>Git</span>
-                            </div>
-                        </article>
-
-                        <article class="exp-card">
-                            <div class="exp-card-header">
-                                <div class="exp-card-meta">
-                                    <span class="exp-date">OPÉRATIONNEL</span>
-                                    <span class="exp-badge">SUPPORT &amp; PROCESS</span>
-                                </div>
-                                <span class="exp-company">GESTION D'INCIDENTS</span>
-                            </div>
-                            <h3 class="exp-card-title">Jira &amp; Ticketing (Support IT)</h3>
-                            <p class="exp-card-desc">Prise en charge des demandes utilisateurs, qualification et suivi rigoureux des incidents informatiques et gestion du flux de tickets sous Jira.</p>
-                            <div class="p-stack" style="margin-top: 10px;">
-                                <span>Jira</span>
-                                <span>Ticketing</span>
-                                <span>Support IT</span>
-                                <span>Gestion Incidents</span>
-                                <span>Escalade</span>
-                            </div>
-                        </article>
+                            <h3 class="skill-prog-title">Autopsy (Analyse Disque)</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
                     </div>
-                </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 3. OSINT (Sources Ouvertes) (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="cyber">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">OSINT &amp; Sources Ouvertes</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 4. Sécurité des Réseaux (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="cyber">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+                                    <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+                                    <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+                                    <path d="M12 8v4m-7 4v-2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Sécurité des Réseaux</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- ================= SYSTÈMES & RÉSEAUX ================= -->
+                <!-- 5. Linux (Debian / Kali) (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="4 17 10 11 4 5"></polyline>
+                                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Linux (Debian / Kali)</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 6. Windows Server (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                                    <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Windows Server</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 7. Active Directory & GPO (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Active Directory &amp; GPO</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 8. Protocoles & TCP/IP (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="6" height="6" rx="1"></rect>
+                                    <rect x="16" y="2" width="6" height="6" rx="1"></rect>
+                                    <rect x="9" y="16" width="6" height="6" rx="1"></rect>
+                                    <path d="M5 8v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"></path>
+                                    <path d="M12 12v4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Protocoles &amp; TCP/IP</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 9. Modèle OSI & CIDR (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Modèle OSI &amp; CIDR</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 10. Scripting Bash (3/5 -> 60%) -->
+                <article class="skill-prog-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Scripting Bash</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- ================= OUTILS & MÉTHODES ================= -->
+                <!-- 11. Virtualisation (VMware / VBox) (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="tools" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Virtualisation (VMware / VBox)</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 12. Git & GitHub (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="tools" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                                    <circle cx="18" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Git &amp; GitHub</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 13. Jira & Ticketing (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="tools" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Jira &amp; Ticketing</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 14. Support & Diagnostic IT (4/5 -> 80%) -->
+                <article class="skill-prog-card" data-category="tools" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Support &amp; Maintenance IT</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
             </div>
         </section>
             </div>
