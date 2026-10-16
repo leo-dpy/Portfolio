@@ -180,7 +180,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Les onglets de compétences ont été remplacés par des carrousels infinis purs CSS
+    // Gestion des onglets de Compétences (Sécurité & Analyse / Systèmes & Réseaux / Outils & Scripting)
+    const skillsTabBtns = document.querySelectorAll('.skills-tab-btn');
+    const skillsPanels = document.querySelectorAll('.skills-panel');
+
+    if (skillsTabBtns.length && skillsPanels.length) {
+        skillsTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+
+                skillsTabBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                skillsPanels.forEach(panel => {
+                    if (panel.id === `panel-skills-${targetTab}`) {
+                        panel.classList.add('active');
+                    } else {
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
 
     // Redirection au clic sur les cartes de projets
     const projectCards = document.querySelectorAll('.project-card');
@@ -204,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const projectsGrid = document.querySelector('#projets .projects-grid');
 
-    let currentFilter = 'ynov-b1';
+    let currentFilter = 'projets';
     let isProjetsExpanded = false;
 
     function applyFilter(filterValue) {

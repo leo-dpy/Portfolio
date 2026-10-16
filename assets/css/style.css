@@ -651,8 +651,10 @@ h2 {
     padding: 0.5rem 0 1rem 0;
 }
 
-.desktop-view .project-filters {
-    margin: 0.8rem 0 1.2rem 0;
+.desktop-view .project-filters,
+.desktop-view .exp-tabs-nav,
+.desktop-view .skills-tabs-nav {
+    margin: 0.6rem 0 1rem 0;
 }
 
 /* ==========================================================================
@@ -1093,116 +1095,7 @@ h1 {
     text-transform: none;
 }
 
-/* --- COMPÉTENCES --- */
-.skills-carousel-wrapper {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding-bottom: 20px;
-}
-
-.carousel-category {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.carousel-title {
-    font-size: 1.1rem;
-    color: var(--accent);
-    margin: 0;
-    text-align: center;
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 81, 255, 0.4);
-}
-
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 0;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.carousel-track {
-    display: flex;
-    width: max-content;
-}
-
-.track-left {
-    animation: scrollLeft 30s linear infinite;
-}
-
-.track-right {
-    animation: scrollRight 30s linear infinite;
-}
-
-.carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px;
-    margin: 0 15px;
-    background: rgba(255, 255, 255, 0.15);
-    border: none !important;
-    position: relative;
-    z-index: 1;
-    clip-path: var(--cut-8);
-    min-width: 130px;
-    height: 120px;
-    box-sizing: border-box;
-    cursor: default;
-}
-
-.carousel-item::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    background: #0a0a10;
-    clip-path: inherit;
-    z-index: -1;
-    transition: all 0.3s ease;
-}
-
-.carousel-item img {
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
-    transition: transform 0.3s ease;
-}
-
-.carousel-item span {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #e0e0e0;
-    letter-spacing: 1px;
-}
-
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-100% / var(--copies, 3)));
-    }
-}
-
-@keyframes scrollRight {
-    0% {
-        transform: translateX(calc(-100% / var(--copies, 3)));
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-/* --- PROJETS --- */
+/* --- PROJETS (CYBERSÉCURITÉ) --- */
 .project-filters {
     display: flex;
     justify-content: center;
@@ -1216,6 +1109,12 @@ h1 {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
     align-items: stretch;
+}
+
+#projets .projects-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 }
 
 .project-card {
@@ -1537,8 +1436,9 @@ p.no-clamp {
     color: #fff;
 }
 
-/* --- SECTION PARCOURS (ONGLETS & CARTES ÉPURÉES) --- */
-.exp-tabs-nav {
+/* --- SECTION PARCOURS & COMPÉTENCES (ONGLETS & CARTES ÉPURÉES) --- */
+.exp-tabs-nav,
+.skills-tabs-nav {
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -1546,7 +1446,8 @@ p.no-clamp {
     flex-wrap: wrap;
 }
 
-.exp-tab-btn {
+.exp-tab-btn,
+.skills-tab-btn {
     background: rgba(255, 255, 255, 0.15);
     border: none !important;
     position: relative;
@@ -1563,7 +1464,8 @@ p.no-clamp {
     text-transform: uppercase;
 }
 
-.exp-tab-btn::before {
+.exp-tab-btn::before,
+.skills-tab-btn::before {
     content: "";
     position: absolute;
     inset: 1px;
@@ -1574,7 +1476,9 @@ p.no-clamp {
 }
 
 .exp-tab-btn:hover,
-.exp-tab-btn.active {
+.exp-tab-btn.active,
+.skills-tab-btn:hover,
+.skills-tab-btn.active {
     background: var(--accent);
     color: #fff;
     box-shadow: 0 0 16px rgba(0, 81, 255, 0.4);
@@ -1582,28 +1486,34 @@ p.no-clamp {
 }
 
 .exp-tab-btn:hover::before,
-.exp-tab-btn.active::before {
+.exp-tab-btn.active::before,
+.skills-tab-btn:hover::before,
+.skills-tab-btn.active::before {
     background: #0a0a10;
 }
 
-.exp-tab-content {
+.exp-tab-content,
+.skills-tab-content {
     max-width: 820px;
     margin: 0 auto;
 }
 
-.exp-panel {
+.exp-panel,
+.skills-panel {
     display: none;
 }
 
-.exp-panel.active {
+.exp-panel.active,
+.skills-panel.active {
     display: block;
     animation: fadeIn 0.35s ease;
 }
 
-.exp-cards-list {
+.exp-cards-list,
+.skills-cards-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
 
 .exp-card {
@@ -1612,7 +1522,7 @@ p.no-clamp {
     position: relative;
     z-index: 1;
     clip-path: var(--cut-8);
-    padding: 20px 24px;
+    padding: 14px 20px;
     cursor: default;
     box-sizing: border-box;
     transition: all 0.3s ease;
@@ -1626,6 +1536,12 @@ p.no-clamp {
     clip-path: inherit;
     z-index: -1;
     transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+    background: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 81, 255, 0.35);
+    transform: translateY(-2px);
 }
 
 .exp-card.exp-card-current {

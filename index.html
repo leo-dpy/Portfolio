@@ -143,203 +143,144 @@
         <section id="skills">
             <h2 class="section-title">>_ COMPÉTENCES</h2>
 
-            <div class="skills-carousel-wrapper">
+            <div class="skills-tabs-nav" role="tablist">
+                <button class="skills-tab-btn active" role="tab" aria-selected="true"
+                    data-tab="cyber-defense">SÉCURITÉ &amp; ANALYSE</button>
+                <button class="skills-tab-btn" role="tab" aria-selected="false"
+                    data-tab="reseaux-sys">SYSTÈMES &amp; RÉSEAUX</button>
+                <button class="skills-tab-btn" role="tab" aria-selected="false"
+                    data-tab="outils-dev">OUTILS &amp; MÉTHODES</button>
+            </div>
 
-                <!-- Frontend Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">FRONTEND</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-left" style="--copies: 4;">
-                            <!-- Copie 1 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 2 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 3 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 4 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                        </div>
+            <div class="skills-tab-content">
+                <!-- Panneau 1 : Sécurité & Analyse (Forensic & OSINT) -->
+                <div id="panel-skills-cyber-defense" class="skills-panel active" role="tabpanel">
+                    <div class="skills-cards-list">
+                        <article class="exp-card exp-card-current">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">AVANCÉ</span>
+                                    <span class="exp-badge exp-badge-current">ANALYSE POST-INCIDENT</span>
+                                </div>
+                                <span class="exp-company">INVESTIGATION NUMÉRIQUE</span>
+                            </div>
+                            <h3 class="exp-card-title">Investigation Numérique &amp; Forensic</h3>
+                            <p class="exp-card-desc">Analyse d'artefacts disques et mémoires (dumps RAM), extraction de traces et préservation de la chaîne de preuve numérique.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>Forensic</span>
+                                <span>Autopsy</span>
+                                <span>Volatility</span>
+                                <span>Dumps RAM</span>
+                                <span>Analyse de Traces</span>
+                            </div>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">OPÉRATIONNEL</span>
+                                    <span class="exp-badge">EXERCICE ORION 2026</span>
+                                </div>
+                                <span class="exp-company">THREAT INTELLIGENCE</span>
+                            </div>
+                            <h3 class="exp-card-title">OSINT &amp; Reconnaissance de Menaces</h3>
+                            <p class="exp-card-desc">Collecte et corrélation de renseignements en sources ouvertes, cartographie d'empreintes numériques et analyse de désinformation.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>OSINT</span>
+                                <span>Shodan</span>
+                                <span>Maltego</span>
+                                <span>Reconnaissance</span>
+                                <span>Veille Menaces</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Backend Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">BACKEND & LOGICIEL</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-right" style="--copies: 3;">
-                            <!-- Copie 1 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                            <!-- Copie 2 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                            <!-- Copie 3 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                        </div>
+                <!-- Panneau 2 : Systèmes & Réseaux (Linux, Windows, Réseau, Modèle OSI) -->
+                <div id="panel-skills-reseaux-sys" class="skills-panel" role="tabpanel">
+                    <div class="skills-cards-list">
+                        <article class="exp-card exp-card-current">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">OPÉRATIONNEL</span>
+                                    <span class="exp-badge exp-badge-current">ADMIN SYS &amp; HARDENING</span>
+                                </div>
+                                <span class="exp-company">SYSTÈMES IT</span>
+                            </div>
+                            <h3 class="exp-card-title">Administration Systèmes Linux &amp; Windows</h3>
+                            <p class="exp-card-desc">Administration quotidienne Linux (Debian, Ubuntu, Kali) et parcs Windows / Active Directory, permissions Unix, GPO et durcissement.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>Linux</span>
+                                <span>Debian / Kali</span>
+                                <span>Windows Server</span>
+                                <span>Active Directory</span>
+                                <span>Bash</span>
+                            </div>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">MAÎTRISÉ</span>
+                                    <span class="exp-badge">ARCHITECTURE &amp; PROTOCOLES</span>
+                                </div>
+                                <span class="exp-company">RÉSEAU IT</span>
+                            </div>
+                            <h3 class="exp-card-title">Réseaux &amp; Modèle OSI</h3>
+                            <p class="exp-card-desc">Maîtrise des protocoles fondamentaux (TCP/IP, DNS, DHCP), découpage en sous-réseaux (CIDR/VLSM) et capture/analyse de trames avec Wireshark.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>Réseau</span>
+                                <span>Modèle OSI</span>
+                                <span>TCP/IP</span>
+                                <span>Wireshark</span>
+                                <span>DNS / DHCP</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Infra/Tools Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">INFRA & OUTILS</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-left" style="--copies: 3;">
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
+                <!-- Panneau 3 : Outils & Méthodes (VMware, GitHub, Jira, Ticketing) -->
+                <div id="panel-skills-outils-dev" class="skills-panel" role="tabpanel">
+                    <div class="skills-cards-list">
+                        <article class="exp-card exp-card-current">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">OPÉRATIONNEL</span>
+                                    <span class="exp-badge exp-badge-current">LABS &amp; VERSIONING</span>
+                                </div>
+                                <span class="exp-company">ENVIRONNEMENT TECHNIQUE</span>
+                            </div>
+                            <h3 class="exp-card-title">Virtualisation &amp; GitHub (VMware / Docker)</h3>
+                            <p class="exp-card-desc">Déploiement d'environnements de test et labs cyber sous VMware et VirtualBox, gestion de dépôts et suivi de versions avec Git &amp; GitHub.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>VMware</span>
+                                <span>VirtualBox</span>
+                                <span>Docker</span>
+                                <span>GitHub</span>
+                                <span>Git</span>
+                            </div>
+                        </article>
 
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-                        </div>
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">OPÉRATIONNEL</span>
+                                    <span class="exp-badge">SUPPORT &amp; PROCESS</span>
+                                </div>
+                                <span class="exp-company">GESTION D'INCIDENTS</span>
+                            </div>
+                            <h3 class="exp-card-title">Jira &amp; Ticketing (Support IT)</h3>
+                            <p class="exp-card-desc">Prise en charge des demandes utilisateurs, qualification et suivi rigoureux des incidents informatiques et gestion du flux de tickets sous Jira.</p>
+                            <div class="p-stack" style="margin-top: 10px;">
+                                <span>Jira</span>
+                                <span>Ticketing</span>
+                                <span>Support IT</span>
+                                <span>Gestion Incidents</span>
+                                <span>Escalade</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
-
             </div>
         </section>
             </div>
@@ -349,236 +290,27 @@
         <div id="view-projets" class="desktop-view" role="region" aria-label="Vue Projets">
             <div class="view-content-wrapper">
         <section id="projets">
-            <h2 class="section-title">>_ PROJETS</h2>
+            <h2 class="section-title">>_ PROJETS &amp; LABS</h2>
 
             <div class="project-filters">
-                <button class="filter-btn" data-filter="perso">PROJETS PERSO</button>
-                <button class="filter-btn active" data-filter="ynov-b1">PROJETS YNOV B1</button>
-
-                <button class="filter-btn" data-filter="ynov-b2">PROJETS YNOV B2</button>
-                <button class="filter-btn" data-filter="ydays">PROJET YDAYS</button>
+                <button class="filter-btn active" data-filter="projets">PROJETS (AEGIS &amp; CYBERSENS)</button>
+                <button class="filter-btn" data-filter="labs">LABS (VPS &amp; À VENIR)</button>
             </div>
 
             <div class="projects-grid">
-                <article class="project-card online-card featured-project" data-category="ynov-b1">
+                <!-- PROJET 1 : AEGIS -->
+                <article class="project-card online-card featured-project" data-category="projets">
                     <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
+                        <span class="p-type">SECURITY TOOLKIT</span><span class="p-status online">● EN LIGNE</span>
                     </div>
-                    <div class="project-body">
-                        <h3>Groupie Tracker</h3>
-                        <p>Application musicale avec API Go et visualisation de données. Interface web dynamique.</p>
-                        <div class="p-stack">
-                            <span>GO</span>
-                            <span>API</span>
-                            <span>YOUTUBE API</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Groupie-Tracker" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://groupie-tracker.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card featured-project" data-category="ynov-b1">
-                    <div class="project-header">
-                        <span class="p-type">GAME ENGINE</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Power 4</h3>
-                        <p>Jeu Puissance 4 complet avec différentes fonctionnalités, difficultés et IA intégrée.</p>
-                        <div class="p-stack">
-                            <span>JS</span>
-                            <span>ALGORYTHMIE</span>
-                            <span>IA</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Power-4" class="git-mini" target="_blank" rel="noopener"
-                                aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://power4.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE
-                                PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article id="project-ysync" class="project-card online-card" data-category="ynov-b1">
-                    <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Ysync</h3>
-                        <p>Plateforme de gestion complète : location de matériel, réservation de salles.</p>
-                        <div class="p-stack">
-                            <span>BLAZOR / C#</span>
-                            <span>NEST.JS</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Ysync" class="git-mini" target="_blank" rel="noopener"
-                                aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://ysync.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card" data-category="ynov-b1">
-                    <div class="project-header">
-                        <span class="p-type">DASHBOARD</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>DailyHub</h3>
-                        <p>Dashboard interactif sous forme de widgets personnalisés affichant diverses données en temps
-                            réel.</p>
-                        <div class="p-stack">
-                            <span>JS</span>
-                            <span>API</span>
-                            <span>DOCKER</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/DailyHub" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://dailyhub.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card" data-category="ynov-b1">
-                    <div class="project-header">
-                        <span class="p-type">FORUM</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>The Hive</h3>
-                        <p>Développement d'un forum complet avec un backend en Go, intégrant toutes les fonctionnalités
-                            classiques d'un forum.</p>
-                        <div class="p-stack">
-                            <span>GO</span>
-                            <span>BACKEND</span>
-                            <span>SQLITE</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/the-hive" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://the-hive.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article id="project-quizball" class="project-card online-card featured-project"
-                    data-category="ynov-b2">
-                    <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Quizball</h3>
-                        <p>Application web de quiz sportif interactif (football, basket, tennis) avec chrono et score en
-                            temps réel.</p>
-                        <div class="p-stack">
-                            <span>REACT</span>
-                            <span>TYPESCRIPT</span>
-                            <span>LARAVEL</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Quizball.git" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://quizball.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="project-card online-card featured-project" data-category="perso">
-                    <div class="project-header"><span class="p-type">SIMULATEUR</span><span class="p-status online">●
-                            ONLINE</span></div>
-                    <div class="project-body">
-                        <h3>Pokemon Battle</h3>
-                        <p>Simulateur de combat pokémon interactif sur navigateur. Gestion des types, attaques et PV.
-                        </p>
-                        <div class="p-stack">
-                            <span>JS</span>
-                            <span>GAME LOGIC</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Pokemon-Battle" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://pokemon-battle.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card" data-category="perso">
-                    <div class="project-header"><span class="p-type">TOOLKIT</span><span class="p-status online">●
-                            ONLINE</span></div>
                     <div class="project-body">
                         <h3>Aegis</h3>
-                        <p>Boîte à outils de sécurité et confidentialité. Traitement local, analyse IP, et gestion de
-                            fichiers sécurisée.</p>
+                        <p>Boîte à outils de sécurité et confidentialité : analyse IP et en-têtes, test d'entropie de mots de passe, et chiffrement/gestion sécurisée de fichiers en local côté client sans stockage distant.</p>
                         <div class="p-stack">
-                            <span>JS</span>
-                            <span>SECURITÉ</span>
+                            <span>SÉCURITÉ</span>
                             <span>PRIVACY</span>
+                            <span>ANALYSE IP</span>
+                            <span>CHIFFREMENT</span>
                         </div>
                     </div>
                     <div class="project-footer" style="justify-content: flex-end;">
@@ -590,50 +322,75 @@
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                     </path>
                                 </svg></a>
-                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE PROJET</a>
+                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER À L'OUTIL</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card offline-card" data-category="perso">
-                    <div class="project-header"><span class="p-type">SECURE TRANSFER</span><span
-                            class="p-status offline">● EN DEV</span></div>
+                <!-- PROJET 2 : CYBERSENS -->
+                <article id="project-cybersens" class="project-card offline-card featured-project" data-category="projets">
+                    <div class="project-header">
+                        <span class="p-type">SENSIBILISATION CYBER</span><span class="p-status offline">● PROJET ÉCOLE</span>
+                    </div>
                     <div class="project-body">
-                        <h3>Protocol X</h3>
-                        <p>Coffre-fort d'envoi et salons de communication éphémères P2P. Chiffrement de bout en bout et
-                            auto-destruction.</p>
+                        <h3>CyberSens</h3>
+                        <p class="no-clamp">Plateforme de sensibilisation à la cybersécurité (projet YDays 1 an) : simulateur d'attaques par phishing, modules interactifs, quiz adaptatifs et suivi de progression face aux menaces.</p>
                         <div class="p-stack">
-                            <span>NODE.JS</span>
-                            <span>WEBRTC</span>
-                            <span>CRYPTO API</span>
+                            <span>SENSIBILISATION</span>
+                            <span>PHISHING</span>
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>PÉDAGOGIE</span>
                         </div>
                     </div>
                     <div class="project-footer" style="justify-content: flex-end;">
                         <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Protocol-X.git" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <span class="btn-project btn-locked">COMING SOON</span>
+                            <span class="btn-project btn-locked">FINALISÉ &bull; YDAYS</span>
                         </div>
                     </div>
                 </article>
 
-                <article id="project-cybersens" class="project-card offline-card featured-project"
-                    data-category="ydays">
+                <!-- LAB 1 : MON VPS & HOMELAB -->
+                <article class="project-card online-card featured-project" data-category="labs">
                     <div class="project-header">
-                        <span class="p-type">CYBERSECURITY</span><span class="p-status offline">● HORS LIGNE</span>
+                        <span class="p-type">INFRASTRUCTURE &amp; LAB</span><span class="p-status online">● EN SERVICE</span>
                     </div>
                     <div class="project-body">
-                        <h3>CyberSens</h3>
-                        <p class="no-clamp">Participation pendant 1 an à la conception d'une plateforme de
-                            sensibilisation à la cybersécurité : phishing, cours interactifs, quiz adaptatifs et
-                            suivi de progression.</p>
+                        <h3>VPS Personnel &amp; Labs</h3>
+                        <p>Administration et durcissement d'un serveur VPS Linux Debian : configuration pare-feu (UFW/iptables), accès SSH sécurisé par clés, reverse proxy Nginx et conteneurs Docker pour services et tests.</p>
+                        <div class="p-stack">
+                            <span>VPS LINUX</span>
+                            <span>DEBIAN</span>
+                            <span>HARDENING</span>
+                            <span>DOCKER</span>
+                            <span>REVERSE PROXY</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <span class="btn-project" style="cursor: default; pointer-events: none; border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">INFRA OPÉRATIONNELLE</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- LAB 2 : PROJET QUI ARRIVE BIENTÔT -->
+                <article class="project-card offline-card" data-category="labs">
+                    <div class="project-header">
+                        <span class="p-type">SÉCURITÉ CYBER</span><span class="p-status offline">● EN DEV</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Projet Cyber à Venir</h3>
+                        <p>Nouveau projet en cours de conception et développement, axé sur l'investigation numérique, l'audit technique et la sécurité des protocoles. Architecture et fonctionnalités en préparation.</p>
+                        <div class="p-stack">
+                            <span>CYBERSÉCURITÉ</span>
+                            <span>AUDIT</span>
+                            <span>INVESTIGATION</span>
+                            <span>DEV SÉCURISÉ</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked">COMING SOON</span>
+                        </div>
                     </div>
                 </article>
             </div>
