@@ -128,8 +128,8 @@
                     </div>
                     <div class="bio">
                         <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en deuxième année de <strong>Bachelor
-                                Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis
-                            toujours, j'ai construit mon parcours autour de cette vocation.</p>
+                                Cybersécurité à Lille Ynov Campus</strong>.</p>
+                        <p style="margin-top: 10px;">Méthodique et rigoureux, je recherche un <strong>stage opérationnel de 1 mois minimum à partir de mai 2027</strong> avec poursuite en <strong>alternance pour mon Bachelor 3 (2027-2028)</strong> afin de m'investir sur le terrain au sein de vos équipes techniques.</p>
                     </div>
                 </div>
             </div>
@@ -368,7 +368,7 @@
                                     <path d="M12 12v4"></path>
                                 </svg>
                             </div>
-                            <h3 class="skill-prog-title">Protocoles &amp; TCP/IP</h3>
+                            <h3 class="skill-prog-title">Protocoles (TCP/IP, DHCP, DNS)</h3>
                         </div>
                         <div class="skill-prog-levels">
                             <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
@@ -537,6 +537,32 @@
                         <div class="skill-prog-fill" style="width: 80%;"></div>
                     </div>
                 </article>
+
+                <!-- 15. Bases de données & MySQL (3/5 -> 60% Intermédiaire, issu du CV) -->
+                <article class="skill-prog-card" data-category="tools" style="display: none;">
+                    <div class="skill-prog-header">
+                        <div class="skill-prog-info">
+                            <div class="skill-prog-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-prog-title">Bases de données &amp; MySQL</h3>
+                        </div>
+                        <div class="skill-prog-levels">
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check active"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span class="level-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
             </div>
         </section>
             </div>
@@ -557,14 +583,15 @@
                 <!-- PROJET 1 : AEGIS -->
                 <article class="project-card online-card featured-project" data-category="projets">
                     <div class="project-header">
-                        <span class="p-type">SECURITY TOOLKIT</span><span class="p-status online">● EN LIGNE</span>
+                        <span class="p-type">HYGIÈNE NUMÉRIQUE &amp; SÉCURITÉ</span><span class="p-status online">● EN LIGNE</span>
                     </div>
                     <div class="project-body">
                         <h3>Aegis</h3>
-                        <p>Boîte à outils de sécurité et confidentialité : analyse IP et en-têtes, test d'entropie de mots de passe, et chiffrement/gestion sécurisée de fichiers en local côté client sans stockage distant.</p>
+                        <p>Boîte à outils de sécurité et d'hygiène numérique : générateur de mots de passe et QR codes sécurisés, vérification de liens et d'e-mails, contrôle d'intégrité de fichiers (hash SHA-256), analyse IP et chiffrement local client-side sans transfert distant.</p>
                         <div class="p-stack">
-                            <span>SÉCURITÉ</span>
-                            <span>PRIVACY</span>
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>QR &amp; PASSWORDS</span>
+                            <span>INTÉGRITÉ HASH</span>
                             <span>ANALYSE IP</span>
                             <span>CHIFFREMENT</span>
                         </div>
@@ -590,7 +617,7 @@
                     </div>
                     <div class="project-body">
                         <h3>CyberSens</h3>
-                        <p class="no-clamp">Plateforme de sensibilisation à la cybersécurité (projet YDays 1 an) : simulateur d'attaques par phishing, modules interactifs, quiz adaptatifs et suivi de progression face aux menaces.</p>
+                        <p class="no-clamp">Plateforme dédiée à la sensibilisation et aux outils de cybersécurité (projet YDays 1 an) : simulateur d'attaques par phishing, modules interactifs, quiz adaptatifs et suivi de progression face aux menaces.</p>
                         <div class="p-stack">
                             <span>SENSIBILISATION</span>
                             <span>PHISHING</span>
@@ -612,13 +639,13 @@
                     </div>
                     <div class="project-body">
                         <h3>VPS Personnel &amp; Labs</h3>
-                        <p>Administration et durcissement d'un serveur VPS Linux Debian : configuration pare-feu (UFW/iptables), accès SSH sécurisé par clés, reverse proxy Nginx et conteneurs Docker pour services et tests.</p>
+                        <p>Déploiement et sécurisation de services conteneurisés via Coolify &amp; Docker (portfolio, base de données) sur serveur VPS Linux (OVH / Debian) : durcissement système, filtrage réseau pare-feu et protection contre les intrusions avec Fail2ban.</p>
                         <div class="p-stack">
-                            <span>VPS LINUX</span>
-                            <span>DEBIAN</span>
+                            <span>VPS LINUX (OVH)</span>
+                            <span>DOCKER &amp; COOLIFY</span>
+                            <span>FAIL2BAN</span>
                             <span>HARDENING</span>
-                            <span>DOCKER</span>
-                            <span>REVERSE PROXY</span>
+                            <span>BASE DE DONNÉES</span>
                         </div>
                     </div>
                     <div class="project-footer" style="justify-content: flex-end;">
@@ -848,26 +875,34 @@
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
                                     <span class="exp-date">2023</span>
-                                    <span class="exp-badge">STAGE</span>
+                                    <span class="exp-badge">STAGE SOC</span>
                                 </div>
                                 <span class="exp-company">IBM FRANCE &bull; LILLE</span>
                             </div>
-                            <h3 class="exp-card-title">Stage Cybersécurité (SOC)</h3>
-                            <p class="exp-card-desc">Immersion dans un Security Operations Center (SOC) et découverte
-                                approfondie des métiers et outils de la cybersécurité.</p>
+                            <h3 class="exp-card-title">Stage Cybersécurité</h3>
+                            <p class="exp-card-desc">Immersion au sein d'un Security Operations Center (SOC) et découverte des métiers de la cybersécurité :</p>
+                            <ul class="exp-bullets">
+                                <li>Observation du fonctionnement d'un SOC et de ses outils d'analyse et de détection.</li>
+                                <li>Acquisition de connaissances sur divers métiers et processus liés à la cybersécurité opérationnelle.</li>
+                                <li>Participation à des projets d'analyse des menaces et amélioration de la compréhension des enjeux actuels.</li>
+                            </ul>
                         </article>
 
                         <article class="exp-card">
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
                                     <span class="exp-date">2022</span>
-                                    <span class="exp-badge">STAGE</span>
+                                    <span class="exp-badge">STAGE IT</span>
                                 </div>
                                 <span class="exp-company">MICRO LOGIS &bull; PECQUENCOURT</span>
                             </div>
                             <h3 class="exp-card-title">Stage Réparateur Informatique</h3>
-                            <p class="exp-card-desc">Diagnostic matériel, réparations de parcs informatiques,
-                                installation de systèmes d'exploitation et gestion autonome de l'atelier technique.</p>
+                            <p class="exp-card-desc">Maintenance matérielle, assistance technique et gestion autonome de l'atelier :</p>
+                            <ul class="exp-bullets">
+                                <li>Réparation d'ordinateurs, diagnostic matériel et installation/remplacement de disques durs.</li>
+                                <li>Assistance technique et support sur divers systèmes d'exploitation (Windows, Linux).</li>
+                                <li>Gestion autonome de l'atelier technique et préparation des postes informatiques.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
@@ -878,14 +913,17 @@
                         <article class="exp-card">
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
-                                    <span class="exp-date">JUIN - AOÛT 2026</span>
+                                    <span class="exp-date">MAI - SEPTEMBRE 2026</span>
                                     <span class="exp-badge">JOB ÉTUDIANT</span>
                                 </div>
                                 <span class="exp-company">LA CROIX OU PILE</span>
                             </div>
                             <h3 class="exp-card-title">Saisonnier en Restauration</h3>
-                            <p class="exp-card-desc">Plonge, préparation des commandes, mise en place de la terrasse et
-                                service.</p>
+                            <p class="exp-card-desc">Travail d'équipe soutenu, rigueur et service en restauration :</p>
+                            <ul class="exp-bullets">
+                                <li>Plonge, nettoyage complet de la cuisine et préparation des commandes.</li>
+                                <li>Mise en place de la terrasse, service et rangement en équipe.</li>
+                            </ul>
                         </article>
 
                         <article class="exp-card">
@@ -894,11 +932,14 @@
                                     <span class="exp-date">2025 - 2026</span>
                                     <span class="exp-badge">JOB ÉTUDIANT</span>
                                 </div>
-                                <span class="exp-company">SERVICES & TRAVAUX EXTÉRIEURS</span>
+                                <span class="exp-company">SERVICE AU PARTICULIER</span>
                             </div>
-                            <h3 class="exp-card-title">Entretien de Terrains & Espaces Verts</h3>
-                            <p class="exp-card-desc">Tonte de pelouse, désherbage, entretien de terrains et divers
-                                travaux d'extérieur.</p>
+                            <h3 class="exp-card-title">Entretien de Terrains &amp; Espaces Verts</h3>
+                            <p class="exp-card-desc">Prestations d'entretien extérieur réalisées en autonomie complète :</p>
+                            <ul class="exp-bullets">
+                                <li>Entretien de parcelles et extérieurs : tonte, désherbage et travaux d’aménagement.</li>
+                                <li>Organisation autonome du matériel et relation directe de confiance avec les particuliers.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>

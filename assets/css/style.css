@@ -1787,6 +1787,32 @@ p.no-clamp {
     line-height: 1.6;
 }
 
+.exp-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.exp-bullets li {
+    font-size: 0.82rem;
+    color: #c0c0c0;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 18px;
+}
+
+.exp-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
 /* --- MODAL CONTACT --- */
 .modal-overlay {
     position: fixed;
