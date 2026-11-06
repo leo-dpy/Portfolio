@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+
+    <title>Léo Dupuy | Portfolio </title>
+    <meta name="description"
+        content="Découvrez mon Portfolio d'étudiant en Bachelor 2 Cybersécurité à Lille Ynov Campus. Découvrez mes projets personnels et éducatifs ainsi que mon parcours.">
+    <link rel="canonical" href="https://leodupuy.fr/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" as="style">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        media="print" onload="this.media='all'">
+
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="any">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="bg-static"></div>
+
+    <!-- BANDEAU SUPÉRIEUR STYLE GNOME LINUX -->
+    <header id="gnome-topbar" class="gnome-topbar" role="banner">
+        <div class="topbar-inner">
+            <!-- Gauche : Identité & Indicateur Terminal / Activités -->
+            <div class="topbar-left">
+                <div class="gnome-activity-chip" title="Terminal Léo Dupuy">
+                    <svg class="gnome-icon-terminal" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                    <span class="user-fullname">LÉO DUPUY</span>
+                </div>
+                <div class="topbar-role-badge">
+                    <span class="role-text">B2 Cybersécurité &bull; Lille Ynov Campus</span>
+                </div>
+            </div>
+
+            <!-- Centre : Recherche Stage & Alternance -->
+            <div class="topbar-center">
+                <div class="search-opp-pill" title="Disponibilité professionnelle">
+                    <span class="opp-title">RECHERCHE STAGE &amp; ALTERNANCE</span>
+                </div>
+            </div>
+
+            <!-- Droite : Quick Contacts & Tray style GNOME -->
+            <div class="topbar-right">
+                <!-- Copie rapide Email -->
+                <button type="button" class="topbar-chip-btn" id="btn-topbar-email" title="Cliquer pour copier l'email" aria-label="Copier l'adresse email leo.dupuy@ynov.com">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span class="chip-text" id="topbar-email-text">leo.dupuy@ynov.com</span>
+                </button>
+
+                <!-- Téléphone (info statique) -->
+                <div class="topbar-chip-static" title="Téléphone : 07 71 59 90 71">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span class="chip-text">07 71 59 90 71</span>
+                </div>
+
+                <!-- Téléchargement CV -->
+                <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="topbar-chip-btn cv-btn" title="Télécharger le CV (PDF)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="12" y1="18" x2="12" y2="12" />
+                        <polyline points="9 15 12 18 15 15" />
+                    </svg>
+                    <span class="chip-text">CV.PDF</span>
+                </a>
+
+                <!-- Liens Sociaux -->
+                <div class="topbar-socials">
+                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="topbar-social-link" title="LinkedIn Léo Dupuy" aria-label="LinkedIn">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" width="16" height="16" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="topbar-social-link" title="GitHub Léo Dupuy" aria-label="GitHub">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width="16" height="16" alt="GitHub" class="invert-icon" style="filter: invert(1);">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ESPACE DE TRAVAIL DESKTOP MULTI-VUES (SANS SCROLL DE FENÊTRE) -->
+    <main id="desktop-workspace" class="desktop-workspace" role="main">
+
+        <!-- VUE 1 : PROFIL & À PROPOS -->
+        <div id="view-about" class="desktop-view active" role="region" aria-label="Vue Profil">
+            <div class="view-content-wrapper">
+                <header class="hero-section">
+                    <div class="hero-content">
+                        <h1>Léo Dupuy</h1>
+                        <div class="typewriter">
+                            <span class="hero-subtitle">ÉTUDIANT B2 CYBERSÉCURITÉ</span>
+                        </div>
+                    </div>
+                </header>
+
+        <section id="about">
+            <div class="profile-card">
+                <div class="profile-visual">
+                    <div class="img-frame">
+                        <img src="assets/img/photo-professionelle.webp" alt="Léo Dupuy" class="profile-pic" width="250"
+                            height="250" loading="eager">
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <h2 class="profile-title">À Propos <span class="dot">.</span></h2>
+                    <div class="info-badges">
+                        <span class="badge badge-glow">OPEN TO WORK</span>
+                        <span class="badge">LILLE, FR</span>
+                        <span class="badge">19 ANS</span>
+                        <span class="badge">PERMIS B</span>
+                    </div>
+                    <div class="bio">
+                        <p>Étudiant en 2e année de <strong>Bachelor Cybersécurité à Lille Ynov Campus</strong>, je recherche un <strong>stage à partir de mai 2027</strong> avec poursuite en <strong>alternance pour mon Bachelor 3 (2027-2028)</strong>.</p>
+                        <p style="margin-top: 10px;">Méthodique et rigoureux, je souhaite m'investir sur le terrain au sein de vos équipes techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+            </div>
+        </div>
+
+        <!-- VUE 2 : COMPÉTENCES -->
+        <div id="view-skills" class="desktop-view" role="region" aria-label="Vue Compétences">
+            <div class="view-content-wrapper">
+                <section id="skills">
+                    <h2 class="section-title">>_ COMPÉTENCES</h2>
+
+            <!-- Barre d'onglets Cyber Cut -->
+            <div class="skills-tab-bar-container">
+                <div class="skills-tabs-nav" role="tablist">
+                    <button class="skills-tab-btn active" role="tab" aria-selected="true" data-tab="cyber">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        CYBERSÉCURITÉ
+                    </button>
+                    <button class="skills-tab-btn" role="tab" aria-selected="false" data-tab="sys-net">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="8"></rect>
+                            <rect x="2" y="14" width="20" height="8"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                        SYSTÈMES &amp; RÉSEAUX
+                    </button>
+                    <button class="skills-tab-btn" role="tab" aria-selected="false" data-tab="tools">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                        OUTILS &amp; MÉTHODES
+                    </button>
+                </div>
+            </div>
+
+            <div class="skills-grid" id="skills-progress-grid">
+                <!-- ================= CYBERSÉCURITÉ ================= -->
+                <!-- 1. Investigation Forensic -->
+                <article class="skill-card" data-category="cyber">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <circle cx="12" cy="11" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Investigation Forensic</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 2. Autopsy (Analyse Disque) -->
+                <article class="skill-card" data-category="cyber">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="12" x2="2" y2="12"></line>
+                                    <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                                    <line x1="6" y1="16" x2="6.01" y2="16"></line>
+                                    <line x1="10" y1="16" x2="10.01" y2="16"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Autopsy (Analyse Disque)</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 3. OSINT & Sources Ouvertes -->
+                <article class="skill-card" data-category="cyber">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">OSINT &amp; Sources Ouvertes</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 4. Sécurité des Réseaux & Hardening -->
+                <article class="skill-card" data-category="cyber">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 12 12 15 16 10"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Sécurité des Réseaux &amp; Hardening</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- ================= SYSTÈMES & RÉSEAUX ================= -->
+                <!-- 5. Linux (Debian / Kali) -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="4 17 10 11 4 5"></polyline>
+                                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Linux (Debian / Kali)</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 6. Windows Server -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="8"></rect>
+                                    <rect x="2" y="14" width="20" height="8"></rect>
+                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Windows Server</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 7. Active Directory & GPO -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Active Directory &amp; GPO</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- 8. Protocoles & TCP/IP -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="6" height="6"></rect>
+                                    <rect x="16" y="2" width="6" height="6"></rect>
+                                    <rect x="9" y="16" width="6" height="6"></rect>
+                                    <path d="M5 8v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"></path>
+                                    <path d="M12 12v4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Protocoles (TCP/IP, DHCP, DNS)</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 9. Modèle OSI & Adressage CIDR -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Modèle OSI &amp; Adressage CIDR</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 10. Scripting Bash -->
+                <article class="skill-card" data-category="sys-net" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Scripting Bash</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+
+                <!-- ================= OUTILS & MÉTHODES ================= -->
+                <!-- 11. Virtualisation (VMware / VBox) -->
+                <article class="skill-card" data-category="tools" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Virtualisation (VMware / VBox)</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 12. Git & GitHub -->
+                <article class="skill-card" data-category="tools" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                                    <circle cx="18" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Git &amp; GitHub</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 13. Jira & Ticketing -->
+                <article class="skill-card" data-category="tools" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Jira &amp; Ticketing</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 14. Support & Maintenance IT -->
+                <article class="skill-card" data-category="tools" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Support &amp; Maintenance IT</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 80%;"></div>
+                    </div>
+                </article>
+
+                <!-- 15. Bases de données & MySQL -->
+                <article class="skill-card" data-category="tools" style="display: none;">
+                    <div class="skill-card-header">
+                        <div class="skill-card-info">
+                            <div class="skill-card-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skill-card-title">Bases de données &amp; MySQL</h3>
+                        </div>
+                    </div>
+                    <div class="skill-prog-track">
+                        <div class="skill-prog-fill" style="width: 60%;"></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+            </div>
+        </div>
+
+        <!-- VUE 3 : PROJETS -->
+        <div id="view-projets" class="desktop-view" role="region" aria-label="Vue Projets">
+            <div class="view-content-wrapper">
+        <section id="projets">
+            <h2 class="section-title">>_ PROJETS &amp; LABS</h2>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="cyber">PROJETS CYBER</button>
+                <button class="filter-btn" data-filter="labs">LABS (VPS &amp; HOMELAB)</button>
+                <button class="filter-btn" data-filter="dev">PROJETS DEV</button>
+            </div>
+
+            <div class="projects-grid" data-active-filter="cyber">
+                <!-- ================= PROJETS CYBER ================= -->
+                <!-- PROJET CYBER 1 : AEGIS -->
+                <article id="project-aegis" class="project-card online-card featured-project clickable-card" data-category="cyber">
+                    <div class="project-header">
+                        <span class="p-type">HYGIÈNE NUMÉRIQUE &amp; SÉCURITÉ</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Aegis</h3>
+                        <p>Boîte à outils de sécurité : analyse IP, hash SHA-256, générateur de clés et chiffrement local client-side.</p>
+                        <div class="p-stack">
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>QR &amp; PASSWORDS</span>
+                            <span>INTÉGRITÉ HASH</span>
+                            <span>ANALYSE IP</span>
+                            <span>CHIFFREMENT</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/aegis" class="git-mini" target="_blank" rel="noopener"
+                                aria-label="Code GitHub Aegis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER À L'OUTIL</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET CYBER 2 : CYBERSENS -->
+                <article id="project-cybersens" class="project-card offline-card featured-project" data-category="cyber">
+                    <div class="project-header">
+                        <span class="p-type">SENSIBILISATION CYBER</span><span class="p-status offline"><span class="status-dot"></span>PROJET ÉCOLE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>CyberSens</h3>
+                        <p>Plateforme de sensibilisation aux cybermenaces : simulateur de phishing, cours et quiz adaptatifs (projet YDays 1 an).</p>
+                        <div class="p-stack">
+                            <span>SENSIBILISATION</span>
+                            <span>PHISHING</span>
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>PÉDAGOGIE</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked">FINALISÉ &bull; YDAYS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= LABS ================= -->
+                <!-- LAB 1 : MON VPS & LABS -->
+                <article class="project-card online-card featured-project" data-category="labs" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">INFRASTRUCTURE &amp; LAB</span><span class="p-status online"><span class="status-dot"></span>EN SERVICE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>VPS Personnel</h3>
+                        <p>Déploiement et sécurisation de services conteneurisés via Coolify &amp; Docker (portfolio, base de données) sur serveur VPS Linux.</p>
+                        <div class="p-stack">
+                            <span>VPS LINUX (OVH)</span>
+                            <span>DOCKER &amp; COOLIFY</span>
+                            <span>FAIL2BAN</span>
+                            <span>HARDENING</span>
+                            <span>BASE DE DONNÉES</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">INFRA OPÉRATIONNELLE</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- LAB 2 : HOMELAB -->
+                <article class="project-card offline-card" data-category="labs" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">LAB VIRTUEL &amp; INFRA</span><span class="p-status warning"><span class="status-dot"></span>EN COURS</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Home Lab</h3>
+                        <p>Auto-hébergement sous Proxmox VE remplaçant le VPS : orchestration Coolify &amp; Docker, VPN Tailscale et Jellyfin.</p>
+                        <div class="p-stack">
+                            <span>PROXMOX VE</span>
+                            <span>COOLIFY</span>
+                            <span>TAILSCALE</span>
+                            <span>JELLYFIN</span>
+                            <span>DOCKER</span>
+                            <span>AUTO-HÉBERGEMENT</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked">EN COURS D'INSTALLATION</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= PROJETS DEV ================= -->
+                <!-- DEV 1 : GROUPIE TRACKER -->
+                <article class="project-card online-card featured-project clickable-card" data-category="dev" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">WEB APP</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Groupie Tracker</h3>
+                        <p>Application web en Go consommant des APIs REST pour explorer artistes, tournées et concerts.</p>
+                        <div class="p-stack">
+                            <span>GO</span>
+                            <span>API REST</span>
+                            <span>HTML / CSS</span>
+                            <span>YOUTUBE API</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/Groupie-Tracker" class="git-mini" target="_blank"
+                                rel="noopener" aria-label="Code GitHub Groupie Tracker"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://groupie-tracker.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DEV 2 : POWER 4 -->
+                <article class="project-card online-card featured-project clickable-card" data-category="dev" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">GAME ENGINE</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Power 4</h3>
+                        <p>Jeu Puissance 4 complet sur navigateur en JavaScript avec différents niveaux et IA intégrée.</p>
+                        <div class="p-stack">
+                            <span>JAVASCRIPT</span>
+                            <span>ALGORITHMIE</span>
+                            <span>IA</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/Power-4" class="git-mini" target="_blank" rel="noopener"
+                                aria-label="Code GitHub Power 4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://power4.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DEV 3 : DAILYHUB -->
+                <article class="project-card online-card clickable-card" data-category="dev" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">DASHBOARD</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>DailyHub</h3>
+                        <p>Dashboard interactif en widgets affichant diverses données et flux d'APIs en temps réel.</p>
+                        <div class="p-stack">
+                            <span>JAVASCRIPT</span>
+                            <span>API REST</span>
+                            <span>DOCKER</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/DailyHub" class="git-mini" target="_blank"
+                                rel="noopener" aria-label="Code GitHub DailyHub"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://dailyhub.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DEV 4 : QUIZBALL -->
+                <article id="project-quizball" class="project-card online-card clickable-card" data-category="dev" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">WEB APP</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Quizball</h3>
+                        <p>Application de quiz sportif interactif (football, basket, tennis) avec chrono et scores en direct.</p>
+                        <div class="p-stack">
+                            <span>REACT</span>
+                            <span>TYPESCRIPT</span>
+                            <span>LARAVEL</span>
+                        </div>
+                    </div>
+                    <div class="project-footer" style="justify-content: flex-end;">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/Quizball.git" class="git-mini" target="_blank"
+                                rel="noopener" aria-label="Code GitHub Quizball"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://quizball.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div id="projets-btn-container" style="text-align: center; margin-top: 3rem; display: none;">
+                <button id="toggle-projets" class="btn-outline">VOIR PLUS</button>
+            </div>
+        </section>
+            </div>
+        </div>
+
+        <!-- VUE 4 : PARTICIPATIONS -->
+        <div id="view-participations" class="desktop-view" role="region" aria-label="Vue Participations">
+            <div class="view-content-wrapper">
+        <section id="participations">
+            <h2 class="section-title">>_ PARTICIPATIONS</h2>
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="participation-img-top">
+                        <img src="assets/img/CTF Forensic.png" alt="Challenge 48H CTF Forensic">
+                    </div>
+                    <div class="project-header" style="margin-top: 15px;">
+                        <span class="p-type">CTF FORENSIC</span>
+
+                    </div>
+                    <div class="project-body" style="margin-bottom: 15px;">
+                        <h3>Challenge 48H</h3>
+                        <p class="no-clamp">Challenge intensif de 48H orienté sur l'investigation numérique (Forensic),
+                            l'analyse de données et la réponse aux incidents réseau.</p>
+                        <div class="p-stack">
+                            <span>FORENSIC</span>
+                            <span>RÉSEAU</span>
+                            <span>DATA</span>
+                            <span>TEAMWORK</span>
+                        </div>
+                    </div>
+                    <div class="project-footer"
+                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">DATES</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">30-31 Mars 2026</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">LIEU</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">Ynov Campus</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="participation-img-top">
+                        <img src="assets/img/CTF Orion.jpeg" alt="CTF Orion Nom de Code Bellatrix">
+                    </div>
+                    <div class="project-header" style="margin-top: 15px;">
+                        <span class="p-type">EXERCICE MILITAIRE</span>
+                        <span class="p-status online">34ème</span>
+                    </div>
+                    <div class="project-body" style="margin-bottom: 15px;">
+                        <h3>CTF Orion</h3>
+                        <p class="no-clamp">Exercice militaire de cybersécurité sur 4 jours. Mission : Déjouer une
+                            campagne de désinformation, identifier les preneurs d'otage et localiser un pilote
+                            capturé.</p>
+                        <div class="p-stack">
+                            <span>OSINT</span>
+                            <span>COMCYBER</span>
+                            <span>ANSSI</span>
+                            <span>ANALYSE</span>
+                        </div>
+                    </div>
+                    <div class="project-footer"
+                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">DATES</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">23-27 Mars 2026</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">LIEU</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">En ligne</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="participation-img-top">
+                        <img src="assets/img/CTF 4dec.png" alt="CTF Inter-Campus Ynov 4 Dec">
+                    </div>
+                    <div class="project-header" style="margin-top: 15px;">
+                        <span class="p-type">COMPÉTITION CTF</span>
+                        <span class="p-status online">2ÈME PLACE (LILLE)</span>
+                    </div>
+                    <div class="project-body" style="margin-bottom: 15px;">
+                        <h3>CTF Inter-Campus</h3>
+                        <p class="no-clamp">Compétition de cybersécurité réunissant les étudiants des différents campus
+                            Ynov. Épreuves de Web Exploitation, Cryptographie et OSINT.</p>
+                        <div class="p-stack">
+                            <span>CYBERSÉCURITÉ</span>
+                            <span>TEAMWORK</span>
+                            <span>CHALLENGE</span>
+                        </div>
+                    </div>
+                    <div class="project-footer"
+                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">DATES</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">04 Décembre</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="feat-label">LIEU</span>
+                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">Ynov Campus</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button id="toggle-participations" class="btn-outline">VOIR PLUS</button>
+            </div>
+        </section>
+            </div>
+        </div>
+
+        <!-- VUE 5 : CERTIFICATIONS -->
+        <div id="view-certifications" class="desktop-view" role="region" aria-label="Vue Certifications">
+            <div class="view-content-wrapper">
+        <section id="certifications">
+            <h2 class="section-title">>_ CERTIFICATIONS</h2>
+            <div class="certifications-container">
+                <a href="assets/docs/Certif ANSSI.pdf" target="_blank" class="cert-card-horizontal" rel="noopener">
+                    <div class="cert-visual-side">
+                        <img src="assets/img/anssi-logo.png" alt="Logo ANSSI" class="cert-logo-img">
+                    </div>
+                    <div class="cert-content-side">
+                        <div class="cert-header">
+                            <h3>SecNumAcadémie</h3>
+                            <span class="cert-tag">VALIDÉ</span>
+                        </div>
+                        <span class="cert-org">ANSSI <span class="cert-date">| Obtenue le 11 février 2026</span></span>
+                        <p>Certification officielle de l'ANSSI couvrant les fondamentaux de la cybersécurité :
+                            authenticité, confidentialité, intégrité et traçabilité.</p>
+                        <span class="cert-cta">VOIR LE CERTIFICAT &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+            </div>
+        </div>
+
+        <!-- VUE 6 : PARCOURS -->
+        <div id="view-exp" class="desktop-view" role="region" aria-label="Vue Parcours">
+            <div class="view-content-wrapper">
+        <section id="exp">
+            <h2 class="section-title">>_ PARCOURS</h2>
+
+            <div class="exp-tabs-nav" role="tablist">
+                <button class="exp-tab-btn active" role="tab" aria-selected="true"
+                    data-tab="formations">FORMATIONS</button>
+                <button class="exp-tab-btn" role="tab" aria-selected="false" data-tab="stages">EXPÉRIENCES CYBER &
+                    IT</button>
+                <button class="exp-tab-btn" role="tab" aria-selected="false" data-tab="autres">AUTRES
+                    EXPÉRIENCES</button>
+            </div>
+
+            <div class="exp-tab-content">
+                <!-- Formations -->
+                <div id="panel-formations" class="exp-panel active" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card exp-card-current">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2025 - EN COURS</span>
+                                    <span class="exp-badge exp-badge-current">Bachelor 2</span>
+                                </div>
+                                <span class="exp-company">LILLE YNOV CAMPUS</span>
+                            </div>
+                            <h3 class="exp-card-title">Bachelor Cybersécurité</h3>
+                            <p class="exp-card-desc">Spécialisation sécurité systèmes et réseaux, administration système
+                                et fondamentaux de la cybersécurité.</p>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2022 - 2025</span>
+                                    <span class="exp-badge">DIPLÔME</span>
+                                </div>
+                                <span class="exp-company">LYCÉE DU HAINAUT &bull; VALENCIENNES</span>
+                            </div>
+                            <h3 class="exp-card-title">Baccalauréat STI2D</h3>
+                            <p class="exp-card-desc">Option Systèmes d'Information et Numérique (SIN). Mention Bien.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Stages & Tech -->
+                <div id="panel-stages" class="exp-panel" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2023</span>
+                                    <span class="exp-badge">STAGE SOC</span>
+                                </div>
+                                <span class="exp-company">IBM FRANCE &bull; LILLE</span>
+                            </div>
+                            <h3 class="exp-card-title">Stage Cybersécurité</h3>
+                            <p class="exp-card-desc">Immersion au sein d'un Security Operations Center (SOC) et découverte des métiers de la cybersécurité :</p>
+                            <ul class="exp-bullets">
+                                <li>Observation du fonctionnement d'un SOC et de ses outils d'analyse et de détection.</li>
+                                <li>Acquisition de connaissances sur divers métiers et processus liés à la cybersécurité opérationnelle.</li>
+                                <li>Participation à des projets d'analyse des menaces et amélioration de la compréhension des enjeux actuels.</li>
+                            </ul>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2022</span>
+                                    <span class="exp-badge">STAGE IT</span>
+                                </div>
+                                <span class="exp-company">MICRO LOGIS &bull; PECQUENCOURT</span>
+                            </div>
+                            <h3 class="exp-card-title">Stage Réparateur Informatique</h3>
+                            <p class="exp-card-desc">Maintenance matérielle, assistance technique et gestion autonome de l'atelier :</p>
+                            <ul class="exp-bullets">
+                                <li>Réparation d'ordinateurs, diagnostic matériel et installation/remplacement de disques durs.</li>
+                                <li>Assistance technique et support sur divers systèmes d'exploitation (Windows, Linux).</li>
+                                <li>Gestion autonome de l'atelier technique et préparation des postes informatiques.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Autres Expériences -->
+                <div id="panel-autres" class="exp-panel" role="tabpanel">
+                    <div class="exp-cards-list">
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">MAI - SEPTEMBRE 2026</span>
+                                    <span class="exp-badge">JOB ÉTUDIANT</span>
+                                </div>
+                                <span class="exp-company">LA CROIX OU PILE</span>
+                            </div>
+                            <h3 class="exp-card-title">Saisonnier en Restauration</h3>
+                            <p class="exp-card-desc">Travail d'équipe soutenu, rigueur et service en restauration :</p>
+                            <ul class="exp-bullets">
+                                <li>Plonge, nettoyage complet de la cuisine et préparation des commandes.</li>
+                                <li>Mise en place de la terrasse, service et rangement en équipe.</li>
+                            </ul>
+                        </article>
+
+                        <article class="exp-card">
+                            <div class="exp-card-header">
+                                <div class="exp-card-meta">
+                                    <span class="exp-date">2025 - 2026</span>
+                                    <span class="exp-badge">JOB ÉTUDIANT</span>
+                                </div>
+                                <span class="exp-company">SERVICE AU PARTICULIER</span>
+                            </div>
+                            <h3 class="exp-card-title">Entretien de Terrains &amp; Espaces Verts</h3>
+                            <p class="exp-card-desc">Prestations d'entretien extérieur réalisées en autonomie complète :</p>
+                            <ul class="exp-bullets">
+                                <li>Entretien de parcelles et extérieurs : tonte, désherbage et travaux d’aménagement.</li>
+                                <li>Organisation autonome du matériel et relation directe de confiance avec les particuliers.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- DOCK FLOTTANT ORIGINAL (CYBER CUTS) -->
+    <nav role="navigation" aria-label="Navigation principale">
+        <div class="nav-links">
+            <a href="#about" class="active" data-view="about">PROFIL</a>
+            <a href="#skills" data-view="skills">COMPÉTENCES</a>
+            <a href="#projets" data-view="projets">PROJETS</a>
+            <a href="#participations" data-view="participations">PARTICIPATIONS</a>
+            <a href="#certifications" data-view="certifications">CERTIFICATIONS</a>
+            <a href="#exp" data-view="exp">PARCOURS</a>
+        </div>
+    </nav>
+
+    <!-- Contact & Réseaux -->
+    <div id="contact-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <h3 class="modal-title">>_ CONNEXION</h3>
+                    <button id="btn-close-contact" class="modal-close" aria-label="Fermer">✕</button>
+                </div>
+                <div class="modal-desc">
+                    <p>N'hésitez pas à me contacter pour une opportunité, un projet ou simplement pour échanger.</p>
+                </div>
+                <div class="contact-links-grid">
+                    <button id="btn-copy-email-modal" class="contact-card" type="button"
+                        aria-label="Copier l'adresse email">
+                        <img src="assets/img/ynov-logo.png" width="24" height="24" alt="Ynov Campus"
+                            style="object-fit: contain;">
+                        <div class="contact-info">
+                            <span>EMAIL</span>
+                            <strong>leo.dupuy@ynov.com</strong>
+                        </div>
+                    </button>
+                    <button id="btn-copy-phone-modal" class="contact-card" type="button"
+                        aria-label="Copier le numéro de téléphone">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <div class="contact-info">
+                            <span>TÉLÉPHONE</span>
+                            <strong>07 71 59 90 71</strong>
+                        </div>
+                    </button>
+                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="contact-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                            width="24" height="24" alt="LinkedIn">
+                        <div class="contact-info">
+                            <span>LINKEDIN</span>
+                            <strong>@dupuy-leo</strong>
+                        </div>
+                    </a>
+                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="contact-card">
+                        <!-- On inverse l'icône noire de Github pour qu'elle devienne blanche -->
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                            style="filter: invert(1);" width="24" height="24" alt="GitHub">
+                        <div class="contact-info">
+                            <span>GITHUB</span>
+                            <strong>@leo-dpy</strong>
+                        </div>
+                    </a>
+                    <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="contact-card">
+                        <!-- Icône de téléchargement -->
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <div class="contact-info">
+                            <span>MON CV</span>
+                            <strong>CV Léo Dupuy</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
