@@ -28,562 +28,529 @@
 
     <div class="bg-static"></div>
 
-    <nav role="navigation">
-        <div class="logo">LÉO<span> DUPUY</span></div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Ouvrir le menu">
-        <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <div class="nav-links">
-            <a href="#about">PROFIL</a>
-            <a href="#skills">COMPÉTENCES</a>
-            <a href="#projets">PROJETS</a>
-            <a href="#participations">PARTICIPATIONS</a>
-            <a href="#certifications">CERTIFICATIONS</a>
-            <a href="#exp">PARCOURS</a>
-        </div>
-    </nav>
+    <!-- BANDEAU SUPÉRIEUR STYLE GNOME LINUX -->
+    <header id="gnome-topbar" class="gnome-topbar" role="banner">
+        <div class="topbar-inner">
+            <!-- Gauche : Identité & Indicateur Terminal / Activités -->
+            <div class="topbar-left">
+                <div class="gnome-activity-chip" title="Terminal Léo Dupuy">
+                    <svg class="gnome-icon-terminal" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                    <span class="user-fullname">LÉO DUPUY</span>
+                </div>
+                <div class="topbar-role-badge">
+                    <span class="role-text">B2 Cybersécurité &bull; Lille Ynov Campus</span>
+                </div>
+            </div>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Léo Dupuy</h1>
-            <div class="typewriter">
-                <span class="hero-subtitle">ÉTUDIANT B2 CYBERSÉCURITÉ</span>
+            <!-- Centre : Recherche Stage & Alternance -->
+            <div class="topbar-center">
+                <div class="search-opp-pill" title="Disponibilité professionnelle">
+                    <span class="opp-title">RECHERCHE STAGE &amp; ALTERNANCE</span>
+                </div>
+            </div>
+
+            <!-- Droite : Quick Contacts & Tray style GNOME -->
+            <div class="topbar-right">
+                <!-- Email : ouvre le client mail -->
+                <a href="mailto:leo.dupuy@ynov.com" class="topbar-chip-btn" title="M'envoyer un email" aria-label="Envoyer un email à leo.dupuy@ynov.com">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span class="chip-text">leo.dupuy@ynov.com</span>
+                </a>
+
+                <!-- Téléphone (info statique) -->
+                <div class="topbar-chip-static" title="Téléphone : 07 71 59 90 71">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span class="chip-text">07 71 59 90 71</span>
+                </div>
+
+                <!-- Téléchargement CV -->
+                <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="topbar-chip-btn cv-btn" title="Télécharger le CV (PDF)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="12" y1="18" x2="12" y2="12" />
+                        <polyline points="9 15 12 18 15 15" />
+                    </svg>
+                    <span class="chip-text">CV.PDF</span>
+                </a>
+
+                <!-- Liens Sociaux -->
+                <div class="topbar-socials">
+                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="topbar-social-link" title="LinkedIn Léo Dupuy" aria-label="LinkedIn">
+                        <img src="assets/img/skills/linkedin.svg" width="16" height="16" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="topbar-social-link" title="GitHub Léo Dupuy" aria-label="GitHub">
+                        <img src="assets/img/skills/github.svg" width="16" height="16" alt="GitHub" class="invert">
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <!-- ESPACE DE TRAVAIL DESKTOP MULTI-VUES (SANS SCROLL DE FENÊTRE) -->
+    <main id="desktop-workspace" class="desktop-workspace" role="main">
 
-        <section id="about">
-            <div class="profile-card">
-                <div class="profile-visual">
-                    <div class="img-frame">
-                        <img src="assets/img/photo-professionelle.webp" alt="Léo Dupuy" class="profile-pic" width="250"
-                            height="250" loading="eager">
+        <!-- VUE 1 : PROFIL & À PROPOS -->
+        <div id="view-about" class="desktop-view active" role="region" aria-label="Vue Profil">
+            <div class="view-content-wrapper">
+                <section id="about" class="about-v2">
+                    <div class="about-grid about-hero">
+                        <div class="about-photo">
+                            <div class="img-frame">
+                                <img src="assets/img/photo-professionelle.webp" alt="Léo Dupuy" class="profile-pic" width="250" height="320" loading="eager">
+                            </div>
+                        </div>
+
+                        <div class="about-main">
+                            <h1 class="hero-name">Léo Dupuy</h1>
+                            <p class="hero-role">&gt;_ Étudiant B2 Cybersécurité</p>
+                            <div class="info-badges">
+                                <span class="badge">LILLE, FR</span>
+                                <span class="badge">19 ANS</span>
+                                <span class="badge">PERMIS B</span>
+                                <span class="badge">ANGLAIS B1</span>
+                                <span class="badge">ESPAGNOL B1</span>
+                            </div>
+                            <div class="bio">
+                                <p>Étudiant en 2e année de <strong>Bachelor Cybersécurité à Lille Ynov Campus</strong>, je recherche un <strong>stage à partir de mai 2027</strong> avec poursuite en <strong>alternance pour mon Bachelor 3 (2027-2028)</strong>.</p>
+                                <p>Méthodique, rigoureux et habitué au travail en équipe (CTF, Challenge 48H), je souhaite m'investir sur le terrain au sein de vos équipes techniques.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="profile-content">
-                    <h2 class="profile-title">À Propos <span class="dot">.</span></h2>
-                    <div class="info-badges">
-                        <span class="badge badge-glow">OPEN TO WORK</span>
-                        <span class="badge">LILLE, FR</span>
-                        <span class="badge">19 ANS</span>
-                        <span class="badge">PERMIS B</span>
-                    </div>
-                    <div class="bio">
-                        <p>Je m'appelle Léo Dupuy, j'ai 19 ans et je suis étudiant en deuxième année de <strong>Bachelor
-                                Cybersécurité à Lille Ynov Campus</strong>. Passionné par l'informatique depuis
-                            toujours, j'ai construit mon parcours autour de cette vocation.</p>
-                    </div>
-                    <div class="contact-buttons">
-                        <button id="btn-open-contact" class="btn-primary btn-contact-pulse"><span
-                                class="cyber-icon">>_</span> CONTACT & RÉSEAUX</button>
-                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- VUE 2 : COMPÉTENCES -->
+        <div id="view-skills" class="desktop-view" role="region" aria-label="Vue Compétences">
+            <div class="view-content-wrapper">
+                <section id="skills">
+                    <h2 class="section-title">>_ COMPÉTENCES</h2>
+
+            <!-- Barre d'onglets Cyber Cut -->
+            <div class="skills-tab-bar-container">
+                <div class="skills-tabs-nav" role="tablist">
+                    <button class="skills-tab-btn active" role="tab" aria-selected="true" data-tab="cyber">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        CYBERSÉCURITÉ
+                    </button>
+                    <button class="skills-tab-btn" role="tab" aria-selected="false" data-tab="sys-net">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8"></rect><rect x="2" y="14" width="20" height="8"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        SYSTÈMES &amp; RÉSEAUX
+                    </button>
+                    <button class="skills-tab-btn" role="tab" aria-selected="false" data-tab="tools">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        OUTILS &amp; INFRA
+                    </button>
+                    <button class="skills-tab-btn" role="tab" aria-selected="false" data-tab="dev">
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        DÉVELOPPEMENT
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <section id="skills">
-            <h2 class="section-title">>_ COMPÉTENCES</h2>
+            <div class="skills-logo-grid" id="skills-grid">
+                <!-- ================= CYBERSÉCURITÉ ================= -->
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/kali.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Kali Linux</h3>
+                    <span class="skill-tile-ctx">CTF · OSINT · Crypto · Web</span>
+                </article>
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/autopsy.png" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Autopsy · Forensic</h3>
+                    <span class="skill-tile-ctx">Challenge 48H</span>
+                </article>
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/hackthebox.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Hack The Box</h3>
+                    <span class="skill-tile-ctx">Academy · CJCA en cours</span>
+                </article>
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/anssi-logo.png" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Hygiène numérique</h3>
+                    <span class="skill-tile-ctx">SecNumAcadémie · CyberSens</span>
+                </article>
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/cloudflare.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Cloudflare</h3>
+                    <span class="skill-tile-ctx">Home Lab · Accès sécurisé</span>
+                </article>
+                <article class="skill-tile" data-category="cyber">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/tailscale.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Tailscale</h3>
+                    <span class="skill-tile-ctx">VPN · Home Lab</span>
+                </article>
 
-            <div class="skills-carousel-wrapper">
+                <!-- ================= SYSTÈMES &amp; RÉSEAUX ================= -->
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/linux.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Linux</h3>
+                    <span class="skill-tile-ctx">VPS · Home Lab · Hardening</span>
+                </article>
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/debian.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Debian</h3>
+                    <span class="skill-tile-ctx">Home Lab</span>
+                </article>
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/ubuntu.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Ubuntu</h3>
+                    <span class="skill-tile-ctx">VPS OVH</span>
+                </article>
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/bash.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Bash</h3>
+                    <span class="skill-tile-ctx">VPS · Home Lab</span>
+                </article>
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/windows.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Windows Server</h3>
+                    <span class="skill-tile-ctx">AD · GPO · Support IT</span>
+                </article>
+                <article class="skill-tile" data-category="sys-net" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/cisco.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Cisco Packet Tracer</h3>
+                    <span class="skill-tile-ctx">OSI · CIDR · TCP/IP · DNS</span>
+                </article>
 
-                <!-- Frontend Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">FRONTEND</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-left" style="--copies: 4;">
-                            <!-- Copie 1 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 2 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 3 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                            <!-- Copie 4 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" width="40" height="40" loading="lazy"><span>HTML5</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" width="40" height="40" loading="lazy"><span>CSS3</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" width="40" height="40" loading="lazy"><span>JavaScript</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-                                    alt="Vue.js" width="40" height="40" loading="lazy"><span>Vue.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
-                                    alt="Vite" width="40" height="40" loading="lazy"><span>Vite</span></div>
-                        </div>
-                    </div>
-                </div>
+                <!-- ================= OUTILS &amp; INFRA ================= -->
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/proxmox.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Proxmox VE</h3>
+                    <span class="skill-tile-ctx">Home Lab</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/vmware.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">VMware</h3>
+                    <span class="skill-tile-ctx">TP Ynov</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/virtualbox.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">VirtualBox</h3>
+                    <span class="skill-tile-ctx">TP Ynov</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/docker.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Docker</h3>
+                    <span class="skill-tile-ctx">VPS · DailyHub</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/coolify.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Coolify</h3>
+                    <span class="skill-tile-ctx">VPS · Home Lab</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/git.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Git</h3>
+                    <span class="skill-tile-ctx">Tous mes projets</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/github.svg" alt="" class="invert" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">GitHub</h3>
+                    <span class="skill-tile-ctx">@leo-dpy</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/jira.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Jira</h3>
+                    <span class="skill-tile-ctx">CyberSens · YDays</span>
+                </article>
+                <article class="skill-tile" data-category="tools" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/mysql.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">MySQL</h3>
+                    <span class="skill-tile-ctx">VPS · Quizball</span>
+                </article>
 
-                <!-- Backend Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">BACKEND & LOGICIEL</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-right" style="--copies: 3;">
-                            <!-- Copie 1 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                            <!-- Copie 2 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                            <!-- Copie 3 -->
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                    alt="Node.js" width="40" height="40" loading="lazy"><span>Node.js</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
-                                    alt="Go" width="40" height="40" loading="lazy"><span>Go</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
-                                    alt="NestJS" width="40" height="40" loading="lazy"><span>NestJS</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" width="40" height="40" loading="lazy"><span>PHP</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" width="40" height="40" loading="lazy"><span>MySQL</span></div>
-                        </div>
-                    </div>
-                </div>
+                <!-- ================= DÉVELOPPEMENT ================= -->
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/go.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Go</h3>
+                    <span class="skill-tile-ctx">Groupie Tracker</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/javascript.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">JavaScript</h3>
+                    <span class="skill-tile-ctx">Power 4 · DailyHub · Aegis</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/typescript.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">TypeScript</h3>
+                    <span class="skill-tile-ctx">Quizball</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/react.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">React</h3>
+                    <span class="skill-tile-ctx">Quizball</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/laravel.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">Laravel</h3>
+                    <span class="skill-tile-ctx">Quizball</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/html5.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">HTML5</h3>
+                    <span class="skill-tile-ctx">Tous mes projets web</span>
+                </article>
+                <article class="skill-tile" data-category="dev" style="display: none;">
+                    <div class="skill-tile-logo"><img src="assets/img/skills/css3.svg" alt="" width="40" height="40" loading="lazy"></div>
+                    <h3 class="skill-tile-name">CSS3</h3>
+                    <span class="skill-tile-ctx">Projets web</span>
+                </article>
 
-                <!-- Infra/Tools Carousel -->
-                <div class="carousel-category">
-                    <h3 class="carousel-title">INFRA & OUTILS</h3>
-                    <div class="carousel-container">
-                        <div class="carousel-track track-left" style="--copies: 3;">
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                                    alt="Linux" width="40" height="40" loading="lazy"><span>Linux</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
-                                    alt="Bash" width="40" height="40" loading="lazy"><span>Bash</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
-                                    alt="Windows" width="40" height="40" loading="lazy"><span>Windows Admin</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" width="40" height="40" loading="lazy"><span>Git</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" width="40" height="40" loading="lazy"><span>GitHub</span></div>
-                            <div class="carousel-item"><img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-                                    alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 3 : PROJETS -->
+        <div id="view-projets" class="desktop-view" role="region" aria-label="Vue Projets">
+            <div class="view-content-wrapper">
         <section id="projets">
-            <h2 class="section-title">>_ PROJETS</h2>
+            <h2 class="section-title">>_ PROJETS &amp; LABS</h2>
 
             <div class="project-filters">
-                <button class="filter-btn" data-filter="perso">PROJETS PERSO</button>
-                <button class="filter-btn active" data-filter="ynov-b1">PROJETS YNOV B1</button>
-
-                <button class="filter-btn" data-filter="ynov-b2">PROJETS YNOV B2</button>
-                <button class="filter-btn" data-filter="ydays">PROJET YDAYS</button>
+                <button class="filter-btn active" data-filter="cyber">PROJETS CYBER</button>
+                <button class="filter-btn" data-filter="labs">LABS (VPS &amp; HOMELAB)</button>
+                <button class="filter-btn" data-filter="dev">PROJETS DEV</button>
             </div>
 
-            <div class="projects-grid">
-                <article class="project-card online-card featured-project" data-category="ynov-b1">
+            <div class="projects-grid" data-active-filter="cyber">
+                <!-- ================= PROJETS CYBER ================= -->
+                <!-- PROJET CYBER 1 : AEGIS -->
+                <article id="project-aegis" class="project-card clickable-card" data-category="cyber">
                     <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
+                        <span class="p-type">HYGIÈNE NUMÉRIQUE &amp; SÉCURITÉ</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Aegis</h3>
+                        <p>Boîte à outils de sécurité : analyse IP, hash SHA-256, générateur de clés et chiffrement local client-side.</p>
+                        <div class="p-stack">
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>QR &amp; PASSWORDS</span>
+                            <span>INTÉGRITÉ HASH</span>
+                            <span>ANALYSE IP</span>
+                            <span>CHIFFREMENT</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="footer-actions">
+                            <a href="https://github.com/leo-dpy/aegis" class="git-mini" target="_blank" rel="noopener"
+                                aria-label="Code GitHub Aegis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg></a>
+                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER À L'OUTIL</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJET CYBER 2 : CYBERSENS -->
+                <article id="project-cybersens" class="project-card" data-category="cyber">
+                    <div class="project-header">
+                        <span class="p-type">SENSIBILISATION CYBER</span><span class="p-status offline"><span class="status-dot"></span>PROJET ÉCOLE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>CyberSens</h3>
+                        <p>Plateforme de sensibilisation aux cybermenaces : simulateur de phishing, cours et quiz adaptatifs (projet YDays 1 an).</p>
+                        <div class="p-stack">
+                            <span>SENSIBILISATION</span>
+                            <span>PHISHING</span>
+                            <span>HYGIÈNE NUMÉRIQUE</span>
+                            <span>PÉDAGOGIE</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked">FINALISÉ &bull; YDAYS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= LABS ================= -->
+                <!-- LAB 1 : MON VPS & LABS -->
+                <article class="project-card" data-category="labs" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">INFRASTRUCTURE &amp; LAB</span><span class="p-status online"><span class="status-dot"></span>EN SERVICE</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>VPS Personnel</h3>
+                        <p>Déploiement et sécurisation de services conteneurisés via Coolify &amp; Docker (portfolio, base de données) sur serveur VPS Linux.</p>
+                        <div class="p-stack">
+                            <span>VPS LINUX (OVH)</span>
+                            <span>DOCKER &amp; COOLIFY</span>
+                            <span>FAIL2BAN</span>
+                            <span>HARDENING</span>
+                            <span>BASE DE DONNÉES</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked btn-locked-online">INFRA OPÉRATIONNELLE</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- LAB 2 : HOMELAB -->
+                <article class="project-card" data-category="labs" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">LAB VIRTUEL &amp; INFRA</span><span class="p-status warning"><span class="status-dot"></span>EN COURS</span>
+                    </div>
+                    <div class="project-body">
+                        <h3>Home Lab</h3>
+                        <p>Auto-hébergement sous Proxmox VE remplaçant le VPS : orchestration Coolify &amp; Docker, VPN Tailscale, Cloudflare et Jellyfin.</p>
+                        <div class="p-stack">
+                            <span>PROXMOX VE</span>
+                            <span>COOLIFY</span>
+                            <span>TAILSCALE</span>
+                            <span>CLOUDFLARE</span>
+                            <span>JELLYFIN</span>
+                            <span>DOCKER</span>
+                            <span>AUTO-HÉBERGEMENT</span>
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        <div class="footer-actions">
+                            <span class="btn-project btn-locked">EN COURS D'INSTALLATION</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ================= PROJETS DEV ================= -->
+                <!-- DEV 1 : GROUPIE TRACKER -->
+                <article class="project-card clickable-card" data-category="dev" style="display: none;">
+                    <div class="project-header">
+                        <span class="p-type">WEB APP</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
                     </div>
                     <div class="project-body">
                         <h3>Groupie Tracker</h3>
-                        <p>Application musicale avec API Go et visualisation de données. Interface web dynamique.</p>
+                        <p>Application web en Go consommant des APIs REST pour explorer artistes, tournées et concerts.</p>
                         <div class="p-stack">
                             <span>GO</span>
-                            <span>API</span>
+                            <span>API REST</span>
+                            <span>HTML / CSS</span>
                             <span>YOUTUBE API</span>
                         </div>
                     </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
+                    <div class="project-footer">
                         <div class="footer-actions">
                             <a href="https://github.com/leo-dpy/Groupie-Tracker" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
+                                rel="noopener" aria-label="Code GitHub Groupie Tracker"><svg viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
                                     <path
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                     </path>
                                 </svg></a>
-                            <a href="https://groupie-tracker.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
+                            <a href="https://groupie-tracker.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card online-card featured-project" data-category="ynov-b1">
+                <!-- DEV 2 : POWER 4 -->
+                <article class="project-card clickable-card" data-category="dev" style="display: none;">
                     <div class="project-header">
-                        <span class="p-type">GAME ENGINE</span><span class="p-status online">● ONLINE</span>
+                        <span class="p-type">GAME ENGINE</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
                     </div>
                     <div class="project-body">
                         <h3>Power 4</h3>
-                        <p>Jeu Puissance 4 complet avec différentes fonctionnalités, difficultés et IA intégrée.</p>
+                        <p>Jeu Puissance 4 complet sur navigateur en JavaScript avec différents niveaux et IA intégrée.</p>
                         <div class="p-stack">
-                            <span>JS</span>
-                            <span>ALGORYTHMIE</span>
+                            <span>JAVASCRIPT</span>
+                            <span>ALGORITHMIE</span>
                             <span>IA</span>
                         </div>
                     </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
+                    <div class="project-footer">
                         <div class="footer-actions">
                             <a href="https://github.com/leo-dpy/Power-4" class="git-mini" target="_blank" rel="noopener"
-                                aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                aria-label="Code GitHub Power 4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                     </path>
                                 </svg></a>
-                            <a href="https://power4.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE
-                                PROJET</a>
+                            <a href="https://power4.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
                         </div>
                     </div>
                 </article>
 
-                <article id="project-ysync" class="project-card online-card" data-category="ynov-b1">
+                <!-- DEV 3 : DAILYHUB -->
+                <article class="project-card clickable-card" data-category="dev" style="display: none;">
                     <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>Ysync</h3>
-                        <p>Plateforme de gestion complète : location de matériel, réservation de salles.</p>
-                        <div class="p-stack">
-                            <span>BLAZOR / C#</span>
-                            <span>NEST.JS</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Ysync" class="git-mini" target="_blank" rel="noopener"
-                                aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://ysync.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card" data-category="ynov-b1">
-                    <div class="project-header">
-                        <span class="p-type">DASHBOARD</span><span class="p-status online">● ONLINE</span>
+                        <span class="p-type">DASHBOARD</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
                     </div>
                     <div class="project-body">
                         <h3>DailyHub</h3>
-                        <p>Dashboard interactif sous forme de widgets personnalisés affichant diverses données en temps
-                            réel.</p>
+                        <p>Dashboard interactif en widgets affichant diverses données et flux d'APIs en temps réel.</p>
                         <div class="p-stack">
-                            <span>JS</span>
-                            <span>API</span>
+                            <span>JAVASCRIPT</span>
+                            <span>API REST</span>
                             <span>DOCKER</span>
                         </div>
                     </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
+                    <div class="project-footer">
                         <div class="footer-actions">
                             <a href="https://github.com/leo-dpy/DailyHub" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
+                                rel="noopener" aria-label="Code GitHub DailyHub"><svg viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
                                     <path
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                     </path>
                                 </svg></a>
-                            <a href="https://dailyhub.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
+                            <a href="https://dailyhub.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="project-card online-card" data-category="ynov-b1">
+                <!-- DEV 4 : QUIZBALL -->
+                <article id="project-quizball" class="project-card clickable-card" data-category="dev" style="display: none;">
                     <div class="project-header">
-                        <span class="p-type">FORUM</span><span class="p-status online">● ONLINE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>The Hive</h3>
-                        <p>Développement d'un forum complet avec un backend en Go, intégrant toutes les fonctionnalités
-                            classiques d'un forum.</p>
-                        <div class="p-stack">
-                            <span>GO</span>
-                            <span>BACKEND</span>
-                            <span>SQLITE</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/the-hive" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://the-hive.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article id="project-quizball" class="project-card online-card featured-project"
-                    data-category="ynov-b2">
-                    <div class="project-header">
-                        <span class="p-type">WEB APP</span><span class="p-status online">● ONLINE</span>
+                        <span class="p-type">WEB APP</span><span class="p-status online"><span class="status-dot"></span>EN LIGNE</span>
                     </div>
                     <div class="project-body">
                         <h3>Quizball</h3>
-                        <p>Application web de quiz sportif interactif (football, basket, tennis) avec chrono et score en
-                            temps réel.</p>
+                        <p>Application de quiz sportif interactif (football, basket, tennis) avec chrono et scores en direct.</p>
                         <div class="p-stack">
                             <span>REACT</span>
                             <span>TYPESCRIPT</span>
                             <span>LARAVEL</span>
                         </div>
                     </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
+                    <div class="project-footer">
                         <div class="footer-actions">
                             <a href="https://github.com/leo-dpy/Quizball.git" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
+                                rel="noopener" aria-label="Code GitHub Quizball"><svg viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
                                     <path
                                         d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
                                     </path>
                                 </svg></a>
-                            <a href="https://quizball.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE PROJET</a>
+                            <a href="https://quizball.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">ACCÉDER AU PROJET</a>
                         </div>
                     </div>
                 </article>
-
-
-                <article class="project-card online-card featured-project" data-category="perso">
-                    <div class="project-header"><span class="p-type">SIMULATEUR</span><span class="p-status online">●
-                            ONLINE</span></div>
-                    <div class="project-body">
-                        <h3>Pokemon Battle</h3>
-                        <p>Simulateur de combat pokémon interactif sur navigateur. Gestion des types, attaques et PV.
-                        </p>
-                        <div class="p-stack">
-                            <span>JS</span>
-                            <span>GAME LOGIC</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Pokemon-Battle" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://pokemon-battle.leodupuy.fr" target="_blank" class="btn-project"
-                                rel="noopener">VOIR LE
-                                PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card online-card" data-category="perso">
-                    <div class="project-header"><span class="p-type">TOOLKIT</span><span class="p-status online">●
-                            ONLINE</span></div>
-                    <div class="project-body">
-                        <h3>Aegis</h3>
-                        <p>Boîte à outils de sécurité et confidentialité. Traitement local, analyse IP, et gestion de
-                            fichiers sécurisée.</p>
-                        <div class="p-stack">
-                            <span>JS</span>
-                            <span>SECURITÉ</span>
-                            <span>PRIVACY</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/aegis" class="git-mini" target="_blank" rel="noopener"
-                                aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <a href="https://aegis.leodupuy.fr" target="_blank" class="btn-project" rel="noopener">VOIR
-                                LE PROJET</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card offline-card" data-category="perso">
-                    <div class="project-header"><span class="p-type">SECURE TRANSFER</span><span
-                            class="p-status offline">● EN DEV</span></div>
-                    <div class="project-body">
-                        <h3>Protocol X</h3>
-                        <p>Coffre-fort d'envoi et salons de communication éphémères P2P. Chiffrement de bout en bout et
-                            auto-destruction.</p>
-                        <div class="p-stack">
-                            <span>NODE.JS</span>
-                            <span>WEBRTC</span>
-                            <span>CRYPTO API</span>
-                        </div>
-                    </div>
-                    <div class="project-footer" style="justify-content: flex-end;">
-                        <div class="footer-actions">
-                            <a href="https://github.com/leo-dpy/Protocol-X.git" class="git-mini" target="_blank"
-                                rel="noopener" aria-label="Code GitHub"><svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg></a>
-                            <span class="btn-project btn-locked">COMING SOON</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article id="project-cybersens" class="project-card offline-card featured-project"
-                    data-category="ydays">
-                    <div class="project-header">
-                        <span class="p-type">CYBERSECURITY</span><span class="p-status offline">● HORS LIGNE</span>
-                    </div>
-                    <div class="project-body">
-                        <h3>CyberSens</h3>
-                        <p class="no-clamp">Participation pendant 1 an à la conception d'une plateforme de
-                            sensibilisation à la cybersécurité : phishing, cours interactifs, quiz adaptatifs et
-                            suivi de progression.</p>
-                    </div>
-                </article>
-            </div>
-
-            <div id="projets-btn-container" style="text-align: center; margin-top: 3rem; display: none;">
-                <button id="toggle-projets" class="btn-outline">VOIR PLUS</button>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 4 : PARTICIPATIONS -->
+        <div id="view-participations" class="desktop-view" role="region" aria-label="Vue Participations">
+            <div class="view-content-wrapper">
         <section id="participations">
             <h2 class="section-title">>_ PARTICIPATIONS</h2>
             <div class="projects-grid">
@@ -592,11 +559,10 @@
                     <div class="participation-img-top">
                         <img src="assets/img/CTF Forensic.png" alt="Challenge 48H CTF Forensic">
                     </div>
-                    <div class="project-header" style="margin-top: 15px;">
+                    <div class="project-header">
                         <span class="p-type">CTF FORENSIC</span>
-
                     </div>
-                    <div class="project-body" style="margin-bottom: 15px;">
+                    <div class="project-body">
                         <h3>Challenge 48H</h3>
                         <p class="no-clamp">Challenge intensif de 48H orienté sur l'investigation numérique (Forensic),
                             l'analyse de données et la réponse aux incidents réseau.</p>
@@ -607,15 +573,14 @@
                             <span>TEAMWORK</span>
                         </div>
                     </div>
-                    <div class="project-footer"
-                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="project-footer participation-meta">
+                        <div class="meta-row">
                             <span class="feat-label">DATES</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">30-31 Mars 2026</span>
+                            <span class="meta-value">30-31 Mars 2026</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="meta-row">
                             <span class="feat-label">LIEU</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">Ynov Campus</span>
+                            <span class="meta-value">Ynov Campus</span>
                         </div>
                     </div>
                 </article>
@@ -624,11 +589,11 @@
                     <div class="participation-img-top">
                         <img src="assets/img/CTF Orion.jpeg" alt="CTF Orion Nom de Code Bellatrix">
                     </div>
-                    <div class="project-header" style="margin-top: 15px;">
+                    <div class="project-header">
                         <span class="p-type">EXERCICE MILITAIRE</span>
-                        <span class="p-status online">34ème</span>
+                        <span class="p-status online">34e / 2000</span>
                     </div>
-                    <div class="project-body" style="margin-bottom: 15px;">
+                    <div class="project-body">
                         <h3>CTF Orion</h3>
                         <p class="no-clamp">Exercice militaire de cybersécurité sur 4 jours. Mission : Déjouer une
                             campagne de désinformation, identifier les preneurs d'otage et localiser un pilote
@@ -640,15 +605,14 @@
                             <span>ANALYSE</span>
                         </div>
                     </div>
-                    <div class="project-footer"
-                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="project-footer participation-meta">
+                        <div class="meta-row">
                             <span class="feat-label">DATES</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">23-27 Mars 2026</span>
+                            <span class="meta-value">23-27 Mars 2026</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="meta-row">
                             <span class="feat-label">LIEU</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">En ligne</span>
+                            <span class="meta-value">En ligne</span>
                         </div>
                     </div>
                 </article>
@@ -657,11 +621,11 @@
                     <div class="participation-img-top">
                         <img src="assets/img/CTF 4dec.png" alt="CTF Inter-Campus Ynov 4 Dec">
                     </div>
-                    <div class="project-header" style="margin-top: 15px;">
+                    <div class="project-header">
                         <span class="p-type">COMPÉTITION CTF</span>
                         <span class="p-status online">2ÈME PLACE (LILLE)</span>
                     </div>
-                    <div class="project-body" style="margin-bottom: 15px;">
+                    <div class="project-body">
                         <h3>CTF Inter-Campus</h3>
                         <p class="no-clamp">Compétition de cybersécurité réunissant les étudiants des différents campus
                             Ynov. Épreuves de Web Exploitation, Cryptographie et OSINT.</p>
@@ -671,28 +635,42 @@
                             <span>CHALLENGE</span>
                         </div>
                     </div>
-                    <div class="project-footer"
-                        style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; align-items: stretch; gap: 8px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="project-footer participation-meta">
+                        <div class="meta-row">
                             <span class="feat-label">DATES</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">04 Décembre</span>
+                            <span class="meta-value">04 Décembre</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="meta-row">
                             <span class="feat-label">LIEU</span>
-                            <span style="font-size: 0.75rem; color: #a3a3a3; font-weight: bold;">Ynov Campus</span>
+                            <span class="meta-value">Ynov Campus</span>
                         </div>
                     </div>
                 </article>
 
             </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <button id="toggle-participations" class="btn-outline">VOIR PLUS</button>
-            </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 5 : CERTIFICATIONS -->
+        <div id="view-certifications" class="desktop-view" role="region" aria-label="Vue Certifications">
+            <div class="view-content-wrapper">
         <section id="certifications">
             <h2 class="section-title">>_ CERTIFICATIONS</h2>
             <div class="certifications-container">
+                <div class="cert-card-horizontal cert-card-pending">
+                    <div class="cert-visual-side">
+                        <img src="assets/img/skills/hackthebox.svg" alt="Logo Hack The Box" class="cert-logo-img">
+                    </div>
+                    <div class="cert-content-side">
+                        <div class="cert-header">
+                            <h3>HTB CJCA</h3>
+                            <span class="cert-tag cert-tag-pending">EN COURS</span>
+                        </div>
+                        <span class="cert-org">HACK THE BOX <span class="cert-date">| Certified Junior Cybersecurity Associate</span></span>
+                        <p>Certification pratique offensive et défensive : tests d'intrusion sur un réseau d'entreprise, analyse et validation d'alertes SIEM, rédaction d'un rapport professionnel.</p>
+                    </div>
+                </div>
                 <a href="assets/docs/Certif ANSSI.pdf" target="_blank" class="cert-card-horizontal" rel="noopener">
                     <div class="cert-visual-side">
                         <img src="assets/img/anssi-logo.png" alt="Logo ANSSI" class="cert-logo-img">
@@ -710,7 +688,12 @@
                 </a>
             </div>
         </section>
+            </div>
+        </div>
 
+        <!-- VUE 6 : PARCOURS -->
+        <div id="view-exp" class="desktop-view" role="region" aria-label="Vue Parcours">
+            <div class="view-content-wrapper">
         <section id="exp">
             <h2 class="section-title">>_ PARCOURS</h2>
 
@@ -761,26 +744,34 @@
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
                                     <span class="exp-date">2023</span>
-                                    <span class="exp-badge">STAGE</span>
+                                    <span class="exp-badge">STAGE SOC</span>
                                 </div>
                                 <span class="exp-company">IBM FRANCE &bull; LILLE</span>
                             </div>
-                            <h3 class="exp-card-title">Stage Cybersécurité (SOC)</h3>
-                            <p class="exp-card-desc">Immersion dans un Security Operations Center (SOC) et découverte
-                                approfondie des métiers et outils de la cybersécurité.</p>
+                            <h3 class="exp-card-title">Stage Cybersécurité</h3>
+                            <p class="exp-card-desc">Immersion au sein d'un Security Operations Center (SOC) et découverte des métiers de la cybersécurité :</p>
+                            <ul class="exp-bullets">
+                                <li>Observation du fonctionnement d'un SOC et de ses outils d'analyse et de détection.</li>
+                                <li>Acquisition de connaissances sur divers métiers et processus liés à la cybersécurité opérationnelle.</li>
+                                <li>Participation à des projets d'analyse des menaces et amélioration de la compréhension des enjeux actuels.</li>
+                            </ul>
                         </article>
 
                         <article class="exp-card">
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
                                     <span class="exp-date">2022</span>
-                                    <span class="exp-badge">STAGE</span>
+                                    <span class="exp-badge">STAGE IT</span>
                                 </div>
                                 <span class="exp-company">MICRO LOGIS &bull; PECQUENCOURT</span>
                             </div>
                             <h3 class="exp-card-title">Stage Réparateur Informatique</h3>
-                            <p class="exp-card-desc">Diagnostic matériel, réparations de parcs informatiques,
-                                installation de systèmes d'exploitation et gestion autonome de l'atelier technique.</p>
+                            <p class="exp-card-desc">Maintenance matérielle, assistance technique et gestion autonome de l'atelier :</p>
+                            <ul class="exp-bullets">
+                                <li>Réparation d'ordinateurs, diagnostic matériel et installation/remplacement de disques durs.</li>
+                                <li>Assistance technique et support sur divers systèmes d'exploitation (Windows, Linux).</li>
+                                <li>Gestion autonome de l'atelier technique et préparation des postes informatiques.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
@@ -791,14 +782,17 @@
                         <article class="exp-card">
                             <div class="exp-card-header">
                                 <div class="exp-card-meta">
-                                    <span class="exp-date">JUIN - AOÛT 2026</span>
+                                    <span class="exp-date">MAI - SEPTEMBRE 2026</span>
                                     <span class="exp-badge">JOB ÉTUDIANT</span>
                                 </div>
                                 <span class="exp-company">LA CROIX OU PILE</span>
                             </div>
                             <h3 class="exp-card-title">Saisonnier en Restauration</h3>
-                            <p class="exp-card-desc">Plonge, préparation des commandes, mise en place de la terrasse et
-                                service.</p>
+                            <p class="exp-card-desc">Travail d'équipe soutenu, rigueur et service en restauration :</p>
+                            <ul class="exp-bullets">
+                                <li>Plonge, nettoyage complet de la cuisine et préparation des commandes.</li>
+                                <li>Mise en place de la terrasse, service et rangement en équipe.</li>
+                            </ul>
                         </article>
 
                         <article class="exp-card">
@@ -807,89 +801,35 @@
                                     <span class="exp-date">2025 - 2026</span>
                                     <span class="exp-badge">JOB ÉTUDIANT</span>
                                 </div>
-                                <span class="exp-company">SERVICES & TRAVAUX EXTÉRIEURS</span>
+                                <span class="exp-company">SERVICE AU PARTICULIER</span>
                             </div>
-                            <h3 class="exp-card-title">Entretien de Terrains & Espaces Verts</h3>
-                            <p class="exp-card-desc">Tonte de pelouse, désherbage, entretien de terrains et divers
-                                travaux d'extérieur.</p>
+                            <h3 class="exp-card-title">Entretien de Terrains &amp; Espaces Verts</h3>
+                            <p class="exp-card-desc">Prestations d'entretien extérieur réalisées en autonomie complète :</p>
+                            <ul class="exp-bullets">
+                                <li>Entretien de parcelles et extérieurs : tonte, désherbage et travaux d’aménagement.</li>
+                                <li>Organisation autonome du matériel et relation directe de confiance avec les particuliers.</li>
+                            </ul>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
+            </div>
+        </div>
 
     </main>
 
-    <!-- Contact & Réseaux -->
-    <div id="contact-modal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-inner">
-                <div class="modal-header">
-                    <h3 class="modal-title">>_ CONNEXION</h3>
-                    <button id="btn-close-contact" class="modal-close" aria-label="Fermer">✕</button>
-                </div>
-                <div class="modal-desc">
-                    <p>N'hésitez pas à me contacter pour une opportunité, un projet ou simplement pour échanger.</p>
-                </div>
-                <div class="contact-links-grid">
-                    <button id="btn-copy-email-modal" class="contact-card" type="button"
-                        aria-label="Copier l'adresse email">
-                        <img src="assets/img/ynov-logo.png" width="24" height="24" alt="Ynov Campus"
-                            style="object-fit: contain;">
-                        <div class="contact-info">
-                            <span>EMAIL</span>
-                            <strong>leo.dupuy@ynov.com</strong>
-                        </div>
-                    </button>
-                    <button id="btn-copy-phone-modal" class="contact-card" type="button"
-                        aria-label="Copier le numéro de téléphone">
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                            </path>
-                        </svg>
-                        <div class="contact-info">
-                            <span>TÉLÉPHONE</span>
-                            <strong>07 71 59 90 71</strong>
-                        </div>
-                    </button>
-                    <a href="https://linkedin.com/in/dupuy-leo" target="_blank" rel="noopener" class="contact-card">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
-                            width="24" height="24" alt="LinkedIn">
-                        <div class="contact-info">
-                            <span>LINKEDIN</span>
-                            <strong>@dupuy-leo</strong>
-                        </div>
-                    </a>
-                    <a href="https://github.com/leo-dpy" target="_blank" rel="noopener" class="contact-card">
-                        <!-- On inverse l'icône noire de Github pour qu'elle devienne blanche -->
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                            style="filter: invert(1);" width="24" height="24" alt="GitHub">
-                        <div class="contact-info">
-                            <span>GITHUB</span>
-                            <strong>@leo-dpy</strong>
-                        </div>
-                    </a>
-                    <a href="assets/docs/CV - Léo Dupuy.pdf" target="_blank" rel="noopener" class="contact-card">
-                        <!-- Icône de téléchargement -->
-                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#e0e0e0" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        <div class="contact-info">
-                            <span>MON CV</span>
-                            <strong>CV Léo Dupuy</strong>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <!-- DOCK DE NAVIGATION -->
+    <nav role="navigation" aria-label="Navigation principale">
+        <div class="nav-links">
+            <a href="#about" class="active" data-view="about">PROFIL</a>
+            <a href="#skills" data-view="skills">COMPÉTENCES</a>
+            <a href="#projets" data-view="projets">PROJETS</a>
+            <a href="#participations" data-view="participations">PARTICIPATIONS</a>
+            <a href="#certifications" data-view="certifications">CERTIFICATIONS</a>
+            <a href="#exp" data-view="exp">PARCOURS</a>
         </div>
-    </div>
+    </nav>
 
 </body>
 
