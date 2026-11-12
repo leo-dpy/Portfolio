@@ -1338,6 +1338,7 @@ p.no-clamp {
 
 .cert-content-side {
     flex: 1;
+    min-width: 0;
     padding: 18px 20px 16px 18px;
     display: flex;
     flex-direction: column;
@@ -1434,7 +1435,7 @@ a.cert-card-horizontal:hover .cert-logo-img {
 
 @media (max-width: 768px) {
     .certifications-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 }
 
@@ -1815,18 +1816,58 @@ img.invert {
     }
 
     nav {
-        bottom: 12px;
-        padding: 5px 8px;
+        bottom: 10px;
+        left: 8px;
+        right: 8px;
+        width: auto;
+        padding: 6px;
     }
 
     .nav-links {
-        gap: 3px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        width: 100%;
     }
 
     .nav-links a {
-        padding: 6px 8px;
-        font-size: 0.65rem;
+        justify-content: center;
+        padding: 7px 4px;
+        font-size: 0.62rem;
+        letter-spacing: 0.3px;
+    }
+
+    .desktop-view {
+        padding-bottom: 110px;
+    }
+
+    .desktop-view .skills-tabs-nav,
+    .desktop-view .project-filters,
+    .desktop-view .exp-tabs-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .desktop-view .skills-tabs-nav > :last-child:nth-child(odd),
+    .desktop-view .project-filters > :last-child:nth-child(odd),
+    .desktop-view .exp-tabs-nav > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .skills-tab-btn,
+    #skills .skills-tab-btn,
+    .filter-btn,
+    .exp-tab-btn {
+        justify-content: center;
+        padding: 9px 6px;
+        font-size: 0.66rem;
         letter-spacing: 0.4px;
+    }
+
+    .hero-role {
+        font-size: 0.78rem;
+        letter-spacing: 2px;
     }
 
     .topbar-left {
@@ -1900,4 +1941,10 @@ img.invert {
 
 #project-cybersens:hover::before {
     background: #0a0a10;
+}
+
+@media (max-width: 360px) {
+    .topbar-chip-static {
+        display: none;
+    }
 }
