@@ -1410,12 +1410,8 @@ a.cert-card-horizontal:hover {
     box-shadow: var(--hover-shadow);
 }
 
-a.cert-card-horizontal:hover::before {
-    background: #0c101c;
-}
-
 a.cert-card-horizontal:hover .cert-cta {
-    color: #38bdf8;
+    color: var(--accent);
 }
 
 a.cert-card-horizontal:hover .cert-logo-img {
