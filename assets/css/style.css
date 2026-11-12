@@ -690,7 +690,6 @@ nav::before {
     color: #fff;
     background: var(--accent);
     box-shadow: var(--hover-shadow);
-    transform: translateY(-2px);
 }
 
 .nav-links a:hover::before,
