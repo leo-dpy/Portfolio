@@ -899,7 +899,7 @@ h1 {
 }
 
 .hero-role {
-    color: #38bdf8;
+    color: var(--accent);
     font-size: 1rem;
     letter-spacing: 4px;
     text-transform: uppercase;
